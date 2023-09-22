@@ -1,0 +1,1032 @@
+# ============================================================
+'R code for LabEx CORAIL book chapter on fish parasites
+
+Christina Pavloudi
+cpavloud@hcmr.gr
+https://cpavloud.github.io/mysite/
+
+	Copyright (C) 2023 Christina Pavloudi
+  
+    This script is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+  
+    This script is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.'
+
+# =============================================================
+
+################################################################################
+########################### LOAD LIBRARIES #####################################
+################################################################################
+
+# List of packages needed
+.packages = c("tidyverse", "worms", "obistools", "mregions", "sf", "leaflet", 
+              "dplyr", "data.table", "gdata", "rfishbase", "readxl", "taxize", 
+              "Orcs", "usefun", "RSQLite", "DBI", "rredlist")
+
+# Install CRAN packages (if not already installed)
+.inst <- .packages %in% installed.packages()
+if(length(.packages[!.inst]) > 0) install.packages(.packages[!.inst])
+
+# Load packages into session 
+lapply(.packages, require, character.only=TRUE)
+
+packageVersion("tidyverse")
+packageVersion("worms")
+packageVersion("obistools")
+packageVersion("mregions")
+packageVersion("sf")
+packageVersion("leaflet")
+packageVersion("dplyr")
+packageVersion("data.table")
+packageVersion("gdata")
+packageVersion("rfishbase")
+packageVersion("readxl")
+packageVersion("taxize")
+packageVersion("Orcs")
+packageVersion("usefun")
+packageVersion("RSQLite")
+packageVersion("DBI")
+packageVersion("rredlist")
+
+remotes::install_github("ropensci/worrms")
+library("worrms")
+packageVersion("worrms")
+
+################################################################################
+########################### LOAD WORKSPACE #####################################
+################################################################################
+
+load(file = "occurrences_fish.RData")
+
+################################################################################
+####################### READ OBIS FISH LISTS ###################################
+################################################################################
+
+Fish_Arnhem_Coast <- rbind.fill(Teleostei_ecoregions_Arnhem_Coast_wkt, 
+                                Elasmobranchii_ecoregions_Arnhem_Coast_wkt, Holocephali_ecoregions_Arnhem_Coast_wkt)
+Fish_Arnhem_Coast <- Fish_Arnhem_Coast %>% mutate(ECOREGION = "Arnhem Coast to Gulf of Carpenteria")
+write.csv(Fish_Arnhem_Coast,"Fish_Arnhem_Coast.csv")
+Fish_Arnhem_Coast <- Fish_Arnhem_Coast %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Arnhem_Coast$aphiaID))
+Fish_Arnhem_Coast <- select(Fish_Arnhem_Coast, scientificName, aphiaID, ECOREGION)
+Fish_Arnhem_Coast <- unique(Fish_Arnhem_Coast)
+
+Fish_Arafura_Sea <- rbind.fill(Teleostei_ecoregions_Arafura_Sea_wkt, 
+                               Elasmobranchii_ecoregions_Arafura_Sea_wkt, Holocephali_ecoregions_Arafura_Sea_wkt)
+Fish_Arafura_Sea <- Fish_Arafura_Sea %>% mutate(ECOREGION = "Arafura Sea")
+write.csv(Fish_Arafura_Sea,"Fish_Arafura_Sea.csv")
+Fish_Arafura_Sea <- Fish_Arafura_Sea %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Arafura_Sea$aphiaID))
+Fish_Arafura_Sea <- select(Fish_Arafura_Sea, scientificName, aphiaID, ECOREGION)
+Fish_Arafura_Sea <- unique(Fish_Arafura_Sea)
+
+Fish_Banda_Sea <- rbind.fill(Teleostei_ecoregions_Banda_Sea_wkt, 
+                             Elasmobranchii_ecoregions_Banda_Sea_wkt, Holocephali_ecoregions_Banda_Sea_wkt)
+Fish_Banda_Sea <- Fish_Banda_Sea %>% mutate(ECOREGION = "Banda Sea")
+write.csv(Fish_Banda_Sea,"Fish_Banda_Sea.csv")
+Fish_Banda_Sea <- Fish_Banda_Sea %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Banda_Sea$aphiaID))
+Fish_Banda_Sea <- select(Fish_Banda_Sea, scientificName, aphiaID, ECOREGION)
+Fish_Banda_Sea <- unique(Fish_Banda_Sea)
+
+Fish_Bismarck_Sea <- rbind.fill(Teleostei_ecoregions_Bismarck_Sea_wkt, 
+                                Elasmobranchii_ecoregions_Bismarck_Sea_wkt, 
+                                Cyclostomi_ecoregions_Bismarck_Sea_wkt)
+Fish_Bismarck_Sea <- Fish_Bismarck_Sea %>% mutate(ECOREGION = "Bismarck Sea")
+write.csv(Fish_Bismarck_Sea,"Fish_Bismarck_Sea.csv")
+Fish_Bismarck_Sea <- Fish_Bismarck_Sea %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Bismarck_Sea$aphiaID))
+Fish_Bismarck_Sea <- select(Fish_Bismarck_Sea, scientificName, aphiaID, ECOREGION)
+Fish_Bismarck_Sea <- unique(Fish_Bismarck_Sea)
+
+Fish_Bonaparte_Coast <- rbind.fill(Teleostei_ecoregions_Bonaparte_Coast_wkt, 
+                                   Elasmobranchii_ecoregions_Bonaparte_Coast_wkt, Holocephali_ecoregions_Bonaparte_Coast_wkt, 
+                                   Cyclostomi_ecoregions_Bonaparte_Coast_wkt)
+Fish_Bonaparte_Coast <- Fish_Bonaparte_Coast %>% mutate(ECOREGION = "Bonaparte Coast")
+write.csv(Fish_Bonaparte_Coast,"Fish_Bonaparte_Coast.csv")
+Fish_Bonaparte_Coast <- Fish_Bonaparte_Coast %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Bonaparte_Coast$aphiaID))
+Fish_Bonaparte_Coast <- select(Fish_Bonaparte_Coast, scientificName, aphiaID, ECOREGION)
+Fish_Bonaparte_Coast <- unique(Fish_Bonaparte_Coast)
+
+Fish_Cocos <- rbind.fill(Teleostei_ecoregions_Cocos_wkt, 
+                         Elasmobranchii_ecoregions_Cocos_wkt)
+Fish_Cocos <- Fish_Cocos %>% mutate(ECOREGION = "Cocos-Keeling/Christmas Island")
+write.csv(Fish_Cocos,"Fish_Cocos.csv")
+Fish_Cocos <- Fish_Cocos %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Cocos$aphiaID))
+Fish_Cocos <- select(Fish_Cocos, scientificName, aphiaID, ECOREGION)
+Fish_Cocos <- unique(Fish_Cocos)
+
+Fish_Coral_Sea <- rbind.fill(Teleostei_ecoregions_Coral_Sea_wkt, 
+                             Elasmobranchii_ecoregions_Coral_Sea_wkt, Holocephali_ecoregions_Coral_Sea_wkt, 
+                             Cyclostomi_ecoregions_Coral_Sea_wkt)
+Fish_Coral_Sea <- Fish_Coral_Sea %>% mutate(ECOREGION = "Coral Sea")
+write.csv(Fish_Coral_Sea,"Fish_Coral_Sea.csv")
+Fish_Coral_Sea <- Fish_Coral_Sea %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Coral_Sea$aphiaID))
+Fish_Coral_Sea <- select(Fish_Coral_Sea, scientificName, aphiaID, ECOREGION)
+Fish_Coral_Sea <- unique(Fish_Coral_Sea)
+
+
+Fish_East_Caroline_Islands <- rbind.fill(Teleostei_ecoregions_East_Caroline_Islands_wkt, 
+                                         Elasmobranchii_ecoregions_East_Caroline_Islands_wkt)
+Fish_East_Caroline_Islands <- Fish_East_Caroline_Islands %>% mutate(ECOREGION = "East Caroline Islands")
+write.csv(Fish_East_Caroline_Islands,"Fish_East_Caroline_Islands.csv")
+Fish_East_Caroline_Islands <- Fish_East_Caroline_Islands %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_East_Caroline_Islands$aphiaID))
+Fish_East_Caroline_Islands <- select(Fish_East_Caroline_Islands, scientificName, aphiaID, ECOREGION)
+Fish_East_Caroline_Islands <- unique(Fish_East_Caroline_Islands)
+
+Fish_Easter_Island <- rbind.fill(Teleostei_ecoregions_Easter_Island_wkt, 
+                                 Elasmobranchii_ecoregions_Easter_Island_wkt)
+Fish_Easter_Island <- Fish_Easter_Island %>% mutate(ECOREGION = "Easter Island")
+write.csv(Fish_Easter_Island,"Fish_Easter_Island.csv")
+Fish_Easter_Island <- Fish_Easter_Island %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Easter_Island$aphiaID))
+Fish_Easter_Island <- select(Fish_Easter_Island, scientificName, aphiaID, ECOREGION)
+Fish_Easter_Island <- unique(Fish_Easter_Island)
+
+Fish_Eastern_Philippines <- rbind.fill(Teleostei_ecoregions_Eastern_Philippines_wkt, 
+                                       Elasmobranchii_ecoregions_Eastern_Philippines_wkt, Holocephali_ecoregions_Eastern_Philippines_wkt, 
+                                       Cyclostomi_ecoregions_Eastern_Philippines_wkt)
+Fish_Eastern_Philippines <- Fish_Eastern_Philippines %>% mutate(ECOREGION = "Eastern Philippines")
+write.csv(Fish_Eastern_Philippines,"Fish_Eastern_Philippines.csv")
+Fish_Eastern_Philippines <- Fish_Eastern_Philippines %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Eastern_Philippines$aphiaID))
+Fish_Eastern_Philippines <- select(Fish_Eastern_Philippines, scientificName, aphiaID, ECOREGION)
+Fish_Eastern_Philippines <- unique(Fish_Eastern_Philippines)
+
+Fish_Exmouth <- rbind.fill(Teleostei_ecoregions_Exmouth_wkt, 
+                           Elasmobranchii_ecoregions_Exmouth_wkt, Holocephali_ecoregions_Exmouth_wkt, 
+                           Cyclostomi_ecoregions_Exmouth_wkt)
+Fish_Exmouth <- Fish_Exmouth %>% mutate(ECOREGION = "Exmouth to Broome")
+write.csv(Fish_Exmouth,"Fish_Exmouth.csv")
+Fish_Exmouth <- Fish_Exmouth %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Exmouth$aphiaID))
+Fish_Exmouth <- select(Fish_Exmouth, scientificName, aphiaID, ECOREGION)
+Fish_Exmouth <- unique(Fish_Exmouth)
+
+Fish_Gulf_of_Papua <- rbind.fill(Teleostei_ecoregions_Gulf_of_Papua_wkt, 
+                                 Elasmobranchii_ecoregions_Gulf_of_Papua_wkt)
+Fish_Gulf_of_Papua <- Fish_Gulf_of_Papua %>% mutate(ECOREGION = "Gulf of Papua")
+write.csv(Fish_Gulf_of_Papua,"Fish_Gulf_of_Papua.csv")
+Fish_Gulf_of_Papua <- Fish_Gulf_of_Papua %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Gulf_of_Papua$aphiaID))
+Fish_Gulf_of_Papua <- select(Fish_Gulf_of_Papua, scientificName, aphiaID, ECOREGION)
+Fish_Gulf_of_Papua <- unique(Fish_Gulf_of_Papua)
+
+Fish_Gulf_of_Thailand <- rbind.fill(Teleostei_ecoregions_Gulf_of_Thailand_wkt, 
+                                    Elasmobranchii_ecoregions_Gulf_of_Thailand_wkt)
+Fish_Gulf_of_Thailand <- Fish_Gulf_of_Thailand %>% mutate(ECOREGION = "Gulf of Thailand")
+write.csv(Fish_Gulf_of_Thailand,"Fish_Gulf_of_Thailand.csv")
+Fish_Gulf_of_Thailand <- Fish_Gulf_of_Thailand %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Gulf_of_Thailand$aphiaID))
+Fish_Gulf_of_Thailand <- select(Fish_Gulf_of_Thailand, scientificName, aphiaID, ECOREGION)
+Fish_Gulf_of_Thailand <- unique(Fish_Gulf_of_Thailand)
+
+Fish_Gulf_of_Tonkin <- rbind.fill(Teleostei_ecoregions_Gulf_of_Tonkin_wkt, 
+                                  Elasmobranchii_ecoregions_Gulf_of_Tonkin_wkt)
+Fish_Gulf_of_Tonkin <- Fish_Gulf_of_Tonkin %>% mutate(ECOREGION = "Gulf of Tonkin")
+write.csv(Fish_Gulf_of_Tonkin,"Fish_Gulf_of_Tonkin.csv")
+Fish_Gulf_of_Tonkin <- Fish_Gulf_of_Tonkin %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Gulf_of_Tonkin$aphiaID))
+Fish_Gulf_of_Tonkin <- select(Fish_Gulf_of_Tonkin, scientificName, aphiaID, ECOREGION)
+Fish_Gulf_of_Tonkin <- unique(Fish_Gulf_of_Tonkin)
+
+Fish_Halmahera <- rbind.fill(Teleostei_ecoregions_Halmahera_wkt, 
+                             Elasmobranchii_ecoregions_Halmahera_wkt)
+Fish_Halmahera <- Fish_Halmahera %>% mutate(ECOREGION = "Halmahera")
+write.csv(Fish_Halmahera,"Fish_Halmahera.csv")
+Fish_Halmahera <- Fish_Halmahera %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Halmahera$aphiaID))
+Fish_Halmahera <- select(Fish_Halmahera, scientificName, aphiaID, ECOREGION)
+Fish_Halmahera <- unique(Fish_Halmahera)
+
+Fish_Lesser <- rbind.fill(Teleostei_ecoregions_Lesser_wkt, 
+                          Elasmobranchii_ecoregions_Lesser_wkt, Holocephali_ecoregions_Lesser_wkt)
+Fish_Lesser <- Fish_Lesser %>% mutate(ECOREGION = "Lesser Sunda")
+write.csv(Fish_Lesser,"Fish_Lesser.csv")
+Fish_Lesser <- Fish_Lesser %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Lesser$aphiaID))
+Fish_Lesser <- select(Fish_Lesser, scientificName, aphiaID, ECOREGION)
+Fish_Lesser <- unique(Fish_Lesser)
+
+
+Fish_Line <- rbind.fill(Teleostei_ecoregions_Line_wkt, 
+                        Elasmobranchii_ecoregions_Line_wkt)
+Fish_Line <- Fish_Line %>% mutate(ECOREGION = "Line Islands")
+write.csv(Fish_Line,"Fish_Line.csv")
+Fish_Line <- Fish_Line %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Line$aphiaID))
+Fish_Line <- select(Fish_Line, scientificName, aphiaID, ECOREGION)
+Fish_Line <- unique(Fish_Line)
+
+Fish_Lord <- rbind.fill(Teleostei_ecoregions_Lord_wkt, 
+                        Elasmobranchii_ecoregions_Lord_wkt, Holocephali_ecoregions_Lord_wkt)
+Fish_Lord <- Fish_Lord %>% mutate(ECOREGION = "Lord Howe and Norfolk Islands")
+write.csv(Fish_Lord,"Fish_Lord.csv")
+Fish_Lord <- Fish_Lord %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Lord$aphiaID))
+Fish_Lord <- select(Fish_Lord, scientificName, aphiaID, ECOREGION)
+Fish_Lord <- unique(Fish_Lord)
+
+Fish_Malacca <- rbind.fill(Teleostei_ecoregions_Malacca_wkt, 
+                           Elasmobranchii_ecoregions_Malacca_wkt, 
+                           Cyclostomi_ecoregions_Malacca_wkt)
+Fish_Malacca <- Fish_Malacca %>% mutate(ECOREGION = "Malacca Strait")
+write.csv(Fish_Malacca,"Fish_Malacca.csv")
+Fish_Malacca <- Fish_Malacca %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Malacca$aphiaID))
+Fish_Malacca <- select(Fish_Malacca, scientificName, aphiaID, ECOREGION)
+Fish_Malacca <- unique(Fish_Malacca)
+
+Fish_Mariana <- rbind.fill(Teleostei_ecoregions_Mariana_wkt, 
+                           Elasmobranchii_ecoregions_Mariana_wkt, 
+                           Cyclostomi_ecoregions_Mariana_wkt)
+Fish_Mariana <- Fish_Mariana %>% mutate(ECOREGION = "Mariana Islands")
+write.csv(Fish_Mariana,"Fish_Mariana.csv")
+Fish_Mariana <- Fish_Mariana %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Mariana$aphiaID))
+Fish_Mariana <- select(Fish_Mariana, scientificName, aphiaID, ECOREGION)
+Fish_Mariana <- unique(Fish_Mariana)
+
+Fish_Tuamotus <- rbind.fill(Teleostei_ecoregions_Tuamotus_wkt, 
+                            Elasmobranchii_ecoregions_Tuamotus_wkt)
+Fish_Tuamotus <- Fish_Tuamotus %>% mutate(ECOREGION = "Tuamotus")
+write.csv(Fish_Tuamotus,"Fish_Tuamotus.csv")
+Fish_Tuamotus <- Fish_Tuamotus %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Tuamotus$aphiaID))
+Fish_Tuamotus <- select(Fish_Tuamotus, scientificName, aphiaID, ECOREGION)
+Fish_Tuamotus <- unique(Fish_Tuamotus)
+
+Fish_Marshall <- rbind.fill(Teleostei_ecoregions_Marshall_wkt, 
+                            Elasmobranchii_ecoregions_Marshall_wkt)
+Fish_Marshall <- Fish_Marshall %>% mutate(ECOREGION = "Marshall Islands")
+write.csv(Fish_Marshall,"Fish_Marshall.csv")
+Fish_Marshall <- Fish_Marshall %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Marshall$aphiaID))
+Fish_Marshall <- select(Fish_Marshall, scientificName, aphiaID, ECOREGION)
+Fish_Marshall <- unique(Fish_Marshall)
+
+Fish_New_Caledonia <- rbind.fill(Teleostei_ecoregions_New_Caledonia_wkt, 
+                                 Elasmobranchii_ecoregions_New_Caledonia_wkt, Holocephali_ecoregions_New_Caledonia_wkt, 
+                                 Cladistii_ecoregions_New_Caledonia_wkt)
+Fish_New_Caledonia <- Fish_New_Caledonia %>% mutate(ECOREGION = "New Caledonia")
+write.csv(Fish_New_Caledonia,"Fish_New_Caledonia.csv")
+Fish_New_Caledonia <- Fish_New_Caledonia %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_New_Caledonia$aphiaID))
+Fish_New_Caledonia <- select(Fish_New_Caledonia, scientificName, aphiaID, ECOREGION)
+Fish_New_Caledonia <- unique(Fish_New_Caledonia)
+
+Fish_Ningaloo <- rbind.fill(Teleostei_ecoregions_Ningaloo_wkt,  
+                            Elasmobranchii_ecoregions_Ningaloo_wkt, Holocephali_ecoregions_Ningaloo_wkt)
+Fish_Ningaloo <- Fish_Ningaloo %>% mutate(ECOREGION = "Ningaloo")
+write.csv(Fish_Ningaloo,"Fish_Ningaloo.csv")
+Fish_Ningaloo <- Fish_Ningaloo %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Ningaloo$aphiaID))
+Fish_Ningaloo <- select(Fish_Ningaloo, scientificName, aphiaID, ECOREGION)
+Fish_Ningaloo <- unique(Fish_Ningaloo)
+
+Fish_Ogasawara <- rbind.fill(Teleostei_ecoregions_Ogasawara_wkt, 
+                             Elasmobranchii_ecoregions_Ogasawara_wkt, Holocephali_ecoregions_Ogasawara_wkt, 
+                             Cyclostomi_ecoregions_Ogasawara_wkt)
+Fish_Ogasawara <- Fish_Ogasawara %>% mutate(ECOREGION = "Ogasawara Islands")
+write.csv(Fish_Ogasawara,"Fish_Ogasawara.csv")
+Fish_Ogasawara <- Fish_Ogasawara %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Ogasawara$aphiaID))
+Fish_Ogasawara <- select(Fish_Ogasawara, scientificName, aphiaID, ECOREGION)
+Fish_Ogasawara <- unique(Fish_Ogasawara)
+
+Fish_Northeast_Sulawesi <- rbind.fill(Teleostei_ecoregions_Northeast_Sulawesi_wkt, 
+                                      Elasmobranchii_ecoregions_Northeast_Sulawesi_wkt)
+Fish_Northeast_Sulawesi <- Fish_Northeast_Sulawesi %>% mutate(ECOREGION = "Northeast Sulawesi")
+write.csv(Fish_Northeast_Sulawesi,"Fish_Northeast_Sulawesi.csv")
+Fish_Northeast_Sulawesi <- Fish_Northeast_Sulawesi %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Northeast_Sulawesi$aphiaID))
+Fish_Northeast_Sulawesi <- select(Fish_Northeast_Sulawesi, scientificName, aphiaID, ECOREGION)
+Fish_Northeast_Sulawesi <- unique(Fish_Northeast_Sulawesi)
+
+Fish_Marquesas <- rbind.fill(Teleostei_ecoregions_Marquesas_wkt, 
+                             Elasmobranchii_ecoregions_Marquesas_wkt)
+Fish_Marquesas <- Fish_Marquesas %>% mutate(ECOREGION = "Marquesas")
+write.csv(Fish_Marquesas,"Fish_Marquesas.csv")
+Fish_Marquesas <- Fish_Marquesas %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Marquesas$aphiaID))
+Fish_Marquesas <- select(Fish_Marquesas, scientificName, aphiaID, ECOREGION)
+Fish_Marquesas <- unique(Fish_Marquesas)
+
+Fish_Vanuatu <- rbind.fill(Teleostei_ecoregions_Vanuatu_wkt, 
+                           Elasmobranchii_ecoregions_Vanuatu_wkt, Holocephali_ecoregions_Vanuatu_wkt, 
+                           Cladistii_ecoregions_Vanuatu_wkt)
+Fish_Vanuatu <- Fish_Vanuatu %>% mutate(ECOREGION = "Vanuatu")
+write.csv(Fish_Vanuatu,"Fish_Vanuatu.csv")
+Fish_Vanuatu <- Fish_Vanuatu %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Vanuatu$aphiaID))
+Fish_Vanuatu <- select(Fish_Vanuatu, scientificName, aphiaID, ECOREGION)
+Fish_Vanuatu <- unique(Fish_Vanuatu)
+
+Fish_Papua <- rbind.fill(Teleostei_ecoregions_Papua_wkt, 
+                         Elasmobranchii_ecoregions_Papua_wkt)
+Fish_Papua <- Fish_Papua %>% mutate(ECOREGION = "Papua")
+write.csv(Fish_Papua,"Fish_Papua.csv")
+Fish_Papua <- Fish_Papua %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Papua$aphiaID))
+Fish_Papua <- select(Fish_Papua, scientificName, aphiaID, ECOREGION)
+Fish_Papua <- unique(Fish_Papua)
+
+Fish_Solomon_Archipelago <- rbind.fill(Teleostei_ecoregions_Solomon_Archipelago_wkt, 
+                                       Elasmobranchii_ecoregions_Solomon_Archipelago_wkt)
+Fish_Solomon_Archipelago <- Fish_Solomon_Archipelago %>% mutate(ECOREGION = "Solomon Archipelago")
+write.csv(Fish_Solomon_Archipelago,"Fish_Solomon_Archipelago.csv")
+Fish_Solomon_Archipelago <- Fish_Solomon_Archipelago %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Solomon_Archipelago$aphiaID))
+Fish_Solomon_Archipelago <- select(Fish_Solomon_Archipelago, scientificName, aphiaID, ECOREGION)
+Fish_Solomon_Archipelago <- unique(Fish_Solomon_Archipelago)
+
+Fish_Solomon_Sea <- rbind.fill(Teleostei_ecoregions_Solomon_Sea_wkt, 
+                               Elasmobranchii_ecoregions_Solomon_Sea_wkt)
+Fish_Solomon_Sea <- Fish_Solomon_Sea %>% mutate(ECOREGION = "Solomon Sea")
+write.csv(Fish_Solomon_Sea,"Fish_Solomon_Sea.csv")
+Fish_Solomon_Sea <- Fish_Solomon_Sea %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Solomon_Sea$aphiaID))
+Fish_Solomon_Sea <- select(Fish_Solomon_Sea, scientificName, aphiaID, ECOREGION)
+Fish_Solomon_Sea <- unique(Fish_Solomon_Sea)
+
+Fish_Palawan <- rbind.fill(Teleostei_ecoregions_Palawan_wkt, 
+                           Elasmobranchii_ecoregions_Palawan_wkt, Holocephali_ecoregions_Palawan_wkt, 
+                           Cyclostomi_ecoregions_Palawan_wkt)
+Fish_Palawan <- Fish_Palawan %>% mutate(ECOREGION = "Palawan/North Borneo")
+write.csv(Fish_Palawan,"Fish_Palawan.csv")
+Fish_Palawan <- Fish_Palawan %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Palawan$aphiaID))
+Fish_Palawan <- select(Fish_Palawan, scientificName, aphiaID, ECOREGION)
+Fish_Palawan <- unique(Fish_Palawan)
+
+Fish_Samoa <- rbind.fill(Teleostei_ecoregions_Samoa_wkt, 
+                         Elasmobranchii_ecoregions_Samoa_wkt)
+Fish_Samoa <- Fish_Samoa %>% mutate(ECOREGION = "Samoa Islands")
+write.csv(Fish_Samoa,"Fish_Samoa.csv")
+Fish_Samoa <- Fish_Samoa %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Samoa$aphiaID))
+Fish_Samoa <- select(Fish_Samoa, scientificName, aphiaID, ECOREGION)
+Fish_Samoa <- unique(Fish_Samoa)
+
+Fish_Society <- rbind.fill(Teleostei_ecoregions_Society_wkt, 
+                           Elasmobranchii_ecoregions_Society_wkt)
+Fish_Society <- Fish_Society %>% mutate(ECOREGION = "Society Islands")
+write.csv(Fish_Society,"Fish_Society.csv")
+Fish_Society <- Fish_Society %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Society$aphiaID))
+Fish_Society <- select(Fish_Society, scientificName, aphiaID, ECOREGION)
+Fish_Society <- unique(Fish_Society)
+
+Fish_Rapa <- rbind.fill(Teleostei_ecoregions_Rapa_wkt, 
+                        Elasmobranchii_ecoregions_Rapa_wkt, 
+                        Cyclostomi_ecoregions_Rapa_wkt)
+Fish_Rapa <- Fish_Rapa %>% mutate(ECOREGION = "Rapa-Pitcairn")
+write.csv(Fish_Rapa,"Fish_Rapa.csv")
+Fish_Rapa <- Fish_Rapa %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Rapa$aphiaID))
+Fish_Rapa <- select(Fish_Rapa, scientificName, aphiaID, ECOREGION)
+Fish_Rapa <- unique(Fish_Rapa)
+
+Fish_Oceanic <- rbind.fill(Teleostei_ecoregions_Oceanic_wkt, 
+                           Elasmobranchii_ecoregions_Oceanic_wkt, Holocephali_ecoregions_Oceanic_wkt, 
+                           Cyclostomi_ecoregions_Oceanic_wkt)
+Fish_Oceanic <- Fish_Oceanic %>% mutate(ECOREGION = "South China Sea Oceanic Islands")
+write.csv(Fish_Oceanic,"Fish_Oceanic.csv")
+Fish_Oceanic <- Fish_Oceanic %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Oceanic$aphiaID))
+Fish_Oceanic <- select(Fish_Oceanic, scientificName, aphiaID, ECOREGION)
+Fish_Oceanic <- unique(Fish_Oceanic)
+
+Fish_Kuroshio <- rbind.fill(Teleostei_ecoregions_Kuroshio_wkt, 
+                            Elasmobranchii_ecoregions_Kuroshio_wkt, Holocephali_ecoregions_Kuroshio_wkt, 
+                            Cyclostomi_ecoregions_Kuroshio_wkt, Chondrostei_ecoregions_Kuroshio_wkt)
+Fish_Kuroshio <- Fish_Kuroshio %>% mutate(ECOREGION = "South Kuroshio")
+write.csv(Fish_Kuroshio,"Fish_Kuroshio.csv")
+Fish_Kuroshio <- Fish_Kuroshio %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Kuroshio$aphiaID))
+Fish_Kuroshio <- select(Fish_Kuroshio, scientificName, aphiaID, ECOREGION)
+Fish_Kuroshio <- unique(Fish_Kuroshio)
+
+Fish_Torres <- rbind.fill(Teleostei_ecoregions_Torres_wkt, 
+                          Elasmobranchii_ecoregions_Torres_wkt, Holocephali_ecoregions_Torres_wkt)
+Fish_Torres <- Fish_Torres %>% mutate(ECOREGION = "Torres Strait Northern Great Barrier Reef")
+write.csv(Fish_Torres,"Fish_Torres.csv")
+Fish_Torres <- Fish_Torres %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Torres$aphiaID))
+Fish_Torres <- select(Fish_Torres, scientificName, aphiaID, ECOREGION)
+Fish_Torres <- unique(Fish_Torres)
+
+Fish_Tonga <- rbind.fill(Teleostei_ecoregions_Tonga_wkt, 
+                         Elasmobranchii_ecoregions_Tonga_wkt, Holocephali_ecoregions_Tonga_wkt)
+Fish_Tonga <- Fish_Tonga %>% mutate(ECOREGION = "Tonga Islands")
+write.csv(Fish_Tonga,"Fish_Tonga.csv")
+Fish_Tonga <- Fish_Tonga %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Tonga$aphiaID))
+Fish_Tonga <- select(Fish_Tonga, scientificName, aphiaID, ECOREGION)
+Fish_Tonga <- unique(Fish_Tonga)
+
+Fish_Java <- rbind.fill(Teleostei_ecoregions_Java_wkt, 
+                        Elasmobranchii_ecoregions_Java_wkt, Holocephali_ecoregions_Java_wkt)
+Fish_Java <- Fish_Java %>% mutate(ECOREGION = "Southern Java")
+write.csv(Fish_Java,"Fish_Java.csv")
+Fish_Java <- Fish_Java %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Java$aphiaID))
+Fish_Java <- select(Fish_Java, scientificName, aphiaID, ECOREGION)
+Fish_Java <- unique(Fish_Java)
+
+Fish_Austral <- rbind.fill(Teleostei_ecoregions_Austral_wkt, 
+                           Elasmobranchii_ecoregions_Austral_wkt)
+Fish_Austral <- Fish_Austral %>% mutate(ECOREGION = "Southern Cook/Austral Islands")
+write.csv(Fish_Austral,"Fish_Austral.csv")
+Fish_Austral <- Fish_Austral %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Austral$aphiaID))
+Fish_Austral <- select(Fish_Austral, scientificName, aphiaID, ECOREGION)
+Fish_Austral <- unique(Fish_Austral)
+
+Fish_Central_Reef <- rbind.fill(Teleostei_ecoregions_Central_Reef_wkt, 
+                                Elasmobranchii_ecoregions_Central_Reef_wkt, Holocephali_ecoregions_Central_Reef_wkt, 
+                                Cyclostomi_ecoregions_Central_Reef_wkt)
+Fish_Central_Reef <- Fish_Central_Reef %>% mutate(ECOREGION = "Central and Southern Great Barrier Reef")
+write.csv(Fish_Central_Reef,"Fish_Central_Reef.csv")
+Fish_Central_Reef <- Fish_Central_Reef %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Central_Reef$aphiaID))
+Fish_Central_Reef <- select(Fish_Central_Reef, scientificName, aphiaID, ECOREGION)
+Fish_Central_Reef <- unique(Fish_Central_Reef)
+
+Fish_Phoenix <- rbind.fill(Teleostei_ecoregions_Phoenix_wkt, 
+                           Elasmobranchii_ecoregions_Phoenix_wkt)
+Fish_Phoenix <- Fish_Phoenix %>% mutate(ECOREGION = "Phoenix/Tokelau/Northern Cook Islands")
+write.csv(Fish_Phoenix,"Fish_Phoenix.csv")
+Fish_Phoenix <- Fish_Phoenix %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Phoenix$aphiaID))
+Fish_Phoenix <- select(Fish_Phoenix, scientificName, aphiaID, ECOREGION)
+Fish_Phoenix <- unique(Fish_Phoenix)
+
+Fish_Sulawesi <- rbind.fill(Teleostei_ecoregions_Sulawesi_wkt, 
+                            Elasmobranchii_ecoregions_Sulawesi_wkt, Holocephali_ecoregions_Sulawesi_wkt, 
+                            Cyclostomi_ecoregions_Sulawesi_wkt)
+Fish_Sulawesi <- Fish_Sulawesi %>% mutate(ECOREGION = "Sulawesi Sea/Makassar Strait")
+write.csv(Fish_Sulawesi,"Fish_Sulawesi.csv")
+Fish_Sulawesi <- Fish_Sulawesi %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Sulawesi$aphiaID))
+Fish_Sulawesi <- select(Fish_Sulawesi, scientificName, aphiaID, ECOREGION)
+Fish_Sulawesi <- unique(Fish_Sulawesi)
+
+Fish_West_Caroline <- rbind.fill(Teleostei_ecoregions_West_Caroline_wkt, 
+                                 Elasmobranchii_ecoregions_West_Caroline_wkt)
+Fish_West_Caroline <- Fish_West_Caroline %>% mutate(ECOREGION = "West Caroline Islands")
+write.csv(Fish_West_Caroline,"Fish_West_Caroline.csv")
+Fish_West_Caroline <- Fish_West_Caroline %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_West_Caroline$aphiaID))
+Fish_West_Caroline <- select(Fish_West_Caroline, scientificName, aphiaID, ECOREGION)
+Fish_West_Caroline <- unique(Fish_West_Caroline)
+
+
+Fish_Southeast_Papua <- rbind.fill(Teleostei_ecoregions_Southeast_Papua_wkt, 
+                                   Elasmobranchii_ecoregions_Southeast_Papua_wkt)
+Fish_Southeast_Papua <- Fish_Southeast_Papua %>% mutate(ECOREGION = "Southeast Papua New Guinea")
+write.csv(Fish_Southeast_Papua,"Fish_Southeast_Papua.csv")
+Fish_Southeast_Papua <- Fish_Southeast_Papua %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Southeast_Papua$aphiaID))
+Fish_Southeast_Papua <- select(Fish_Southeast_Papua, scientificName, aphiaID, ECOREGION)
+Fish_Southeast_Papua <- unique(Fish_Southeast_Papua)
+
+
+Fish_Southern_China <- rbind.fill(Teleostei_ecoregions_Southern_China_wkt, 
+                                  Elasmobranchii_ecoregions_Southern_China_wkt, Holocephali_ecoregions_Southern_China_wkt, 
+                                  Cyclostomi_ecoregions_Southern_China_wkt, Chondrostei_ecoregions_Southern_China_wkt)
+Fish_Southern_China <- Fish_Southern_China %>% mutate(ECOREGION = "Southern China")
+write.csv(Fish_Southern_China,"Fish_Southern_China.csv")
+Fish_Southern_China <- Fish_Southern_China %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Southern_China$aphiaID))
+Fish_Southern_China <- select(Fish_Southern_China, scientificName, aphiaID, ECOREGION)
+Fish_Southern_China <- unique(Fish_Southern_China)
+
+Fish_Southern_Vietnam <- rbind.fill(Teleostei_ecoregions_Southern_Vietnam_wkt, 
+                                    Elasmobranchii_ecoregions_Southern_Vietnam_wkt)
+Fish_Southern_Vietnam <- Fish_Southern_Vietnam %>% mutate(ECOREGION = "Southern Vietnam")
+write.csv(Fish_Southern_Vietnam,"Fish_Southern_Vietnam.csv")
+Fish_Southern_Vietnam <- Fish_Southern_Vietnam %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Southern_Vietnam$aphiaID))
+Fish_Southern_Vietnam <- select(Fish_Southern_Vietnam, scientificName, aphiaID, ECOREGION)
+Fish_Southern_Vietnam <- unique(Fish_Southern_Vietnam)
+
+Fish_Sund_Java <- rbind.fill(Teleostei_ecoregions_Sund_Java_wkt, 
+                             Elasmobranchii_ecoregions_Sund_Java_wkt, Holocephali_ecoregions_Sund_Java_wkt)
+Fish_Sund_Java <- Fish_Sund_Java %>% mutate(ECOREGION = "Sunda Shelf/Java Sea")
+write.csv(Fish_Sund_Java,"Fish_Sund_Java.csv")
+Fish_Sund_Java <- Fish_Sund_Java %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Sund_Java$aphiaID))
+Fish_Sund_Java <- select(Fish_Sund_Java, scientificName, aphiaID, ECOREGION)
+Fish_Sund_Java <- unique(Fish_Sund_Java)
+
+Fish_Fiji <- rbind.fill(Teleostei_ecoregions_Fiji_wkt_1, 
+                        Elasmobranchii_ecoregions_Fiji_wkt_1, 
+                        Teleostei_ecoregions_Fiji_wkt_raw_2, 
+                        Elasmobranchii_ecoregions_Fiji_wkt_2)
+Fish_Fiji <- Fish_Fiji %>% mutate(ECOREGION = "Fiji Islands")
+write.csv(Fish_Fiji,"Fish_Fiji.csv")
+Fish_Fiji <- Fish_Fiji %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Fiji$aphiaID))
+Fish_Fiji <- select(Fish_Fiji, scientificName, aphiaID, ECOREGION)
+Fish_Fiji <- unique(Fish_Fiji)
+
+Fish_Hawaii <- rbind.fill(Teleostei_ecoregions_Hawaii_wkt_1, 
+                          Elasmobranchii_ecoregions_Hawaii_wkt_1, 
+                          Teleostei_ecoregions_Hawaii_wkt_2, 
+                          Elasmobranchii_ecoregions_Hawaii_wkt_2, 
+                          Teleostei_ecoregions_Hawaii_wkt_3, 
+                          Elasmobranchii_ecoregions_Hawaii_wkt_3, Holocephali_ecoregions_Hawaii_wkt_3, 
+                          Cyclostomi_ecoregions_Hawaii_wkt_3)
+Fish_Hawaii <- Fish_Hawaii %>% mutate(ECOREGION = "Hawaii")
+write.csv(Fish_Hawaii,"Fish_Hawaii.csv")
+Fish_Hawaii <- Fish_Hawaii %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Hawaii$aphiaID))
+Fish_Hawaii <- select(Fish_Hawaii, scientificName, aphiaID, ECOREGION)
+Fish_Hawaii <- unique(Fish_Hawaii)
+
+Fish_Gilbert <- rbind.fill(Teleostei_ecoregions_Gilbert_wkt_1, 
+                           Elasmobranchii_ecoregions_Gilbert_wkt_1, 
+                           Teleostei_ecoregions_Gilbert_wkt_3, 
+                           Elasmobranchii_ecoregions_Gilbert_wkt_3)
+Fish_Gilbert <- Fish_Gilbert %>% mutate(ECOREGION = "Gilbert/Ellis Islands")
+write.csv(Fish_Gilbert,"Fish_Gilbert.csv")
+Fish_Gilbert <- Fish_Gilbert %>% filter(str_detect(scientificName, "[ ]"))
+length(unique(Fish_Gilbert$aphiaID))
+Fish_Gilbert <- select(Fish_Gilbert, scientificName, aphiaID, ECOREGION)
+Fish_Gilbert <- unique(Fish_Gilbert)
+
+Fish <- rbind.fill(Fish_Arnhem_Coast, Fish_Arafura_Sea, Fish_Banda_Sea, Fish_Bismarck_Sea, 
+                   Fish_Bonaparte_Coast, Fish_Cocos, Fish_Coral_Sea, Fish_East_Caroline_Islands, 
+                   Fish_Easter_Island, Fish_Eastern_Philippines, Fish_Exmouth, Fish_Gulf_of_Papua, 
+                   Fish_Gulf_of_Thailand, Fish_Gulf_of_Tonkin, Fish_Halmahera, Fish_Lesser, 
+                   Fish_Line, Fish_Lord, Fish_Malacca, Fish_Mariana, 
+                   Fish_Tuamotus, Fish_Marshall, Fish_New_Caledonia, Fish_Ningaloo, 
+                   Fish_Ogasawara, Fish_Northeast_Sulawesi, Fish_Marquesas, Fish_Vanuatu, 
+                   Fish_Papua, Fish_Solomon_Archipelago,  
+                   Fish_Kuroshio, Fish_Torres, Fish_Tonga, Fish_Java, 
+                   Fish_Austral, Fish_Central_Reef, Fish_Phoenix, Fish_Sulawesi, 
+                   Fish_West_Caroline, Fish_Southeast_Papua, Fish_Southern_China, Fish_Southern_Vietnam, 
+                   Fish_Sund_Java, Fish_Fiji, Fish_Gilbert, Fish_Hawaii, Fish_Solomon_Sea, Fish_Palawan, 
+                   Fish_Samoa, Fish_Society, Fish_Rapa, Fish_Oceanic)
+write.table(Fish,"Fish.txt", row.names = FALSE, col.names = TRUE, sep = ";")
+Fish <- unique(Fish)
+Fish <- Fish %>% mutate(PROVINCE = "")
+Fish <- Fish %>% mutate(REALM = "")
+length(unique(Fish$aphiaID))
+
+################################################################################
+####################### READ FISHBASE FISH LISTS ###############################
+################################################################################
+
+
+
+
+
+
+all_fishbase_spalding_results_reef <- read.table("all_fishbase_spalding_results_reef.txt", sep = ';', header = TRUE)
+length(unique(all_fishbase_spalding_results_reef$Species))
+
+all_fish <- rbind(Fish_reef, Fish_Barcoding_reef, all_fishbase_spalding_results_reef)
+
+length(unique(all_fish$Species))
+all_fish <- unique(all_fish)
+
+write.table(all_fish, "merged_unique_fish_OBIS_FishBase_Barcoding.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+# Retrieve ecology from FishBase 
+## trophic levels and standard errors for a list of species
+all_fish_ecology <- ecology(species_list = all_fish$Species, 
+                            fields=c("Species", "Herbivory2", "FeedingType", "DietRemark", "FoodRemark"))
+colnames(all_fish_ecology)
+
+write.table(all_fish_ecology, "merged_unique_fish_OBIS_FishBase_Barcoding_ecology.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+length(unique(all_fish_ecology$Species))
+
+#add spalding information to all
+all_fishbase_spalding <- read.table("all_fishbase_spalding.txt", sep = ';', header = TRUE)
+colnames(all_fishbase_spalding)[colnames(all_fishbase_spalding) == "EcosystemName"] ="ECOREGION"
+all_fishbase_spalding <- select(all_fishbase_spalding, Species, ECOREGION, PROVINCE, REALM)
+length(unique(all_fishbase_spalding$Species))
+all_fishbase_spalding_results_reef <- inner_join(all_fishbase_spalding_results_reef, all_fishbase_spalding, by = "Species")
+length(unique(all_fishbase_spalding_results_reef$Species))
+all_fishbase_spalding_results_reef <- select(all_fishbase_spalding_results_reef, -DemersPelag)
+
+Fish_Barcoding <- read.table("Fish_Barcoding_FrenchPolynesia_correctednames.txt", sep = '\t', header = TRUE)
+Fish_Barcoding[Fish_Barcoding == ""] <- NA                     # Replace blank by NA
+Fish_Barcoding <- Fish_Barcoding %>% drop_na(species_name)
+Fish_Barcoding <- Fish_Barcoding[!(Fish_Barcoding$species_name=="Aseraggodes" | Fish_Barcoding$species_name=="Trachinotus"),]
+colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "family_name"] ="Family"
+colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "order_name"] ="Order"
+colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "genus_name"] ="Genus"
+colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "species_name"] ="Species"
+fish_barc <- select(Fish_Barcoding, Species, Genus, Family, Order, 
+                    ECOREGION, PROVINCE, REALM)
+fish_barc2 <- select(fish_barc, Species, ECOREGION, PROVINCE, REALM)
+
+
+
+spalding_barc <- rbind(all_fishbase_spalding_results_reef, fish_barc2)
+spalding_barc <- unique(spalding_barc)
+length(unique(spalding_barc$Species))
+spalding_barc <- spalding_barc %>% mutate(aphiaID = "")
+spalding_barc$aphiaID <- as.integer(spalding_barc$aphiaID )
+
+Fish <- Fish %>% mutate(PROVINCE =
+                          case_when(ECOREGION == "Arnhem Coast to Gulf of Carpenteria" ~ "Sahul Shelf", 
+                                    ECOREGION == "Arafura Sea" ~ "Sahul Shelf", 
+                                    ECOREGION == "Banda Sea" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Bismarck Sea" ~ "Eastern Coral Triangle", 
+                                    ECOREGION == "Bonaparte Coast" ~ "Sahul Shelf", 
+                                    ECOREGION == "Cocos-Keeling/Christmas Island" ~ "Java Transitional", 
+                                    ECOREGION == "Coral Sea" ~ "Tropical Southwestern Pacific", 
+                                    ECOREGION == "East Caroline Islands" ~ "Tropical Northwestern Pacific", 
+                                    ECOREGION == "Easter Island" ~ "Easter Island", 
+                                    ECOREGION == "Eastern Philippines" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Exmouth to Broome" ~ "Northwest Australian Shelf", 
+                                    ECOREGION == "Fiji Islands" ~ "Tropical Southwestern Pacific", 
+                                    ECOREGION == "Gilbert/Ellis Islands" ~ "Marshall, Gilbert and Ellis Islands", 
+                                    ECOREGION == "Gulf of Papua" ~ "Sahul Shelf", 
+                                    ECOREGION == "Gulf of Thailand" ~ "Sunda Shelf", 
+                                    ECOREGION == "Gulf of Tonkin" ~ "South China Sea", 
+                                    ECOREGION == "Halmahera" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Hawaii" ~ "Hawaii", 
+                                    ECOREGION == "Lesser Sunda" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Line Islands" ~ "Central Polynesia", 
+                                    ECOREGION == "Lord Howe and Norfolk Islands" ~ "Lord Howe and Norfolk Islands", 
+                                    ECOREGION == "Malacca Strait" ~ "Sunda Shelf", 
+                                    ECOREGION == "Mariana Islands" ~ "Tropical Northwestern Pacific", 
+                                    ECOREGION == "Tuamotus" ~ "Southeast Polynesia", 
+                                    ECOREGION == "Marshall Islands" ~ "Marshall, Gilbert and Ellis Islands", 
+                                    ECOREGION == "New Caledonia" ~ "Tropical Southwestern Pacific", 
+                                    ECOREGION == "Ningaloo"  ~ "Northwest Australian Shelf", 
+                                    ECOREGION == "Northeast Sulawesi" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Ogasawara Islands" ~ "Tropical Northwestern Pacific", 
+                                    ECOREGION == "Palawan/North Borneo" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Papua" ~ "Western Coral Triangle",
+                                    ECOREGION == "Phoenix/Tokelau/Northern Cook Islands" ~ "Central Polynesia", 
+                                    ECOREGION == "Rapa-Pitcairn" ~ "Southeast Polynesia", 
+                                    ECOREGION == "Samoa Islands" ~ "Central Polynesia", 
+                                    ECOREGION == "Society Islands" ~ "Southeast Polynesia", 
+                                    ECOREGION == "Solomon Archipelago" ~ "Eastern Coral Triangle", 
+                                    ECOREGION == "Solomon Sea" ~ "Eastern Coral Triangle", 
+                                    ECOREGION == "South China Sea Oceanic Islands" ~ "South China Sea", 
+                                    ECOREGION == "South Kuroshio" ~ "South Kuroshio", 
+                                    ECOREGION == "Southeast Papua New Guinea" ~ "Eastern Coral Triangle", 
+                                    ECOREGION == "Southern China" ~ "South China Sea", 
+                                    ECOREGION == "Southern Vietnam" ~ "Sunda Shelf", 
+                                    ECOREGION == "Sulawesi Sea/Makassar Strait" ~ "Western Coral Triangle", 
+                                    ECOREGION == "Tonga Islands" ~ "Tropical Southwestern Pacific", 
+                                    ECOREGION == "Marquesas" ~ "Marquesas", 
+                                    ECOREGION == "Vanuatu" ~ "Tropical Southwestern Pacific", 
+                                    ECOREGION == "West Caroline Islands" ~ "Tropical Northwestern Pacific", 
+                                    ECOREGION == "Southern Java" ~ "Java Transitional", 
+                                    ECOREGION == "Torres Strait Northern Great Barrier Reef"  ~ "Northeast Australian Shelf", 
+                                    ECOREGION == "Central and Southern Great Barrier Reef" ~ "Northeast Australian Shelf", 
+                                    ECOREGION == "Sunda Shelf/Java Sea" ~ "Sunda Shelf", 
+                                    ECOREGION == "Southern Cook/Austral Islands" ~ "Southeast Polynesia"))
+
+
+
+Fish <- Fish %>% mutate(REALM =
+                          case_when(ECOREGION == "Arnhem Coast to Gulf of Carpenteria" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Arafura Sea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Banda Sea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Bismarck Sea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Bonaparte Coast" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Cocos-Keeling/Christmas Island" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Coral Sea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "East Caroline Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Easter Island" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Eastern Philippines" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Exmouth to Broome" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Fiji Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Gilbert/Ellis Islands" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Gulf of Papua" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Gulf of Thailand" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Gulf of Tonkin" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Halmahera" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Hawaii" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Lesser Sunda" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Line Islands" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Lord Howe and Norfolk Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Malacca Strait" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Mariana Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Tuamotus" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Marshall Islands" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "New Caledonia" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Ningaloo"  ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Northeast Sulawesi" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Ogasawara Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Palawan/North Borneo" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Papua" ~ "Central Indo-Pacific",
+                                    ECOREGION == "Phoenix/Tokelau/Northern Cook Islands" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Rapa-Pitcairn" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Samoa Islands" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Society Islands" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Solomon Archipelago" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Solomon Sea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "South China Sea Oceanic Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "South Kuroshio" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Southeast Papua New Guinea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Southern China" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Southern Vietnam" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Sulawesi Sea/Makassar Strait" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Tonga Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Marquesas" ~ "Eastern Indo-Pacific", 
+                                    ECOREGION == "Vanuatu" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "West Caroline Islands" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Southern Java" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Torres Strait Northern Great Barrier Reef"  ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Central and Southern Great Barrier Reef" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Sunda Shelf/Java Sea" ~ "Central Indo-Pacific", 
+                                    ECOREGION == "Southern Cook/Austral Islands" ~ "Eastern Indo-Pacific"))
+
+
+Fish_reef_regions <- inner_join(Fish_reef, Fish, by = "Species")
+length(unique(Fish_reef_regions$Species))
+Fish_reef_regions <- select(Fish_reef_regions, -DemersPelag)
+
+FISH_all <- rbind(Fish_reef_regions, spalding_barc)
+
+#FISH_all_no_aphia <- FISH_all[is.na(FISH_all$aphiaID), ]     
+
+write.table(FISH_all, "merged_unique_fish_OBIS_FishBase_Barcoding_ecoregions.txt",
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+
+
+#length(unique(FISH_all$Species))
+#8577 species with AphiaID
+#FISH_species <- select(Fish, Species)
+#FISH_species <- unique(FISH_species)
+#all_fish_species <- select(all_fish, Species)
+#length(unique(all_fish$Species))
+#to_get_class <- anti_join(all_fish_species, FISH_species)
+
+
+# Retrieve taxonomy from WORMS 
+taxonomy <- classification(all_fish$Species, db="worms", marine_only=FALSE, max_tries=10)
+#Turn classification object into dataframe
+name <- c()
+output <- array(dim = c(dim(all_fish)[1],7))
+colnames(output) <- c("Kingdom", "Phylum", "Class_Gigaclass", "Order", "Family", "Genus", "Species")
+for (i in seq(1,length(taxonomy))) {
+  name <- as.character(names(taxonomy[i]))
+  if (!is.na(taxonomy[name])) { 
+    if (sum(as.integer(eval(parse(text = paste0("taxonomy$`",name,"`$rank == 'Class'"))))) == 1) {
+      output[i,] <- t(eval(parse(text = paste0("taxonomy$`",name, "`$name[taxonomy$`", name, "`$rank == 'Kingdom' |",
+                                               "taxonomy$`", name, "`$rank == 'Phylum' |",
+                                               "taxonomy$`", name, "`$rank == 'Class' |", 
+                                               "taxonomy$`", name, "`$rank == 'Order' |",
+                                               "taxonomy$`", name, "`$rank == 'Family' |",
+                                               "taxonomy$`", name, "`$rank == 'Genus' |", 
+                                               "taxonomy$`", name, "`$rank == 'Species']" ))))
+    } else {
+      output[i,] <- t(eval(parse(text = paste0("taxonomy$`",name, "`$name[taxonomy$`", name, "`$rank == 'Kingdom' |",
+                                               "taxonomy$`", name, "`$rank == 'Phylum' |",
+                                               "taxonomy$`", name, "`$rank == 'Gigaclass' |",
+                                               "taxonomy$`", name, "`$rank == 'Order' |",
+                                               "taxonomy$`", name, "`$rank == 'Family' |",
+                                               "taxonomy$`", name, "`$rank == 'Genus' |",
+                                               "taxonomy$`", name, "`$rank == 'Species']" ))))
+    }
+    
+  }
+  rm(name)
+}
+output <- data.frame(output)
+order_clean <- data.frame(gsub("\\ .*","",output$Order))
+output<-cbind(output, order_clean)
+output<-output[, c(1,2,3,8,4,5,6,7)]
+output$Order<-NULL
+names(output)[4]<- "Order"
+output<-output[complete.cases(output),]
+
+write.table(output, "merged_unique_fish_OBIS_FishBase_Barcoding_classification.txt", sep = " ",
+            row.names = FALSE, col.names = TRUE)
+
+#retrieve the Aphia IDs
+Fish_names_Aphia_vector <- all_fish$Species  
+Fish_names_Aphia <- match_taxa(Fish_names_Aphia_vector, ask = TRUE)
+
+#split the column scientificNameID
+split_into_multiple <- function(column, pattern = ", ", into_prefix){
+  cols <- str_split_fixed(column, pattern, n = Inf)
+  # Sub out the ""'s returned by filling the matrix to the right, with NAs which are useful
+  cols[which(cols == "")] <- NA
+  cols <- as.tibble(cols)
+  # name the 'cols' tibble as 'into_prefix_1', 'into_prefix_2', ..., 'into_prefix_m' 
+  # where m = # columns of 'cols'
+  m <- dim(cols)[2]
+  
+  names(cols) <- paste(into_prefix, 1:m, sep = "_")
+  return(cols)
+}
+Fish_names_Aphia_split <- Fish_names_Aphia %>% 
+  bind_cols(split_into_multiple(.$scientificNameID, ":", "scientificNameID")) %>% 
+  # selecting those that start with 'type_' will remove the original 'type' column
+  select(scientificName, match_type, starts_with("scientificNameID_"))
+
+colnames(Fish_names_Aphia_split)[colnames(Fish_names_Aphia_split) == "scientificNameID_5"] ="AphiaID"
+Fish_names_Aphia_split <- select(Fish_names_Aphia_split, scientificName, match_type, AphiaID)
+write.table(Fish_names_Aphia_split, "merged_unique_fish_OBIS_FishBase_Barcoding_Aphia.txt",
+            row.names = FALSE, col.names = TRUE, sep =";")
+
+
+df <- data.frame(matrix(ncol = 1, nrow = 52))
+
+rownames(df) <- c("Arnhem Coast to Gulf of Carpenteria", 
+                  "Arafura Sea", 
+                  "Banda Sea", 
+                  "Bismarck Sea", 
+                  "Bonaparte Coast", 
+                  "Cocos-Keeling/Christmas Island", 
+                  "Coral Sea", 
+                  "East Caroline Islands", 
+                  "Easter Island", 
+                  "Eastern Philippines", 
+                  "Exmouth to Broome", 
+                  "Fiji Islands", 
+                  "Gilbert/Ellis Islands", 
+                  "Gulf of Papua", 
+                  "Gulf of Thailand", 
+                  "Gulf of Tonkin", 
+                  "Halmahera", 
+                  "Hawaii", 
+                  "Lesser Sunda", 
+                  "Line Islands", 
+                  "Lord Howe and Norfolk Islands", 
+                  "Malacca Strait", 
+                  "Mariana Islands", 
+                  "Tuamotus", 
+                  "Marshall Islands", 
+                  "New Caledonia", 
+                  "Ningaloo", 
+                  "Northeast Sulawesi", 
+                  "Ogasawara Islands", 
+                  "Palawan/North Borneo", 
+                  "Papua",
+                  "Phoenix/Tokelau/Northern Cook Islands", 
+                  "Rapa-Pitcairn", 
+                  "Samoa Islands", 
+                  "Society Islands", 
+                  "Solomon Archipelago", 
+                  "Solomon Sea", 
+                  "South China Sea Oceanic Islands", 
+                  "South Kuroshio", 
+                  "Southeast Papua New Guinea", 
+                  "Southern China", 
+                  "Southern Vietnam", 
+                  "Sulawesi Sea/Makassar Strait", 
+                  "Tonga Islands", 
+                  "Marquesas", 
+                  "Vanuatu", 
+                  "West Caroline Islands", 
+                  "Southern Java", 
+                  "Torres Strait Northern Great Barrier Reef", 
+                  "Central and Southern Great Barrier Reef", 
+                  "Sunda Shelf/Java Sea", 
+                  "Southern Cook/Austral Islands")
+
+col_FISH_all <- c(sum(FISH_all$ECOREGION == "Arnhem Coast to Gulf of Carpenteria"), 
+                  sum(FISH_all$ECOREGION == "Arafura Sea"), 
+                  sum(FISH_all$ECOREGION == "Banda Sea"), 
+                  sum(FISH_all$ECOREGION == "Bismarck Sea"), 
+                  sum(FISH_all$ECOREGION == "Bonaparte Coast"), 
+                  sum(FISH_all$ECOREGION == "Cocos-Keeling/Christmas Island"), 
+                  sum(FISH_all$ECOREGION == "Coral Sea"), 
+                  sum(FISH_all$ECOREGION == "East Caroline Islands"), 
+                  sum(FISH_all$ECOREGION == "Easter Island"), 
+                  sum(FISH_all$ECOREGION == "Eastern Philippines"), 
+                  sum(FISH_all$ECOREGION == "Exmouth to Broome"), 
+                  sum(FISH_all$ECOREGION == "Fiji Islands"), 
+                  sum(FISH_all$ECOREGION == "Gilbert/Ellis Islands"), 
+                  sum(FISH_all$ECOREGION == "Gulf of Papua"), 
+                  sum(FISH_all$ECOREGION == "Gulf of Thailand"), 
+                  sum(FISH_all$ECOREGION == "Gulf of Tonkin"), 
+                  sum(FISH_all$ECOREGION == "Halmahera"), 
+                  sum(FISH_all$ECOREGION == "Hawaii"), 
+                  sum(FISH_all$ECOREGION == "Lesser Sunda"), 
+                  sum(FISH_all$ECOREGION == "Line Islands"), 
+                  sum(FISH_all$ECOREGION == "Lord Howe and Norfolk Islands"), 
+                  sum(FISH_all$ECOREGION == "Malacca Strait"), 
+                  sum(FISH_all$ECOREGION == "Mariana Islands"), 
+                  sum(FISH_all$ECOREGION == "Tuamotus"), 
+                  sum(FISH_all$ECOREGION == "Marshall Islands"), 
+                  sum(FISH_all$ECOREGION == "New Caledonia"), 
+                  sum(FISH_all$ECOREGION == "Ningaloo"), 
+                  sum(FISH_all$ECOREGION == "Northeast Sulawesi"), 
+                  sum(FISH_all$ECOREGION == "Ogasawara Islands"), 
+                  sum(FISH_all$ECOREGION == "Palawan/North Borneo"), 
+                  sum(FISH_all$ECOREGION == "Papua"),
+                  sum(FISH_all$ECOREGION == "Phoenix/Tokelau/Northern Cook Islands"), 
+                  sum(FISH_all$ECOREGION == "Rapa-Pitcairn"), 
+                  sum(FISH_all$ECOREGION == "Samoa Islands"), 
+                  sum(FISH_all$ECOREGION == "Society Islands"), 
+                  sum(FISH_all$ECOREGION == "Solomon Archipelago"), 
+                  sum(FISH_all$ECOREGION == "Solomon Sea"), 
+                  sum(FISH_all$ECOREGION == "South China Sea Oceanic Islands"), 
+                  sum(FISH_all$ECOREGION == "South Kuroshio"), 
+                  sum(FISH_all$ECOREGION == "Southeast Papua New Guinea"), 
+                  sum(FISH_all$ECOREGION == "Southern China"), 
+                  sum(FISH_all$ECOREGION == "Southern Vietnam"), 
+                  sum(FISH_all$ECOREGION == "Sulawesi Sea/Makassar Strait"), 
+                  sum(FISH_all$ECOREGION == "Tonga Islands"), 
+                  sum(FISH_all$ECOREGION == "Marquesas"), 
+                  sum(FISH_all$ECOREGION == "Vanuatu"), 
+                  sum(FISH_all$ECOREGION == "West Caroline Islands"), 
+                  sum(FISH_all$ECOREGION == "Southern Java"), 
+                  sum(FISH_all$ECOREGION == "Torres Strait Northern Great Barrier Reef"), 
+                  sum(FISH_all$ECOREGION == "Central and Southern Great Barrier Reef"), 
+                  sum(FISH_all$ECOREGION == "Sunda Shelf/Java Sea"), 
+                  sum(FISH_all$ECOREGION == "Southern Cook/Austral Islands"))
+
+colnames(df) <- c("Fish")
+df$Fish <- col_FISH_all
+
+#data_table <- data.table(Fish)                      
+#data_count <- data_table[ , .(count = length(unique(aphiaID))), by = ECOREGION]
+#colnames(data_count)[colnames(data_count) == "count"] ="Fish"
+#df <- cbindX(df, data_count)
+#df <- select(df, -ECOREGION, -matrix.nrow...52.)
+
+#df[is.na(df)] <- 0
+
+write.table(df, "merged_unique_fish_OBIS_FishBase_Barcoding_stats.txt",
+            row.names = TRUE, col.names = TRUE, sep =";")
+
+
+df <- data.frame(matrix(ncol = 1, nrow = 18))
+
+rownames(df) <- c("Eastern Coral Triangle", 
+                  "Java Transitional", 
+                  "Lord Howe and Norfolk Islands", 
+                  "Northeast Australian Shelf", 
+                  "Northwest Australian Shelf", 
+                  "Sahul Shelf", 
+                  "South China Sea", 
+                  "South Kuroshio", 
+                  "Sunda Shelf", 
+                  "Tropical Northwestern Pacific", 
+                  "Tropical Southwestern Pacific", 
+                  "Western Coral Triangle", 
+                  "Central Polynesia", 
+                  "Easter Island", 
+                  "Hawaii", 
+                  "Marquesas", 
+                  "Marshall, Gilbert and Ellis Islands", 
+                  "Southeast Polynesia")
+
+col_FISH_all <- c(sum(FISH_all$PROVINCE == "Eastern Coral Triangle"), 
+                  sum(FISH_all$PROVINCE == "Java Transitional"), 
+                  sum(FISH_all$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                  sum(FISH_all$PROVINCE == "Northeast Australian Shelf"), 
+                  sum(FISH_all$PROVINCE == "Northwest Australian Shelf"), 
+                  sum(FISH_all$PROVINCE == "Sahul Shelf"), 
+                  sum(FISH_all$PROVINCE == "South China Sea"), 
+                  sum(FISH_all$PROVINCE == "South Kuroshio"), 
+                  sum(FISH_all$PROVINCE == "Sunda Shelf"), 
+                  sum(FISH_all$PROVINCE == "Tropical Northwestern Pacific"), 
+                  sum(FISH_all$PROVINCE == "Tropical Southwestern Pacific"), 
+                  sum(FISH_all$PROVINCE == "Western Coral Triangle"), 
+                  sum(FISH_all$PROVINCE == "Central Polynesia"), 
+                  sum(FISH_all$PROVINCE == "Easter Island"), 
+                  sum(FISH_all$PROVINCE == "Hawaii"), 
+                  sum(FISH_all$PROVINCE == "Marquesas"), 
+                  sum(FISH_all$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                  sum(FISH_all$PROVINCE == "Southeast Polynesia"))
+
+colnames(df) <- c("Fish")
+df$Fish <- col_FISH_all
+
+#data_table <- data.table(Fish)                      
+#data_count <- data_table[ , .(count = length(unique(aphiaID))), by = ECOREGION]
+#colnames(data_count)[colnames(data_count) == "count"] ="Fish"
+#df <- cbindX(df, data_count)
+#df <- select(df, -ECOREGION, -matrix.nrow...52.)
+
+#df[is.na(df)] <- 0
+
+write.table(df, "merged_unique_fish_OBIS_FishBase_Barcoding_stats_province.txt",
+            row.names = TRUE, col.names = TRUE, sep =";")
+
+#Save the workspace
+save.image(file = "fish_checklist_all.RData")
+
+load(file = "fish_checklist_all.RData")
+
+
+
