@@ -1,0 +1,1292 @@
+scientificName_Parasite 	Authority	scientificName_Host	Location	PROVINCE
+Alcicornis hainanensis	Gu & Shen, 1976        	Zonichthys nigrofasciata	South China Sea	South China Sea
+Ectenurus zonichthyi	Gu & Shen, 1978        	Zonichthys nigrofasciata	South China Sea	South China Sea
+Uterovesiculurus sinensis	Gu & Shen, 1978        	Zonichthys nigrofasciata	South China Sea	South China Sea
+Bucephalus varicus	Manter, 1940          	Zonichthys nigrofasciata	South China Sea	South China Sea
+Musculovesicula zonichthydis	Shen, 1990          	Zonichthys nigrofasciata	South China Sea	South China Sea
+Preptetos xesuri	(Yamaguti, 1940)          	Zebrasoma veliferum	Australia: Coast of Queensland	Northeast Australian Shelf
+Zebrasomatrema pichelinae	Bray & Chambers, 2000        	Zebrasoma veliferum	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecithoides zebrasomatis	Yamaguti, 1970          	Zebrasoma veliferum	Hawaiian coast	Hawaii
+Neohexangitrema zebrasomatis	          	Zebrasoma scopas	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos xesuri	(Yamaguti, 1940)          	Zebrasoma scopas	Australia: Coast of Queensland	Northeast Australian Shelf
+Zebrasomatrema pichelinae	Bray & Chambers, 2000        	Zebrasoma scopas	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Xiphophorus maculatus	Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Xiphophorus helleri	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Xiphophorus helleri	Queensland	Northeast Australian Shelf
+Centrocestus formosanus	(Nishigori, 1924)          	Xiphophorus helleri	Hawaiian Islands	Hawaii
+Reniforma multilobularis	Yamaguti, 1970          	Xiphias gladius	Hawaiian coast	Hawaii
+Lepotrema xanthichthydis	(Yamaguti, 1970)          	Xanthichthys ringens	Hawaiian coast	Hawaii
+Lepocreadium xanthichthydis	Yamaguti, 1970          	Xanthichthys ringens	Hawaiian coast	Hawaii
+Diploproctodaeum waki	Shen, 1990          	Wak sina	South China Sea	South China Sea
+Hamacreadium hainanensis	Shen, 1990          	Wak sina	South China Sea	South China Sea
+Pleorchis sciaenae	Yamaguti, 1938          	Wak sina	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Variola louti	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema patialense	(Soparkar, 1924)          	Valamugil seheli	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Valamugil cunnesius	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Upeneus tragula	Australia: Coast of Queensland	Northeast Australian Shelf
+Bucephalopsis obpyriformis	Gu & Shen, 1976        	Tylosurus melanotus	South China Sea	South China Sea
+Hurleytrema hainanense	Shen, 1990          	Tylosurus melanotus	South China Sea	South China Sea
+Bucephalopsis bennetti	(Hopkins & Sparks)        	Tylosurus leiurus	South China Sea	South China Sea
+Bucephalopsis bennetti	(Hopkins & Sparks, 1958)        	Tylosurus leiurus	South China Sea	South China Sea
+Phyllodistomum pearsei	Holl, 1929          	Tylosurus leiurus	South China Sea	South China Sea
+Schikhobalotrema acutum	(Linton, 1910)          	Tylosurus giganteus	South China Sea	South China Sea
+Lecithaster stellatus	Looss, 1906          	Tylosurus anstomella	South China Sea	South China Sea
+Gonapodasmius hainanensis	Gu & Shen, 1983        	Trisotropis dermopterus	South China Sea	South China Sea
+Trifoliovarium triacanthi	(Parukhin, 1964)          	Tripodichthys angustifrons	Australia: Coast of Queensland	Northeast Australian Shelf
+Trifoliovarium triacanthi	Bilqees, 1971          	Tripodichthys angustifrons	Australia: Coast of Queensland	Northeast Australian Shelf
+Trifoliovarium triacanthusi	Gupta & Ahmad, 1976        	Tripodichthys angustifrons	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha triacanthi	Parukhin, 1964          	Tripodichthys angustifrons	Australia: Coast of Queensland	Northeast Australian Shelf
+Coitocaecum orthorchis	Ozaki, 1926          	Tridentiger obscurus	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Trichiurus lepturus	Coast of Philippines	Western Coral Triangle
+Musculovesicula trichiuri	Gu & Shen        	Trichiurus haumela	South China Sea	South China Sea
+Erilepturus trichiuri	Gu & Shen, 1978        	Trichiurus haumela	South China Sea	South China Sea
+Lecithochirium trichiuri	Gu & Shen, 1981        	Trichiurus haumela	South China Sea	South China Sea
+Plerurus hainanensis	Gu & Shen, 1981        	Trichiurus haumela	South China Sea	South China Sea
+Plerurus spatulocirrus	Gu & Shen, 1981        	Trichiurus haumela	South China Sea	South China Sea
+Plerurus trichiuri	Gu & Shen, 1981        	Trichiurus haumela	South China Sea	South China Sea
+Lecithochirium fusiforme	Luhe, 1901          	Trichiurus haumela	South China Sea	South China Sea
+Aponurus megaloporus	Shen & Li, 2000        	Trichiurus haumela	South China Sea	South China Sea
+Lecithocladium pagrosomi	Yamaguti, 1934          	Trichiurus haumela	South China Sea	South China Sea
+Tubulovesicula anguillae	Yamaguti, 1934          	Trichiurus haumela	South China Sea	South China Sea
+Bucephalopsis scombropsis	Yamaguti, 1938          	Trichiurus haumela	South China Sea	South China Sea
+Lecithochirium holocentri	Yamaguti, 1970          	Trichiurus haumela	South China Sea	South China Sea
+Stephanostomum imparispine	(Linton, 1905)          	Triacanthus brevirostris	South China Sea	South China Sea
+Torticaecum fenestratum	(Linton, 1907)          	Triacanthus brevirostris	South China Sea	South China Sea
+Hypocreadium scaphosomum	(Manter, 1940)          	Triacanthus brevirostris	South China Sea	South China Sea
+Derogenes varicus	(Muller, 1784)          	Triacanthus brevirostris	South China Sea	South China Sea
+Coitocaecum parvum	Crowcroft, 1944          	Triacanthus brevirostris	South China Sea	South China Sea
+Pseudocreadium scaphosomum	Manter, 1940          	Triacanthus brevirostris	South China Sea	South China Sea
+Diploproctodaeum macracetabulum	Oshmarin, Mamaev & Parukhin, 1961        	Triacanthus brevirostris	South China Sea	South China Sea
+Schistorchis skrjabini	Parukhin, 1963          	Triacanthus brevirostris	South China Sea	South China Sea
+Xystretrum abalisti	Parukhin, 1963          	Triacanthus brevirostris	South China Sea	South China Sea
+Hysterolecitha triacanthi	Parukhin, 1964          	Triacanthus brevirostris	South China Sea	South China Sea
+Clavogalea trachinoti	(Fischthal & Thomas, 1968)        	Trachinotus coppingeri	Australia: Coast of Queensland	Northeast Australian Shelf
+Elytrophalloides humerus	Bray, 1990          	Trachinotus coppingeri	Australia: Coast of Queensland	Northeast Australian Shelf
+Chrisomon gaigai	Dove & Cribb, 1998        	Trachinotus coppingeri	Australia: Coast of Queensland	Northeast Australian Shelf
+Provitellus turrum	Dove & Cribb, 1998        	Trachinotus coppingeri	Australia: Coast of Queensland	Northeast Australian Shelf
+Clavogalea trachinoti	(Fischthal & Thomas, 1968)        	Trachinotus botla	Australia: Coast of Queensland	Northeast Australian Shelf
+Elytrophalloides humerus	Bray, 1990          	Trachinotus botla	Australia: Coast of Queensland	Northeast Australian Shelf
+Chrisomon gaigai	Dove & Cribb, 1998        	Trachinotus botla	Australia: Coast of Queensland	Northeast Australian Shelf
+Lobatostoma manteri	Rohde, 1973          	Trachinotus blochii	Australia: Coast of Queensland	Northeast Australian Shelf
+Tubulovesicula spari	Yamaguti, 1934          	Trachinocephalus myops	South China Sea	South China Sea
+Bianium plicitum	(Linton, 1928)          	Torquigener whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium plicitum	(Linton, 1928)          	Torquigener pleurogramma	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema patialense	(Soparkar, 1924)          	Tilapia mossambica	Coast of Philippines	Western Coral Triangle
+Didymocystis ovata	Ishii, 1935          	Thunnus tonggol	South China Sea	South China Sea
+Koellikeria orientalis	Yamaguti, 1934          	Thunnus tonggol	South China Sea	South China Sea
+Oesophagocystis dissimilis	(Yamaguti, 1938)          	Thunnus thynnus	South China Sea	South China Sea
+Univitellodidymocystis neothunni	Yamaguti, 1970          	Thunnus thynnus	Hawaiian coast	Hawaii
+Platocystis vivipara	(Yamaguti, 1970)          	Thunnus obesus	Hawaiian coast	Hawaii
+Wedlia pylorica	(Yamaguti, 1970)          	Thunnus obesus	Hawaiian coast	Hawaii
+Wedlia retrorbitalis	(Yamaguti, 1970)          	Thunnus obesus	Hawaiian coast	Hawaii
+Cardicola ahi	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Didymocystoides bifasciatus	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Koellikerioides externogastricus	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Koellikerioides internogastricus	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Neonematobothrioides poonui	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Opisthorchinematobothrium parathunni	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Univitellodidymocystis neothunni	Yamaguti, 1970          	Thunnus obesus	Hawaiian coast	Hawaii
+Platocystis vivipara	(Yamaguti, 1970)          	Thunnus albacares	Hawaiian coast	Hawaii
+Wedlia abdominalis	(Yamaguti, 1970)          	Thunnus albacares	Hawaiian coast	Hawaii
+Wedlia retrorbitalis	(Yamaguti, 1970)          	Thunnus albacares	Hawaiian coast	Hawaii
+Cardicola ahi	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Didymocystis irregularis	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Didymocystoides bifasciatus	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Koellikerioides externogastricus	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Koellikerioides internogastricus	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Orbitonematobothrium perioculare	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Univitellodidymocystis neothunni	Yamaguti, 1970          	Thunnus albacares	Hawaiian coast	Hawaii
+Didymocystis irregularis	Yamaguti, 1970          	Thunnus alalunga	Hawaiian coast	Hawaii
+Opisthorchinematobothrium parathunni	Yamaguti, 1970          	Thunnus alalunga	Hawaiian coast	Hawaii
+Ectenurus theraponae	Oshmarin, 1965          	Therapon theraps	South China Sea	South China Sea
+Plagioporus serotinus	Stafford, 1904          	Therapon theraps	South China Sea	South China Sea
+Opecoelus inimici	Yamaguti, 1934          	Therapon theraps	South China Sea	South China Sea
+Transversotrema patialense	(Soparkar, 1924)          	Therapon plumbeus	Coast of Philippines	Western Coral Triangle
+Opecoelus minimus	(Tubangui, 1928)          	Therapon plumbeus	Coast of Philippines	Western Coral Triangle
+Azygia pristipomai	Tubangui, 1928          	Therapon plumbeus	Coast of Philippines	Western Coral Triangle
+Azygia pristipomai	Tubangui, 1928          	Therapon jarbua	Coast of Philippines	Western Coral Triangle
+Torticaecum nipponicum	Yamaguti, 1942          	Therapon jarbua	Coast of Philippines	Western Coral Triangle
+Transversotrema patialense	(Soparkar, 1924)          	Therapon argenteus	Coast of Philippines	Western Coral Triangle
+Lepocreadium navodoni	Shen, 1986          	Thamnaconus modestus	South China Sea	South China Sea
+Deretrema nahaense	Yamaguti, 1942          	Thalassoma lutescens	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Thalassoma lunare	Australia: Coast of Queensland	Northeast Australian Shelf
+Bivesicula claviformis	Yamaguti, 1934          	Thalassoma lunare	Australia: Coast of Queensland	Northeast Australian Shelf
+Deretrema nahaense	Yamaguti, 1942          	Thalassoma lunare	Australia: Coast of Queensland	Northeast Australian Shelf
+Deretrema nahaense	Yamaguti, 1942          	Thalassoma janseni	Australia: Coast of Queensland	Northeast Australian Shelf
+Deretrema nahaense	Yamaguti, 1942          	Thalassoma hardwicki	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos xesuri	(Yamaguti, 1940)          	Thalassoma duperreyi	Hawaiian coast	Hawaii
+Preptetos caballeroi	Pritchard, 1960          	Thalassoma duperreyi	Hawaiian coast	Hawaii
+Diplobulbus minutus	Pritchard, 1966          	Thalassoma duperreyi	Hawaiian coast	Hawaii
+Diplobulbus minutus	Pritchard, 1966          	Thalassoma ballieui	Hawaiian coast	Hawaii
+Cardicola grandis	Lebedev & Mamaev, 1968        	Tetrapterus audax	Australia: Coast of Queensland	Northeast Australian Shelf
+Makairatrema musculicola	Yamaguti, 1970          	Tetrapterus audax	Hawaiian coast	Hawaii
+Neodidymozooides microstoma	Yamaguti, 1970          	Tetrapterus audax	Hawaiian coast	Hawaii
+Neodidymozooides microstoma	Yamaguti, 1970          	Tetrapterus angustirostris	Hawaiian coast	Hawaii
+Reniforma multilobularis	Yamaguti, 1970          	Tetrapterus angustirostris	Hawaiian coast	Hawaii
+Caecobiporum rutellum	Mamaev, 1970          	Tetraodon viridipunctatus	South China Sea	South China Sea
+Opistholebes amplicoelus	          	Tetractenos hamiltoni	Australia: Coast of Queensland	Northeast Australian Shelf
+Isoparorchis hypselobagri	(Billet, 1898)          	Tandanus tandanus	Queensland	Northeast Australian Shelf
+Monodhelmis trichofurcata	(Johnston & Angel, 1940)        	Tandanus tandanus	Queensland	Northeast Australian Shelf
+Monodhelmis trichofurcata	(Johnston & Angel, 1940)        	Tandanus tandanus	Queensland	Northeast Australian Shelf
+Opecoelus variabilis	Cribb, 1985          	Tandanus tandanus	Queensland	Northeast Australian Shelf
+Tandanicola bancrofti	Johnston, 1927          	Tandanus tandanus	Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Takifugu vermicularis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Takifugu poecilonotus	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Takifugu pardalis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Takifugu oblongus	Australia: Coast of Queensland	Northeast Australian Shelf
+Diploproctodaeum spinosus	Liu, 2002          	Takifugu oblongus	South China Sea	South China Sea
+Bianium hemistoma	(Ozaki, 1928)          	Takifugu niphobles	Australia: Coast of Queensland	Northeast Australian Shelf
+Plagioporus apogonichthydis	Yamaguti, 1938          	Synechogobius ommaturus	South China Sea	South China Sea
+Prosorhynchus synanceiae	Wang, 1985          	Synanceia horrida	South China Sea	South China Sea
+Opegaster syngnathi	Yamaguti, 1934          	Synanceia horrida	South China Sea	South China Sea
+Homalometron synagris	(Yamaguti, 1953)          	Synagris taeniopterus	Pacific coast of Indonesia	Western Coral Triangle
+Apocreadium synagris	Yamaguti, 1953          	Synagris taeniopterus	Pacific coast of Indonesia	Western Coral Triangle
+Indodidymozoon metridion	Anderson & Cribb, 1995        	Suggrundus jugosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hypocreadium cavum	Bray & Cribb, 1996        	Sufflamen fraenatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepotrema clavatum	Ozaki, 1932          	Sufflamen chrysopterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hypocreadium patellare	Yamaguti, 1938          	Sufflamen chrysopterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lobatocreadium exiguum	(Manter, 1963)          	Sufflamen capistratus	Hawaiian coast	Hawaii
+Lobatocreadium exiguum	(Manter, 1963)          	Sufflamen capistratus	South China Sea	South China Sea
+Pseudocreadium hainanensis	Shen, 1990          	Sufflamen capistratus	South China Sea	South China Sea
+Lobatocreadium exiguum	(Manter, 1963)          	Sufflamen bursa	Australia: Coast of Queensland	Northeast Australian Shelf
+Hexangium sigani	Goto & Ozaki, 1929        	Stolephorus commerson	Coast of Philippines	Western Coral Triangle
+Callohelmis pichelinae	Cribb & Bray, 1999        	Stethojulis bandanensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Stephanolepis cirrhifer	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Stegastes fasciolatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema crassum	Pritchard & Manter, 1961        	Stegastes fasciolatus	Hawaiian coast	Hawaii
+Schikhobalotrema pomacentri	(Manter, 1937)          	Stegastes apicalis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Stegastes apicalis	Australia: Coast of Queensland	Northeast Australian Shelf
+Siphodera vinaledwardsii	(Linton, 1901)          	Sphyraena pinguis	South China Sea	South China Sea
+Prosorhynchus sphyraenae	Gu & Shen, 1976        	Sphyraena pinguis	South China Sea	South China Sea
+Didymocystis radiatus	Ku & Shen, 1965        	Sphyraena pinguis	South China Sea	South China Sea
+Didymozoon biramus	Ku & Shen, 1965        	Sphyraena pinguis	South China Sea	South China Sea
+Lepidapedon sphyraenae	Shen, 1990          	Sphyraena pinguis	South China Sea	South China Sea
+Bucephalus trifurcatus	Wang, 1980          	Sphyraena pinguis	South China Sea	South China Sea
+Prosorhynchus clavatum	Wang, 1980          	Sphyraena pinguis	South China Sea	South China Sea
+Stephanostomum sphyraenae	Wang, 1982          	Sphyraena pinguis	South China Sea	South China Sea
+Prosorhynchoides philippinorum	(Velasquez, 1959)          	Sphyraena langsar	Coast of Philippines	Western Coral Triangle
+Bucephaloides philippinorum	Velasquez, 1959          	Sphyraena langsar	Coast of Philippines	Western Coral Triangle
+Pseudopecoeloides carangis	(Yamaguti, 1938)          	Sphyraena jello	Coast of Philippines	Western Coral Triangle
+Prosorhynchus sphyraenae	Gu & Shen, 1976        	Sphyraena jello	South China Sea	South China Sea
+Didymocystis radiatus	Ku & Shen, 1965        	Sphyraena jello	South China Sea	South China Sea
+Didymozoon biramus	Ku & Shen, 1965        	Sphyraena jello	South China Sea	South China Sea
+Sterrhurus gymnothoracis	Yamaguti, 1940          	Sphyraena jello	South China Sea	South China Sea
+Stephanostomum kawalea	Yamaguti, 1970          	Sphyraena helleri	Hawaiian coast	Hawaii
+Plerurus digitatus	(Looss, 1899)          	Sphyraena barracuda	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudobucephalopsis spheroides	Long & Lee, 1964        	Sphoeroides ocellatus	South China Sea	South China Sea
+Parabucephalopsis spheroides	Tang & Tang, 1976        	Sphoeroides ocellatus	South China Sea	South China Sea
+Bianium hemistoma	(Ozaki, 1928)          	Sphoeroides borealis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bucephalopsis obpyriformis	Gu & Shen, 1976        	Sparus macrocephalus	South China Sea	South China Sea
+Hamacreadium mutabile	Linton, 1910          	Sparus macrocephalus	South China Sea	South China Sea
+Opegaster parapristipomatis	Yamaguti, 1934          	Sparus macrocephalus	South China Sea	South China Sea
+Proctoeces orientalis	Cao Hua, 1989         	Sparus latus	South China Sea	South China Sea
+Coitocaecum gymnophallum	Nicoll, 1915          	Sparus latus	South China Sea	South China Sea
+Coitocaecum unibulbosum	Ozaki, 1929          	Sparus latus	South China Sea	South China Sea
+Coitocaecum robustum	Wang, 1984          	Sparus latus	South China Sea	South China Sea
+Nicolla pyriformis	Wang, Wang & Zhang, 1992        	Sparus latus	South China Sea	South China Sea
+Hamacreadium lethrini	Yamaguti, 1934          	Sparus latus	South China Sea	South China Sea
+Genolopa sparui	Shen, 1990          	Sparus berda	South China Sea	South China Sea
+Transversotrema licinum	Manter, 1970          	Sillago sihama	Australia: Coast of N Territories	Sahul Shelf
+Ozakia sillaginis	Shen, 1986          	Sillago sihama	South China Sea	South China Sea
+Plagioporus sillagonis	Yamaguti, 1938         	Sillago sihama	South China Sea	South China Sea
+Rhipidocotyle eggletoni	Velasquez, 1959          	Sillago sihama	Coast of Philippines	Western Coral Triangle
+Proterometra sillagae	Wu, Lu & Zhu, 1997        	Sillago sihama	South China Sea	South China Sea
+Torticaecum nipponicum	Yamaguti, 1942          	Sillago sihama	Coast of Philippines	Western Coral Triangle
+Plagioporus spari	Yamaguti, 1951          	Sillago sihama	South China Sea	South China Sea
+Austroholorchis sprenti	(Gibson, 1987)          	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Gibsonivermis berryi	(Gibson, 1987)          	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon pearsoni	Anderson & Cribb, 1994        	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Holorchis sprenti	Gibson, 1987          	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Intusatrium berryi	Gibson, 1987          	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Sillago maculata	Australia: Coast of Queensland	Northeast Australian Shelf
+Stictodora palmifera	Vazquez-Colet, 1943          	Sillago maculata	Coast of Philippines	Western Coral Triangle
+Proterometra brachyura	Wu, Lu & Zhu, 1997        	Sillago maculata	South China Sea	South China Sea
+Transversotrema licinum	Manter, 1970          	Sillago lutea	Australia: Coast of Queensland	Northeast Australian Shelf
+Proterometra lamellorchis	Wu, Lu & Zhu, 1997        	Sillago japonica	South China Sea	South China Sea
+Transversotrema licinum	Manter, 1970          	Sillago ingenuua	Australia: Coast of Queensland	Northeast Australian Shelf
+Austroholorchis sprenti	(Gibson, 1987)          	Sillago ciliata	Australia: Coast of Queensland	Northeast Australian Shelf
+Gibsonivermis berryi	(Gibson, 1987)          	Sillago ciliata	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Sillago ciliata	Australia: Coast of Queensland	Northeast Australian Shelf
+Intusatrium berryi	Gibson, 1987          	Sillago ciliata	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Sillago ciliata	Australia: Coast of Queensland	Northeast Australian Shelf
+Austroholorchis sprenti	(Gibson, 1987)          	Sillago analis	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Sillago analis	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Sillago analis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Siganus vulpinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema leonae	Bray & Cribb, 2000        	Siganus vulpinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hemiurus sigani	Fischthal & Kuntz, 1964        	Siganus spinus	Coast of Philippines	Western Coral Triangle
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus spinus	Coast of Philippines	Western Coral Triangle
+Machidatrema frontilatum	(Manter, 1969)          	Siganus rivulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Siganus rivulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Theletrum frontilatum	Manter, 1969          	Siganus rivulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithophyllum kitrii	Bray & Cribb, 2001        	Siganus punctatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Gyliauchen nahaensis	Ozaki, 1937          	Siganus puellus	Australia: Coast of Queensland	Northeast Australian Shelf
+Coitocaecum austrosinicum	Ding, 1993          	Siganus oramin	South China Sea	South China Sea
+Atractotrema fusum	Goto & Ozaki, 1929        	Siganus oramin	South China Sea	South China Sea
+Coitocaecum sigani	Shen, 1990          	Siganus oramin	South China Sea	South China Sea
+Hysterolecithoides epinepheli	Yamaguti, 1934          	Siganus oramin	South China Sea	South China Sea
+Hysterolecithoides frontilatus	(Manter, 1969)          	Siganus nebulosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Atractotrema sigani	          	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos cannoni	Barker, Bray & Cribb, 1993        	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema leonae	Bray & Cribb, 2000        	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithophyllum kitrii	Bray & Cribb, 2001        	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Gyliauchen nahaensis	Ozaki, 1937          	Siganus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus javus	Coast of Philippines	Western Coral Triangle
+Gyliauchen papillatus	(Goto & Matsudaira, 1918)        	Siganus guttatus	South China Sea	South China Sea
+Hemiurus sigani	Fischthal & Kuntz, 1964        	Siganus guttatus	Coast of Philippines	Western Coral Triangle
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus guttatus	South China Sea	South China Sea
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus guttatus	Coast of Philippines	Western Coral Triangle
+Gyliauchen oligoglandulosus	Gu & Shen, 1979        	Siganus guttatus	South China Sea	South China Sea
+Gyliauchen papillatus	(Goto & Matsudaira, 1918)        	Siganus fuscescens	Coast of Philippines	Western Coral Triangle
+Preptetos cannoni	Barker, Bray & Cribb, 1993        	Siganus fuscescens	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema leonae	Bray & Cribb, 2000        	Siganus fuscescens	Australia: Coast of Queensland	Northeast Australian Shelf
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus fuscescens	Coast of Philippines	Western Coral Triangle
+Allodidymocodium unitubulare	Yamaguti, 1970          	Siganus fuscescens	South China Sea	South China Sea
+Osteodidymocodium kawakawa	Yamaguti, 1970          	Siganus fuscescens	South China Sea	South China Sea
+Hysterolecithoides frontilatus	(Manter, 1969)          	Siganus doliatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Siganus doliatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos cannoni	Barker, Bray & Cribb, 1993        	Siganus doliatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema leonae	Bray & Cribb, 2000        	Siganus doliatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Siganus doliatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Gyliauchen nahaensis	Ozaki, 1937          	Siganus doliatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema leonae	Bray & Cribb, 2000        	Siganus corallinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Gyliauchen nahaensis	Ozaki, 1937          	Siganus corallinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus canaliculatus	Coast of Philippines	Western Coral Triangle
+Hemiurus sigani	Fischthal & Kuntz, 1964        	Siganus argenteus	Coast of Philippines	Western Coral Triangle
+Hexangium sigani	Goto & Ozaki, 1929        	Siganus argenteus	Coast of Philippines	Western Coral Triangle
+Bucephalus paraheterotentaculatus	Velasquez, 1959          	Seriolina nigrofasciata	Coast of Philippines	Western Coral Triangle
+Lecithaster stellatus	Looss, 1906          	Seriola nigrofasciata	Australia: Coast of Queensland	Northeast Australian Shelf
+Ectenurus trachuri	(Yamaguti, 1934)          	Seriola lalandi	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Seriola lalandi	Australia: Coast of Queensland	Northeast Australian Shelf
+Dinurus longisinus	Looss, 1907          	Seriola lalandi	Australia: Coast of Queensland	Northeast Australian Shelf
+Prosorhynchus facilis	(Ozaki, 1924)          	Seriola dumerili	South China Sea	South China Sea
+Metanematobothrium seriolae	Ku & Shen, 1965        	Seriola dumerili	South China Sea	South China Sea
+Stephanostomum seriolae	Yamaguti, 1970          	Seriola dumerili	Hawaiian coast	Hawaii
+Tormopsolus hawaiiensis	Yamaguti, 1970          	Seriola dumerili	Hawaiian coast	Hawaii
+Stephanostomum seriolae	Yamaguti, 1970          	Seriola dumerili	South China Sea	South China Sea
+Bacciger lesteri	Bray, 1982          	Selenotoca multifasciata	Australia: Coast of Queensland	Northeast Australian Shelf
+Bacciger sprenti	Bray, 1982          	Selenotoca multifasciata	Australia: Coast of Queensland	Northeast Australian Shelf
+Tergestia laticollis	(Rudolphi, 1819)          	Selaroides leptolepis	South China Sea	South China Sea
+Helicometra selaroides	Shen, 1986          	Selaroides leptolepis	South China Sea	South China Sea
+Neidhartia xishaensis	(Gu & Shen, 1983)        	Selar crumenophthalmus	South China Sea	South China Sea
+Tergestia hainanensis	Shen, 1990          	Selar boops	South China Sea	South China Sea
+Helicometra execta	Linton, 1910          	Sebastiscus marmoratus	South China Sea	South China Sea
+Pretestis australianus	Angel & Manter, 1970        	Scortum hilli	Queensland	Northeast Australian Shelf
+Bucephalus xiamenensis	Liu, 1994          	Scorpaenopsis gibbosus	South China Sea	South China Sea
+Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Scorpaenopsis cacopsis	Hawaiian coast	Hawaii
+Plerurus digitatus	(Looss, 1899)          	Scomberomorus semifasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Plerurus digitatus	(Looss, 1899)          	Scomberomorus queenslandicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Plerurus scomberomori	Shen, 1990          	Scomberomorus niphonius	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Scomberomorus munroi	Australia: Coast of Queensland	Northeast Australian Shelf
+Tubulovesicula longicorporis	Shen, 1990          	Scomberomorus koreanus	South China Sea	South China Sea
+Bucephalopsis arcuata	(Linton, 1900)          	Scomberomorus guttatus	South China Sea	South China Sea
+Rhipidocotyle pentagonum	(Ozaki, 1924)          	Scomberomorus guttatus	South China Sea	South China Sea
+Rhipidocotyle baculum	(Linton, 1905)          	Scomberomorus commerson	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Scomberomorus commerson	Australia: Coast of Queensland	Northeast Australian Shelf
+Didymozoon scomberomori	Ku & Shen, 1965        	Scomberomorus commerson	South China Sea	South China Sea
+Rhipidocotyle adbaculum	Manter, 1940          	Scomberomorus commerson	South China Sea	South China Sea
+Erilepturus lemeriensis	(Tubangui & Masilungan, 1934)        	Scomberoides lysan	Coast of Philippines	Western Coral Triangle
+Prodistomum orientalis	(Layman, 1930)          	Scomber japonicus	Hawaiian coast	Hawaii
+Allonematobothrioides scombri	Yamaguti, 1970          	Scomber japonicus	Hawaiian coast	Hawaii
+Cephalolepidapedon saba	Yamaguti, 1970          	Scomber japonicus	Hawaiian coast	Hawaii
+Nematobothrium robustum	Yamaguti, 1970          	Scomber japonicus	Hawaiian coast	Hawaii
+Lecithocladium excisum	(Rudolphi, 1819)          	Scolopsis taeniopterus	South China Sea	South China Sea
+Homalometron synagris	(Yamaguti, 1953)          	Scolopsis monogramma	Australia: Coast of Queensland	Northeast Australian Shelf
+Neoapocreadium splendens	Cribb & Bray, 1999        	Scolopsis monogramma	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Scolopsis monogramma	Australia: Coast of Queensland	Northeast Australian Shelf
+Weketrema hawaiiense	(Yamaguti, 1970)          	Scolopsis bilineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Scolopsis bilineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema patialense	(Soparkar, 1924)          	Scatophagus argus	Coast of Philippines	Western Coral Triangle
+Lenolopa huizhouensis	Lu & Wu, 1996        	Scatophagus argus	South China Sea	South China Sea
+Paracrepidostomum scatophagusi	Lu & Wu, 1996        	Scatophagus argus	South China Sea	South China Sea
+Waretrema piscicola	Srivastava, 1939          	Scatophagus argus	Coast of Philippines	Western Coral Triangle
+Transversotrema haasi	Witenberg, 1944          	Scarus sordidus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudomegasolena ishigakiensis	          	Scarus rivulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema haasi	Witenberg, 1944          	Scarus niger	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema haasi	Witenberg, 1944          	Scarus lunula	Coast of Philippines	Western Coral Triangle
+Machidatrema leonae	Bray & Cribb, 2000        	Scarus globiceps	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema haasi	Witenberg, 1944          	Scarus festivus	Coast of Philippines	Western Coral Triangle
+Plerurus digitatus	(Looss, 1899)          	Saurida undosquamis	Australia: Coast of Queensland	Northeast Australian Shelf
+Tubulovesicula lindbergi	(Layman, 1930)          	Saurida tumbil	South China Sea	South China Sea
+Uterovesiculurus hamati	(Yamaguti, 1934)          	Saurida filamentosa	South China Sea	South China Sea
+Plerurus cheni	1994	Saurida elongata	South China Sea	South China Sea
+Uterovesiculurus hamati	(Yamaguti, 1934)          	Saurida elongata	South China Sea	South China Sea
+Lecithochirium cheni	Li, 1994          	Saurida elongata	South China Sea	South China Sea
+Stomachicola sexaginta	Li, 1994          	Saurida elongata	South China Sea	South China Sea
+Tubulovesicula sexaginta	Li, 1994          	Saurida elongata	South China Sea	South China Sea
+Helicometra execta	Linton, 1910          	Saurida elongata	South China Sea	South China Sea
+Helicometra nasae	Nagaty & Abdel Aal, 1962       	Sargocentron violaceum	Coast of Philippines	Western Coral Triangle
+Bianium hemistoma	(Ozaki, 1928)          	Sargocentron spinosissumum	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Sargocentron spiniferum	Hawaiian coast	Hawaii
+Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Sargocentron rubrum	Australia: Coast of Queensland	Northeast Australian Shelf
+Aporocotyle pacifica	Yamaguti, 1970          	Ruvettus pretiosus	Hawaiian coast	Hawaii
+Transversotrema patialense	(Soparkar, 1924)          	Rhynchorhamphus georgii	Coast of Philippines	Western Coral Triangle
+Bucephalopsis rhynchobati	Wang, 1985          	Rhynchobatus djiddensis	South China Sea	South China Sea
+Melogonimus rhodanometra	Bray, Brockerhoff & Cribb, 1995        	Rhina ancylostoma	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Rhabdosargus sarba	Australia: Coast of Queensland	Northeast Australian Shelf
+Opegaster synodi	Manter, 1947          	Rhabdosargus sarba	South China Sea	South China Sea
+Prosorchis rastrelligi	Ku & Shen, 1964        	Rastrelliger kanagurta	South China Sea	South China Sea
+Lecithocladium bulbolabrum	Reid, Coil & Kuntz, 1966        	Rastrelliger kanagurta	South China Sea	South China Sea
+Lecithocladium parviovum	Yamaguti, 1953          	Rastrelliger kanagurta	South China Sea	South China Sea
+Lecithocladium angustiovum	Yamaguti, 1953          	Rastrelliger kanagurta	Coast of Philippines	Western Coral Triangle
+Stephanostomum cobia	Bray & Cribb, 2003        	Rachycentron canadum	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithochirium microstomum	Chandler, 1935          	Rachycentron canadum	South China Sea	South China Sea
+Stephanostomum rachycentronis	Shen, 1990          	Rachycentron canadum	South China Sea	South China Sea
+Opecoelus pteroisi	Shen, 1986          	Pterois lunulata	South China Sea	South China Sea
+Sterrhurus inimici	Yamaguti, 1934          	Pterois lunulata	South China Sea	South China Sea
+Ectenurus trachuri	(Yamaguti, 1934)          	Pterocaesio marri	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides ovale	(Yamaguti, 1942)          	Pterocaesio marri	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides parvulus	Bray, Cribb & Barker, 1996        	Pterocaesio marri	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithochirium caesionis	Yamaguti, 1942          	Pterocaesio marri	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithochirium pseudosciaenae	Shen, 1990          	Pseudosciaena polyactis	South China Sea	South China Sea
+Pseudoprosorhynchus fusiformis	Wang, 1985          	Pseudosciaena polyactis	South China Sea	South China Sea
+Ectenurus pseudosciaenae	Gu & Shen        	Pseudosciaena crocea	South China Sea	South China Sea
+Rhipidocotyle croceae	Gu & Shen, 1975        	Pseudosciaena crocea	South China Sea	South China Sea
+Dollfustrema sinica	Gu & Shen, 1976        	Pseudosciaena crocea	South China Sea	South China Sea
+Ectenurus lepidus	Looss, 1907          	Pseudosciaena crocea	South China Sea	South China Sea
+Plerurus pseudosciaenae	Shen          	Pseudosciaena crocea	South China Sea	South China Sea
+Parahemiurus pseudosciaenae	Shen, 1985          	Pseudosciaena crocea	South China Sea	South China Sea
+Lecithochirium priacanthi	Yamaguti, 1953          	Pseudosciaena crocea	South China Sea	South China Sea
+Erilepturus hamati	(Yamaguti, 1934)          	Pseudorhombus arsius	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon pearsoni	Anderson & Cribb, 1994        	Pseudorhombus arsius	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Pseudomugil signifer	Queensland	Northeast Australian Shelf
+Diphterostomum brusinae	(Stossich, 1889)          	Pseudocaranx dentex	Australia: Coast of Queensland	Northeast Australian Shelf
+Paramonorcheides pseudocaranxi	Dove & Cribb, 1998        	Pseudocaranx dentex	Australia: Coast of Queensland	Northeast Australian Shelf
+Provitellus turrum	Dove & Cribb, 1998        	Pseudocaranx dentex	Australia: Coast of Queensland	Northeast Australian Shelf
+Neoprosorhynchus pseudecheneis	Wang & Guo, 1983        	Pseudecheneis sulcatus	South China Sea	South China Sea
+Tubulovesicula lindbergi	(Layman, 1930)          	Psettodes erumei	South China Sea	South China Sea
+Stephanostomum imparispine	(Linton, 1905)          	Psettodes erumei	South China Sea	South China Sea
+Torticaecum fenestratum	(Linton, 1907)          	Psettodes erumei	South China Sea	South China Sea
+Tormopsolus echenei	Parukhin, 1966          	Psettodes erumei	South China Sea	South China Sea
+Prosorhynchus longus	Velasquez, 1959          	Psettodes erumei	Coast of Philippines	Western Coral Triangle
+Rhipidocotyle laruei	Velasquez, 1959          	Psettodes erumei	Coast of Philippines	Western Coral Triangle
+Tubulovesicula muraenesocis	Yamaguti, 1934          	Psettodes erumei	South China Sea	South China Sea
+Monilicaecum ventricosum	Yamaguti, 1942          	Psettodes erumei	South China Sea	South China Sea
+Monascus filiformis	(Rudolphi, 1819)          	Psenes indicus	South China Sea	South China Sea
+Cypseluritrema prognichthydis	Shen & Li, 2000        	Prognichthys brevipinnis	South China Sea	South China Sea
+Lepidapedon golphick	Oshmarin, 1968          	Pristipomoides typus	South China Sea	South China Sea
+Lepidapedoides kalikali	Yamaguti, 1970          	Pristipomoides sieboldii	Hawaiian coast	Hawaii
+Allolepidapedon pristipomoidis	Shen, 1985          	Pristipomoides microlepis	South China Sea	South China Sea
+Paracryptogonimus apharei	Yamaguti, 1970          	Pristipomoides microlepis	South China Sea	South China Sea
+Lepidapedoides kalikali	Yamaguti, 1970          	Pristipomoides auricilla	Hawaiian coast	Hawaii
+Petalocotyle adenometra	Hall & Cribb, 2000        	Prionurus microlepidotus	Australia: Coast of Queensland	Northeast Australian Shelf
+Gonapodasmius haemuli	(MacCallum & MacCallum, 1916)        	Priacanthus tayenus	Hawaiian coast	Hawaii
+Didymocystoides dolichorchis	Gu & Shen, 1983        	Priacanthus tayenus	South China Sea	South China Sea
+Didymozoon longicollopsis	Gu & Shen, 1983        	Priacanthus tayenus	South China Sea	South China Sea
+Liliaoralis cataluphi	Korotaeva, 1994          	Priacanthus tayenus	South China Sea	South China Sea
+Didymozoon priacanthi	Ku & Shen, 1965        	Priacanthus tayenus	South China Sea	South China Sea
+Neometadidymozoon polymorphis	(Oshmarin & Mamaev, 1963)        	Priacanthus macracanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Didymocystoides dolichorchis	Gu & Shen, 1983        	Priacanthus macracanthus	South China Sea	South China Sea
+Liliaoralis cataluphi	Korotaeva, 1994          	Priacanthus macracanthus	South China Sea	South China Sea
+Didymozoon priacanthi	Ku & Shen, 1965        	Priacanthus macracanthus	South China Sea	South China Sea
+Syncorpozoum hainanensis	Ku & Shen, 1965        	Priacanthus macracanthus	South China Sea	South China Sea
+Aephnidiogenes barbarus	Nicoll, 1915          	Pomadasys kaakan	Australia: Coast of Queensland	Northeast Australian Shelf
+Lasiotocus cryptostoma	(Oshmarin, 1966)          	Pomadasys hasta	South China Sea	South China Sea
+Aephnidiogenes barbarus	Nicoll, 1915          	Pomadasys hasta	South China Sea	South China Sea
+Aephnidiogenes barbarus	Nicoll, 1915          	Pomadasys hasta	Coast of Philippines	Western Coral Triangle
+Plerurus pomadasydis	Shen & Tong, 1985        	Pomadasys hasta	South China Sea	South China Sea
+Opecoelus minimus	(Tubangui, 1928)          	Pomadasys argenteus	Coast of Philippines	Western Coral Triangle
+Aephnidiogenes barbarus	Nicoll, 1915          	Pomadasys argenteus	Coast of Philippines	Western Coral Triangle
+Azygia pristipomai	Tubangui, 1928          	Pomadasys argenteus	Coast of Philippines	Western Coral Triangle
+Lepotrema monile	Bray & Cribb, 1998        	Pomacentrus wardi	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Pomacentrus wardi	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Pomacentrus wardi	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Pomacentrus wardi	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus wardi	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Pomacentrus vaiuli	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema pomacentri	(Manter, 1937)          	Pomacentrus tripunctatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pearsoni	Bray, Cribb & Barker, 1993        	Pomacentrus tripunctatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus tripunctatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Pomacentrus taeniometapon	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema pomacentri	(Manter, 1937)          	Pomacentrus philippinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Pomacentrus philippinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha heronensis	Bray, Cribb & Barker, 1993        	Pomacentrus philippinus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Pomacentrus pavo	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus pavo	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha heronensis	Bray, Cribb & Barker, 1993        	Pomacentrus nigromarginatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus nigromarginatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Pomacentrus nagasakiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus nagasakiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pearsoni	Bray, Cribb & Barker, 1993        	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha heronensis	Bray, Cribb & Barker, 1993        	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Aponurus laguncula	Looss, 1907          	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus moluccensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Pomacentrus melanochir	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Pomacentrus jenkinsi	Hawaiian coast	Hawaii
+Thulinia microrchis	(Yamaguti, 1934)          	Pomacentrus inornatus	Hawaiian coast	Hawaii
+Mitotrema anthostomatum	Manter, 1963          	Pomacentrus flavicauda	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Pomacentrus flavicauda	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema pomacentri	(Manter, 1937)          	Pomacentrus chrysurus	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pearsoni	Bray, Cribb & Barker, 1993        	Pomacentrus chrysurus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Pomacentrus chrysurus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Pomacentrus chrysurus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos cannoni	Barker, Bray & Cribb, 1993        	Pomacentrus bankanensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Galactosomum bearupi	Pearson, 1973          	Pomacentrus bankanensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Pomacentrus amboinensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha heronensis	Bray, Cribb & Barker, 1993        	Pomacentrus amboinensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Antorchis pomacanthi	(Hafeezullah & Siddiqi, 1970)        	Pomacanthus sexstriatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster machidai	Cribb, Anderson & Bray, 1999        	Pomacanthus sexstriatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Antorchis pomacanthi	(Hafeezullah & Siddiqi, 1970)        	Pomacanthus semicirculatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster machidai	Cribb, Anderson & Bray, 1999        	Pomacanthus semicirculatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neopreptetos arusettae	Machida, 1982          	Pomacanthus semicirculatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Plagioporus pomacanthi	Shen & Li, 2000        	Pomacanthus annularis	South China Sea	South China Sea
+Gonapodasmius hapuki	Pozdnyakov, 1994          	Polyprion oxygeneios	Coast of New Guinea	Western Coral Triangle
+Bucephalus polymorphus	Von Baer, 1827         	Polymorphus indicus	South China Sea	South China Sea
+Stephanostomum polymixiae	Yamaguti, 1970          	Polymixia japonica	Hawaiian coast	Hawaii
+Lecithochirium poecilopsettae	Shen, 1990          	Poecilopsetta plinthus	South China Sea	South China Sea
+Tubulovesicula anguillae	Yamaguti, 1934          	Poecilopsetta plinthus	South China Sea	South China Sea
+Ascocotyle felippei	Price, 1935          	Poecilia reticulata	Hawaiian Islands	Hawaii
+Transversotrema patialense	(Soparkar, 1924)          	Poecilia latipinna	Coast of Philippines	Western Coral Triangle
+Plerurus digitatus	(Looss, 1899)          	Plectropomus leopardus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pacificreadium serrani	(Nagaty & Abdel Aal, 1962)       	Plectropomus leopardus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Plectropomus leopardus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudopecoelus elongatus	(Yamaguti, 1938)          	Plectropomus leopardus	South China Sea	South China Sea
+Rhipidocotyle clavivesiculum	Ku & Shen, 1975        	Plectropomus leopardus	South China Sea	South China Sea
+Pearsonellum corventum	Overstreet & Koie, 1989        	Plectropomus leopardus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudoprosorhynchus hainanensis	Shen, 1990          	Plectropomus leopardus	South China Sea	South China Sea
+Derogenes pearsoni	Bray, Cribb & Barker, 1993        	Plectroglyphidodon lacrymatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Plectroglyphidodon dickii	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pharyngicola	Bray, Cribb & Barker, 1993        	Plectroglyphidodon dickii	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Plectroglyphidodon dickii	Australia: Coast of Queensland	Northeast Australian Shelf
+Aephnidiogenes hainanensis	Shen & Tung, 1990        	Plectorhynchus pictus	South China Sea	South China Sea
+Weketrema hawaiiense	(Yamaguti, 1970)          	Plectorhynchus gibbosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Rhopalotrema pterygionastes	Anderson, 1998          	Platycephalus indicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Dollfustrema sinica	Gu & Shen, 1976        	Platycephalus indicus	South China Sea	South China Sea
+Pseudopecoelina platycephali	Shen, 1986          	Platycephalus indicus	South China Sea	South China Sea
+Helicodidymozoon helicis	(Lester, 1979)          	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon brevicolle	(Yamaguti, 1938)          	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon moretonensis	Anderson & Cribb, 1994        	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon suttiei	Anderson & Cribb, 1994        	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Rhopalotrema elusivum	Anderson, 1998          	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neometadidymozoon helicis	Lester, 1979          	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Aponurus laguncula	Looss, 1907          	Platycephalus fuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Platycephalus endrachtensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Helicodidymozoon tortor	Anderson & Cribb, 1994        	Platycephalus endrachtensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon lesteri	Anderson & Cribb, 1994        	Platycephalus endrachtensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Indodidymozoon pearsoni	Anderson & Cribb, 1994        	Platycephalus endrachtensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Aponurus laguncula	Looss, 1907          	Platycephalus endrachtensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Diploproctodaeum rutellum	(Mamaev, 1970)          	Platax teira	Australia: Coast of Queensland	Northeast Australian Shelf
+Neomultitestis aspidogastriformis	Bray & Cribb, 2003        	Platax teira	Australia: Coast of Queensland	Northeast Australian Shelf
+Prosorchiopsis plataxonis	Gu & Shen, 1979        	Platax teira	South China Sea	South China Sea
+Multitestis magnacetabulum	Mamaev, 1970          	Platax teira	Australia: Coast of Queensland	Northeast Australian Shelf
+Neomultitestis bengalensis	(Madhavi, 1972)          	Platax orbicularis	South China Sea	South China Sea
+Diploproctodaeum rutellum	(Mamaev, 1970)          	Platax orbicularis	South China Sea	South China Sea
+Prosogonotrema plataxum	Gu & Shen, 1979        	Platax orbicularis	South China Sea	South China Sea
+Didymozoon gigas	Ku & Shen, 1965        	Platax orbicularis	South China Sea	South China Sea
+Diploproctodaeum plataxi	Mamaev, 1970          	Platax orbicularis	South China Sea	South China Sea
+Diploproctodaeum tsubameuo	Bray & Cribb, 2003        	Platax batavianus	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus pisoodonophis	Shen, 1990          	Pisoodonophis cancrivorous	South China Sea	South China Sea
+Sterrhurus pisoodonophis	Shen, 1990          	Pisoodonophis cancrivorous	South China Sea	South China Sea
+Cableia pudica	Bray, Cribb & Barker, 1996        	Pervagor janthinosoma	Australia: Coast of Queensland	Northeast Australian Shelf
+Anisoporus cobraeformis	Ozaki, 1928          	Peristedion orientale	South China Sea	South China Sea
+Trifoliovarium ovarilobulus	(Wang, 1989)          	Pelates quadrilineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Weketrema hawaiiense	(Yamaguti, 1970)          	Parupeneus porphyreus	Hawaiian coast	Hawaii
+Paropecoelus palawanensis	(Fischthal & Kuntz, 1964)        	Parupeneus indicus	Coast of Philippines	Western Coral Triangle
+Weketrema hawaiiense	(Yamaguti, 1970)          	Parupeneus bifasciatus	Hawaiian coast	Hawaii
+Paropecoelus palawanensis	(Fischthal & Kuntz, 1964)        	Parupeneus barberinus	Coast of Philippines	Western Coral Triangle
+Schikhobalotrema pomacentri	(Manter, 1937)          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepocreadium clavatum	(Ozaki, 1932)          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos xesuri	(Yamaguti, 1940)          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Macvicaria heronensis	Bray & Cribb, 1989        	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepotrema clavatum	Ozaki, 1932          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Parma polylepis	Australia: Coast of Queensland	Northeast Australian Shelf
+Cypseluritrematoides minor	Gu & Shen, 1979        	Parexocoetus brachypterus	South China Sea	South China Sea
+Cardicola ahi	Yamaguti, 1970          	Parathunnus sibi	Hawaiian coast	Hawaii
+Lecithocladium apolecti	Velasquez, 1962          	Parastromateus niger	Coast of Philippines	Western Coral Triangle
+Tergestia hainanensis	Shen, 1990          	Parargyrops edita	South China Sea	South China Sea
+Hamacreadium mutabile	Linton, 1910          	Parapristipoma trilineatum	South China Sea	South China Sea
+Lecithocladium parapristipomatis	Liu, 1997          	Parapristipoma trilineatum	South China Sea	South China Sea
+Preptetos parapristipomae	Liu, 2002          	Parapristipoma trilineatum	South China Sea	South China Sea
+Opecoelus inimici	Yamaguti, 1934          	Parapristipoma trilineatum	South China Sea	South China Sea
+Opegaster parapristipomatis	Yamaguti, 1934          	Parapristipoma trilineatum	South China Sea	South China Sea
+Plagioporus ira	Yamaguti, 1940          	Paraplagusia japonica	South China Sea	South China Sea
+Trifoliovarium ovarilobulus	(Wang, 1989)          	Paramonacanthus japonicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Diploproctodaeum yosogi	Bray, Cribb & Barker, 1966        	Paramonacanthus japonicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Diplocreadium tangaloomaensis	Bray, Cribb & Barker, 1996        	Paramonacanthus japonicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Tergestia hainanensis	Shen, 1990          	Paragyrops editis	South China Sea	South China Sea
+Lecithochirium holocentri	Yamaguti, 1970          	Paragyrops editis	South China Sea	South China Sea
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Parachaetodon ocellatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hurleytrematoides malabonensis	Velasquez, 1961          	Parachaetodon ocellatus	Coast of Philippines	Western Coral Triangle
+Paracryptogonimus manilensis	Velasquez, 1961          	Parachaetodon ocellatus	Coast of Philippines	Western Coral Triangle
+Lecithocladium harpodontis	Srivastava, 1937          	Pampus argenteus	South China Sea	South China Sea
+Pycnadenoides reversati	Aken-Ova, 2003          	Pagrus auratus	Australia: Coast of Queensland	Northeast Australian Shelf
+Macvicaria alacris	(Looss, 1901)         	Pagrosomus major	South China Sea	South China Sea
+Transversotrema haasi	Witenberg, 1944          	Oxycheilinus diagrammus	Coast of Philippines	Western Coral Triangle
+Paradiscogaster macrostomus	(Shimazu & Kamegai, 1990)        	Ostracion meleagris	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster ostracii	(Yamaguti, 1934)          	Ostracion meleagris	Hawaiian coast	Hawaii
+Paradiscogaster ostracii	(Yamaguti, 1934)          	Ostracion meleagris	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster macrostomus	(Shimazu & Kamegai, 1990)        	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Discogastroides ostracii	(Yamaguti, 1934)          	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster ostracii	(Yamaguti, 1934)          	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium spongiosum	Bray & Cribb, 1998        	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Diploproctodaeum momoaafata	Bray, Cribb & Barker, 1996        	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Parayamagutia ostracionis	Machida, 1971          	Ostracion cubicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides ostichthydis	Yamaguti, 1970          	Ostichthys japonicus	Hawaiian coast	Hawaii
+Transversotrema patialense	(Soparkar, 1924)          	Oreochromis niloticus	Coast of Philippines	Western Coral Triangle
+Transversotrema patialense	(Soparkar, 1924)          	Oreochromis mossambicus	Coast of Philippines	Western Coral Triangle
+Helicometra pulchella	(Rudolphi, 1819)          	Oplegnathus fasciatus	South China Sea	South China Sea
+Opegaster oplegnathi	Wang, Wang & Zhang, 1992        	Oplegnathus fasciatus	South China Sea	South China Sea
+Genolopa sparui	Shen, 1990          	Odontamblyopus rubicundus	South China Sea	South China Sea
+Rhipidocotyloides tsengi	Long & Lee, 1964        	Ochetobius elongatus	South China Sea	South China Sea
+Monascus filiformis	(Rudolphi, 1819)          	Nomeus gronovii	South China Sea	South China Sea
+Podocotyle staffordi	Miller, 1941          	Nibea diacanthus	South China Sea	South China Sea
+Pseudacaenodera nibeae	Shen, 1990          	Nibea albiflora	South China Sea	South China Sea
+Pleorchis sciaenae	Yamaguti, 1938          	Nibea albiflora	South China Sea	South China Sea
+Monodhelmis torpedinis	Dollfus, 1937          	Netuma thalassina	Coast of Philippines	Western Coral Triangle
+Cardicola ahi	Yamaguti, 1970          	Neothunnus macropterus	Hawaiian coast	Hawaii
+Monodhelmis trichofurcata	(Johnston & Angel, 1940)        	Neosilurus ater	Queensland	Northeast Australian Shelf
+Monodhelmis trichofurcata	(Johnston & Angel, 1940)        	Neosilurus ater	Queensland	Northeast Australian Shelf
+Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Neoniphon sammara	Hawaiian coast	Hawaii
+Hexangium sigani	Goto & Ozaki, 1929        	Neoniphon sammara	Coast of Philippines	Western Coral Triangle
+Bancroftrema neoceratodi	Angel, 1966          	Neoceratodus forsteri	Queensland	Northeast Australian Shelf
+Paracryptogonimus elongatus	Gu & Shen, 1979        	Nemipterus virgatus	South China Sea	South China Sea
+Parahemiurus merus	(Linton, 1910)          	Nemipterus japonicus	South China Sea	South China Sea
+Tetrochetus navodonis	Shen & Tong, 1984        	Navodon septentrionalis	South China Sea	South China Sea
+Rhynchopharynx formionis	Shen, 1986          	Navodon septentrionalis	South China Sea	South China Sea
+Preptetos cylindricus	Wang, 1989          	Navodon septentrionalis	South China Sea	South China Sea
+Lecithocladium invasor	Chambers, Carlisle, Dove & Cribb, 2001        	Naso vlamingii	Australia: Coast of Queensland	Northeast Australian Shelf
+Cleptodiscus bulbosus	Hanson, 1955          	Naso vlamingii	Coast of Philippines	Western Coral Triangle
+Lecithocladium chingi	Manter & Pritchard, 1960        	Naso vlamingii	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithocladium chingi	Manter & Pritchard, 1960        	Naso vlamingii	Coast of Philippines	Western Coral Triangle
+Preptetos caballeroi	Pritchard, 1960          	Naso vlamingii	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos caballeroi	Pritchard, 1960          	Naso vlamingii	Coast of Philippines	Western Coral Triangle
+Prosorchiopsis aluterae	Yamaguti, 1970          	Naso vlamingii	Coast of Philippines	Western Coral Triangle
+Pseudopisthogonoporus vitellosus	(Pritchard, 1963)          	Naso unicornis	Hawaiian coast	Hawaii
+Preptetos xesuri	(Yamaguti, 1940)          	Naso unicornis	Hawaiian coast	Hawaii
+Preptetos laguncula	Bray & Cribb, 1996        	Naso unicornis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hexangium leptosomum	Machida & Uchida, 1990        	Naso unicornis	Coast of Philippines	Western Coral Triangle
+Preptetos caballeroi	Pritchard, 1960          	Naso unicornis	Hawaiian coast	Hawaii
+Lecithocladium invasor	Chambers, Carlisle, Dove & Cribb, 2001        	Naso tuberosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Affecauda annulata	Hall & Chambers, 1999        	Naso tuberosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithocladium chingi	Manter & Pritchard, 1960        	Naso tuberosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudopisthogonoporus vitellosus	(Pritchard, 1963)          	Naso hexacanthus	Hawaiian coast	Hawaii
+Preptetos xesuri	(Yamaguti, 1940)          	Naso hexacanthus	Hawaiian coast	Hawaii
+Lecithocladium chingi	Manter & Pritchard, 1960        	Naso hexacanthus	Coast of Philippines	Western Coral Triangle
+Preptetos caballeroi	Pritchard, 1960          	Naso hexacanthus	Hawaiian coast	Hawaii
+Prosogonotrema bilabiatum	Vigueras, 1940          	Naso hexacanthus	Coast of Philippines	Western Coral Triangle
+Neoparacardicola nasonis	Yamaguti, 1970          	Naso hexacanthus	Hawaiian coast	Hawaii
+Pseudopisthogonoporus vitellosus	(Pritchard, 1963)          	Naso brevirostris	Hawaiian coast	Hawaii
+Pseudopisthogonoporus vitellosus	(Pritchard, 1963)          	Naso brevirostris	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos xesuri	(Yamaguti, 1940)          	Naso brevirostris	Hawaiian coast	Hawaii
+Lecithocladium chingi	Manter & Pritchard, 1960        	Naso brevirostris	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos caballeroi	Pritchard, 1960          	Naso brevirostris	Hawaiian coast	Hawaii
+Preptetos caballeroi	Pritchard, 1960          	Naso brevirostris	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos xesuri	(Yamaguti, 1940)          	Naso annulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithocladium invasor	Chambers, Carlisle, Dove & Cribb, 2001        	Naso annulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithocladium chingi	Manter & Pritchard, 1960        	Naso annulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos caballeroi	Pritchard, 1960          	Naso annulatus	Hawaiian coast	Hawaii
+Preptetos caballeroi	Pritchard, 1960          	Naso annulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Myxus elongatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hymenocotta mulli	Manter, 1961          	Myxus elongatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Plagioporus myoxocephalis	Achmerov, 1960          	Myoxocephalus platycephalus	South China Sea	South China Sea
+Phyllotrema quadricaudatum	Gu & Shen, 1979        	Muraenesox cinereus	South China Sea	South China Sea
+Coitocaecum muraenesocis	Wang, Wang & Zhang, 1992        	Muraenesox cinereus	South China Sea	South China Sea
+Tubulovesicula muraenesocis	Yamaguti, 1934          	Muraenesox cinereus	South China Sea	South China Sea
+Stomachicola muraenesocis	Yamaguti, l934          	Muraenesox cinereus	South China Sea	South China Sea
+Weketrema hawaiiense	(Yamaguti, 1970)          	Mulloidichthys pfugeri	Hawaiian coast	Hawaii
+Weketrema hawaiiense	(Yamaguti, 1970)          	Mulloidichthys flavolineatus	Hawaiian coast	Hawaii
+Saccocoelioides huidongensis	Lu, 1993          	Mugil parvus	South China Sea	South China Sea
+Elliptobursa attenuatus	Wu, Lü & Chen, 1999        	Mugil parvus	South China Sea	South China Sea
+Monascus mediolongiusculus	Ding, 1993          	Mugil ophuyseni	South China Sea	South China Sea
+Tandemorchis yuedongensis	Lu, 1993          	Mugil macrolepis	South China Sea	South China Sea
+Allomonorchis huangfuensis	Lü, Wu & Chen, 1999        	Mugil macrolepis	South China Sea	South China Sea
+Pseudopecoeloides mugilis	Shen, 1990          	Mugil macrolepis	South China Sea	South China Sea
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Mugil georgii	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Mugil georgii	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudohapladena megaorchis	Liu & Yang, 2002        	Mugil engeli	South China Sea	South China Sea
+Paramacradenina xiamenensis	Tang, Shi & Guan, 1983        	Mugil engeli	South China Sea	South China Sea
+Prototransversotrema steeri	(Angel, 1969)          	Mugil cephalus	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Mugil cephalus	Queensland	Northeast Australian Shelf
+Saturnius mugilis	(Yamaguti, 1970)          	Mugil cephalus	Hawaiian coast	Hawaii
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Mugil cephalus	Australia: Coast of Queensland	Northeast Australian Shelf
+Haploporus magnisaccus	Machida, 1996          	Mugil cephalus	Pacific coast of Indonesia	Western Coral Triangle
+Hysterolecitha indonesiana	Machida, 1996          	Mugil cephalus	Pacific coast of Indonesia	Western Coral Triangle
+Lecithobotrys stomachicola	Machida, 1996          	Mugil cephalus	Pacific coast of Indonesia	Western Coral Triangle
+Carassotrema philippinense	Machida, 1996          	Mugil cephalus	Coast of Philippines	Western Coral Triangle
+Hymenocotta mulli	Manter, 1961          	Mugil cephalus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Mugil cephalus	Australia: Coast of Queensland	Northeast Australian Shelf
+Prohaplosplanchnus diorchis	Tang & Lin, 1978        	Mugil cephalus	South China Sea	South China Sea
+Aphanurus mugilus	Tang, 1981          	Mugil cephalus	South China Sea	South China Sea
+Cardicola mugilis	Yamaguti, 1970          	Mugil cephalus	Hawaiian coast	Hawaii
+Lasiotocus macrotrema	Wu, Lü & Chen, 1999        	Mugil affinis	South China Sea	South China Sea
+Elliptobursa singlorchis	Wu, Lu & Zhu, 1996        	Mugil affinis	South China Sea	South China Sea
+Prodistomum keyam	Bray & Cribb, 1996        	Monodactylus argenteus	Australia: Coast of Queensland	Northeast Australian Shelf
+Coomera brayi	Dove & Cribb, 1995        	Monodactylus argenteus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster farooqii	Hafeezullah & Siddiqi, 1970        	Monodactylus argenteus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos cylindricus	Wang, 1989          	Monacanthus chinensis	South China Sea	South China Sea
+Transversotrema patialense	(Soparkar, 1924)          	Molliniesia latipinna	Coast of Philippines	Western Coral Triangle
+Monodhelmis fujianensis	(Wang, 1982)          	Miichthys miiuy	South China Sea	South China Sea
+Tormopsolus fuzhouensis	Wang, 1982          	Miichthys miiuy	South China Sea	South China Sea
+Thulinia microrchis	(Yamaguti, 1934)          	Microcanthus strigatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Microcanthus strigatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Plagioporus siliculus	Sinitzin, 1931          	Microcanthus strigatus	South China Sea	South China Sea
+Lepocreadium clavatum	(Ozaki, 1932)          	Melichthys vidua	Hawaiian coast	Hawaii
+Pseudopisthogonoporus vitellosus	(Pritchard, 1963)          	Melichthys vidua	Hawaiian coast	Hawaii
+Lepotrema clavatum	Ozaki, 1932          	Melichthys vidua	Hawaiian coast	Hawaii
+Lepotrema clavatum	Ozaki, 1932          	Melichthys vidua	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepotrema incisum	(Hanson, 1955)          	Melichthys buniva	Hawaiian coast	Hawaii
+Lepocreadium clavatum	(Ozaki, 1932)          	Melichthys buniva	Hawaiian coast	Hawaii
+Lepocreadium incisum	Hanson, 1955          	Melichthys buniva	Hawaiian coast	Hawaii
+Lepotrema clavatum	Ozaki, 1932          	Melichthys buniva	Hawaiian coast	Hawaii
+Prototransversotrema steeri	(Angel, 1969)          	Melanotaenia duboulayi	Queensland	Northeast Australian Shelf
+Transversotrema patialense	(Soparkar, 1924)          	Megalops cyprinoides	Coast of Philippines	Western Coral Triangle
+Bivesicula megalopis	Shen, 1982          	Megalops cyprinoides	South China Sea	South China Sea
+Lecithocladium glandulum	Chauhan, 1945          	Megalaspis cordyla	South China Sea	South China Sea
+Ectenurus megalaspis	Gu & Shen, 1978        	Megalaspis cordyla	South China Sea	South China Sea
+Nematobothrium schistogonimum	Ku & Shen, 1965        	Megalaspis cordyla	South China Sea	South China Sea
+Bucephalus fragilis	Velasquez, 1959          	Megalaspis cordyla	Coast of Philippines	Western Coral Triangle
+Lecithocladium megalaspis	Yamaguti, 1953          	Megalaspis cordyla	Coast of Philippines	Western Coral Triangle
+Makairatrema musculicola	Yamaguti, 1970          	Makaira mazara	Australia: Coast of Queensland	Northeast Australian Shelf
+Neodidymozoon macrostoma	Yamaguti, 1970          	Makaira mazara	Australia: Coast of Queensland	Northeast Australian Shelf
+Hirudinella marina	(Garcin, 1730)          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Cardicola grandis	Lebedev & Mamaev, 1968        	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Glomeritrema subcuticola	Yamaguti, 1942          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Angionematobothrium jugulare	Yamaguti, 1970          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Makairatrema musculicola	Yamaguti, 1970          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Metadidymozoon branchiale	Yamaguti, 1970          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Neodidymozooides microstoma	Yamaguti, 1970          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Neodidymozoon macrostoma	Yamaguti, 1970          	Makaira indica	Australia: Coast of Queensland	Northeast Australian Shelf
+Paracryptogonimus manilensis	Velasquez, 1961          	Lutjanus vitta	Coast of Philippines	Western Coral Triangle
+Opegaster macrorchis	Yamaguti, 1938          	Lutjanus vitta	South China Sea	South China Sea
+Pseudosiphoderoides lutjani	(Yamaguti, 1942)          	Lutjanus vaigiensis	South China Sea	South China Sea
+Uterovesiculurus spindlis	Shen, 1990          	Lutjanus vaigiensis	South China Sea	South China Sea
+Paracryptogonimus ovatus	Yamaguti, 1952          	Lutjanus vaigiensis	South China Sea	South China Sea
+Paracryptogonimus xiamenensis	Liu, 1996          	Lutjanus russelli	South China Sea	South China Sea
+Transversotrema licinum	Manter, 1970          	Lutjanus quinquelineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos impar	Bray & Cribb, 1996        	Lutjanus malabaricus	Australia: Coast of Queensland	Northeast Australian Shelf
+Helicometra pulchella	(Rudolphi, 1819)          	Lutjanus lineolatus	South China Sea	South China Sea
+Hamacreadium hainanensis	Shen, 1990          	Lutjanus lineolatus	South China Sea	South China Sea
+Hamacreadium hainanensis	Shen, 1990          	Lutjanus linealatus	South China Sea	South China Sea
+Opegaster macrorchis	Yamaguti, 1938          	Lutjanus kasmira	South China Sea	South China Sea
+Hamacreadium lethrini	Yamaguti, 1934          	Lutjanus johni	South China Sea	South China Sea
+Hamacreadium lethrini	Yamaguti, 1934          	Lutjanus gibbus	Coast of Philippines	Western Coral Triangle
+Paracryptogonimus orientalis	Fischthal & Kuntz, 1964        	Lutjanus fulviflamma	Coast of Philippines	Western Coral Triangle
+Siphoderina asiatica	Gu & Shen, 1979        	Lutjanus fulviflamma	South China Sea	South China Sea
+Paracryptogonimus manilensis	Velasquez, 1961          	Lutjanus fulviflamma	Coast of Philippines	Western Coral Triangle
+Plerurus digitatus	(Looss, 1899)          	Lutjanus erythropterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Preptetos impar	Bray & Cribb, 1996        	Lutjanus erythropterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithocladium lutiani	Gu & Shen, 1978        	Lutjanus erythropterus	South China Sea	South China Sea
+Uterovesiculurus lutianius	Gu & Shen, 1978        	Lutjanus erythropterus	South China Sea	South China Sea
+Siphoderina asiatica	Gu & Shen, 1979        	Lutjanus erythropterus	South China Sea	South China Sea
+Hamacreadium hainanensis	Shen, 1990          	Lutjanus erythropterus	South China Sea	South China Sea
+Hurleytrema hainanense	Shen, 1990          	Lutjanus erythropterus	South China Sea	South China Sea
+Podocotyle lutiani	Shen, 1990          	Lutjanus erythropterus	South China Sea	South China Sea
+Siphoderoides lutiani	Shen, 1990          	Lutjanus erythropterus	South China Sea	South China Sea
+Erilepturus hamati	(Yamaguti, 1934)          	Lutjanus carponotatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Lutjanus carponotatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum casum	Linton, 1910          	Lutjanus bohar	Coast of Philippines	Western Coral Triangle
+Transversotrema licinum	Manter, 1970          	Lutjanus bohar	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Lutjanus adetii	Australia: Coast of Queensland	Northeast Australian Shelf
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Liza vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hymenocotta mulli	Manter, 1961          	Liza vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Liza vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Liza subviridis	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema patialense	(Soparkar, 1924)          	Liza subviridis	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema exquisitum	Cribb, Bray & Barker, 1992        	Liza subviridis	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Liza subviridis	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudopecoeloides mugilis	Shen, 1990          	Liza macrolepis	South China Sea	South China Sea
+Prohaplosplanchnus diorchis	Tang & Lin, 1978        	Liza haematocheilae	South China Sea	South China Sea
+Phanurus oligoovus	Liu & Yang, 2002        	Liza carinatus	South China Sea	South China Sea
+Pseudohapladena lizae	Liu & Yang, 2002        	Liza carinatus	South China Sea	South China Sea
+Lasiotocus lizae	Liu, 2002          	Liza carinatus	South China Sea	South China Sea
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Liza argentea	Australia: Coast of Queensland	Northeast Australian Shelf
+Hapalotrema flecterotestis	Zhukov, 1971          	Liocassis brashnikowi	South China Sea	South China Sea
+Podocotyle lethrini	Yamaguti, 1942          	Lethrinus ornatus	South China Sea	South China Sea
+Podocotyle lethrini	Yamaguti, 1942          	Lethrinus orantus	South China Sea	South China Sea
+Stephanostomum pagrosomi	(Yamaguti, 1939)          	Lethrinus nebulosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithochirium keokeo	Yamaguti, 1970          	Lethrinus nebulosus	South China Sea	South China Sea
+Tubulovesicula angusticauda	(Nicoll, 1915)          	Lethrinus miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Lethrinus miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum pagrosomi	(Yamaguti, 1939)          	Lethrinus miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Macvicaria macassarensis	(Yamaguti, 1952)          	Lethrinus miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum aaravi	Bray & Cribb, 2003        	Lethrinus miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Lethrinus miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hamacreadium lethrini	Yamaguti, 1934          	Lethrinus erythropterus	Coast of Philippines	Western Coral Triangle
+Stephanostomum pagrosomi	(Yamaguti, 1939)          	Lethrinus atkinsoni	Australia: Coast of Queensland	Northeast Australian Shelf
+Zoogonus pagrosomi	Yamaguti, 1939          	Lethrinus atkinsoni	Australia: Coast of Queensland	Northeast Australian Shelf
+Plagioporus leiognathi	Wang, Wang & Zhang, 1992        	Leiognathus ruconius	South China Sea	South China Sea
+Bucephalopsis scombropsis	Yamaguti, 1938          	Leiocassis hainensis	South China Sea	South China Sea
+Prototransversotrema steeri	(Angel, 1969)          	Lates calcarifer	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Lates calcarifer	Queensland	Northeast Australian Shelf
+Transversotrema patialense	(Soparkar, 1924)          	Lates calcarifer	Coast of Philippines	Western Coral Triangle
+Erilepturus hamati	(Yamaguti, 1934)          	Lates calcarifer	Australia: Coast of N Territories	Sahul Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Lates calcarifer	Coast of Philippines	Western Coral Triangle
+Cruoricola lates	Herbert, Shaharom-Harrison & Overstreet, 1994        	Lates calcarifer	Queensland	Northeast Australian Shelf
+Prosorhynchus luzonicus	Velasquez, 1959          	Lates calcarifer	Coast of Philippines	Western Coral Triangle
+Pseudometadena celebesensis	Yamaguti, 1952          	Lates calcarifer	Coast of Philippines	Western Coral Triangle
+Biovarium xiamenense	Liu, 1996          	Lateolabrax japonicus	South China Sea	South China Sea
+Stephanostomum lateolabracis	Liu, 1998          	Lateolabrax japonicus	South China Sea	South China Sea
+Plagioporus eleutheronemae	Wang, Wang & Zhang, 1992        	Lateolabrax japonicus	South China Sea	South China Sea
+Heterolebes dongshanensis	Liu, 1999          	Lagocephalus lunaris spadiceus	South China Sea	South China Sea
+Heterolebes lagocephali	Liu, 1999          	Lagocephalus lunaris spadiceus	South China Sea	South China Sea
+Opistholebes dongshanensis	Liu, 1999          	Lagocephalus lunaris spadiceus	South China Sea	South China Sea
+Bianium plicitum	(Linton, 1928)          	Lagocephalus inermis	Australia: Coast of Queensland	Northeast Australian Shelf
+Rhipidocotyle labroidei	Jones, Grutter & Cribb, 2003        	Labroides dimidiatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema chilostoma	(Machida, 1980)          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Cadenatella pacifica	(Yamaguti, 1970)          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema kyphosi	(Yamaguti, 1970)          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Koseiria xishaensis	Gu & Shen, 1983        	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Enenterum aureum	Linton, 1910          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Opisthadena dimidia	Linton, 1910          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Cadenatella isuzumi	Machida, 1993          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Enenterum elongatum	Yamaguti, 1970          	Kyphosus vaigiensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Machidatrema chilostoma	(Machida, 1980)          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Cadenatella pacifica	(Yamaguti, 1970)          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Machidatrema kyphosi	(Yamaguti, 1970)          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Cadenatella pacifica	(Yamaguti, 1970)          	Kyphosus cinerascens	Australia: Coast of Queensland	Northeast Australian Shelf
+Koseiria xishaensis	Gu & Shen, 1983        	Kyphosus cinerascens	Australia: Coast of Queensland	Northeast Australian Shelf
+Opisthadena dimidia	Linton, 1910          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Opisthadena dimidia	Linton, 1910          	Kyphosus cinerascens	Australia: Coast of Queensland	Northeast Australian Shelf
+Cadenatella isuzumi	Machida, 1993          	Kyphosus cinerascens	Australia: Coast of Queensland	Northeast Australian Shelf
+Koseiria tahmeli	Nagaty, 1942          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Deontacylix kyphosi	Yamaguti, 1970          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Enenterum elongatum	Yamaguti, 1970          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Enenterum kyphosi	Yamaguti, 1970          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Genolinea kyphosi	Yamaguti, 1970          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Jeancadenatia pacifica	Yamaguti, 1970          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Opisthadena kyphosi	Yamaguti, 1970          	Kyphosus cinerascens	Hawaiian coast	Hawaii
+Adenodidymocystis intestinalis	Yamaguti, 1970          	Katsuwonus pelamys	Hawaiian coast	Hawaii
+Coeliodidymocystis kamegaii	Yamaguti, 1970          	Katsuwonus pelamys	Hawaiian coast	Hawaii
+Didymocystoides pinnicola	Yamaguti, 1970          	Katsuwonus pelamys	Hawaiian coast	Hawaii
+Diploproctodaeum waki	Shen, 1990          	Johnius sina	South China Sea	South China Sea
+Xystretrum papillosum	          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hirudinella marina	(Garcin, 1730)          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Cardicola grandis	Lebedev & Mamaev, 1968        	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Glomeritrema subcuticola	Yamaguti, 1942          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Angionematobothrium jugulare	Yamaguti, 1970          	Istiophorus platypterus	Hawaiian coast	Hawaii
+Angionematobothrium jugulare	Yamaguti, 1970          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Cypseluritrematoides triangularis	Yamaguti, 1970          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Makairatrema musculicola	Yamaguti, 1970          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Metadidymozoon branchiale	Yamaguti, 1970          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neodidymozooides microstoma	Yamaguti, 1970          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neodidymozoon macrostoma	Yamaguti, 1970          	Istiophorus platypterus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Istiblennius meleagris	Australia: Coast of Queensland	Northeast Australian Shelf
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Istiblennius edentulus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudoprosorhynchus fusiformis	Wang, 1985          	Inimicus japonicus	South China Sea	South China Sea
+Indodidymozoon ditremion	Anderson & Cribb, 1995        	Inegocia japonica	Australia: Coast of Queensland	Northeast Australian Shelf
+Plagioporus sillagonis	Yamaguti, 1938         	Ilisha elongata	South China Sea	South China Sea
+Lecithaster stellatus	Looss, 1906          	Hyporhamphus sayori	Australia: Coast of Queensland	Northeast Australian Shelf
+Opegaster brevifistula	Ozaki, 1928          	Hoplosebastes armatus	South China Sea	South China Sea
+Lecithochirium holocentri	Yamaguti, 1970          	Holocentrus rubrum	South China Sea	South China Sea
+Dollfustrema hippocampi	(Shen, 1982)          	Hippocampus trimaculatus	South China Sea	South China Sea
+Aphanurus stossichii	(Monticelli, 1891)          	Herklotsichthys dispilonotus	Coast of Philippines	Western Coral Triangle
+Paradiscogaster flindersi	Bray, Cribb & Barker, 1994        	Heniochus varius	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Heniochus varius	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Heniochus varius	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Heniochus chrysostomus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster chaetodontis	Yamaguti, 1938          	Heniochus chrysostomus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepocreadium clavatum	(Ozaki, 1932)          	Hemitaurichthys zoster	Hawaiian coast	Hawaii
+Lepotrema clavatum	Ozaki, 1932          	Hemitaurichthys zoster	Hawaiian coast	Hawaii
+Transversotrema patialense	(Soparkar, 1924)          	Hemirhamphus georgii	Coast of Philippines	Western Coral Triangle
+Treptodemoides xinyingensis	Shen, 1995          	Hemirhamphus far	South China Sea	South China Sea
+Callohelmis pichelinae	Cribb & Bray, 1999        	Hemigymnus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Deretrema woolcockae	Cribb, Wright & Bray, 1999        	Hemigymnus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Bucephalus harpodontis	Wang, 1980          	Harpodon nehereus	South China Sea	South China Sea
+Bucephalus retractilis	Yamaguti, 1952          	Harengula nymphaea	South China Sea	South China Sea
+Helicometra fusiformis	Wang, Wang & Zhang, 1992        	Hapalogenys mucronatus	South China Sea	South China Sea
+Helicometra hapalogenyos	Wang, Wang & Zhang, 1992        	Hapalogenys mucronatus	South China Sea	South China Sea
+Plagioporus oligolecithosus	Wang, Wang & Zhang, 1992        	Hapalogenys mucronatus	South China Sea	South China Sea
+Podocotyle longiforme	Wang, Wang & Zhang, 1992        	Hapalogenys mucronatus	South China Sea	South China Sea
+Sterrhurus microvatus	Yamaguti, 1970          	Halieutaea stellata	South China Sea	South China Sea
+Folliculovarium gymnothoracis	Gu & Shen, 1983        	Gymnothorax undulatus	South China Sea	South China Sea
+Heterobucephalopsis gymnothoracis	Gu & Shen, 1983        	Gymnothorax undulatus	South China Sea	South China Sea
+Proctotrematoides gymnothoracis	Shen, 1990          	Gymnothorax undulatus	South China Sea	South China Sea
+Proctotrematoides gymnothoracis	Shen, 1990          	Gymnothorax pictus	South China Sea	South China Sea
+Tubulovesicula spari	Yamaguti, 1934          	Gymnothorax pictus	South China Sea	South China Sea
+Neodollfustrema xishaense	Gu & Shen, 1983        	Gymnothorax melanospilus	South China Sea	South China Sea
+Hamacreadium gymnomuraenae	Shen & Li, 2000        	Gymnomuraena tigrina	South China Sea	South China Sea
+Propycnadenoides philippinensis	Fischthal & Thomas, 1964        	Gymnocranius griseus	Coast of Philippines	Western Coral Triangle
+Stephanostomum pagrosomi	(Yamaguti, 1939)          	Gymnocranius audleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Plerurus digitatus	(Looss, 1899)          	Grammatorcynus bicarinatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Ovipusillus mayu	Dove & Cribb, 1998        	Gnathanodon speciosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Prosorhynchus glyptothoracis	Zhang, 1984          	Glyptothorax sinense	South China Sea	South China Sea
+Aphanurus orientalis	Liu, 1995          	Glossogobius olivaceus	South China Sea	South China Sea
+Erilepturus lemeriensis	(Tubangui & Masilungan, 1934)        	Glossogobius giurus	Coast of Philippines	Western Coral Triangle
+Opecoelus minimus	(Tubangui, 1928)          	Glossogobius giurus	Coast of Philippines	Western Coral Triangle
+Prosorhynchus crucibulum	Rudolphi, 1819          	Glossogobius giurus	Coast of Philippines	Western Coral Triangle
+Azygia pristipomai	Tubangui, 1928          	Glossogobius giurus	Coast of Philippines	Western Coral Triangle
+Opecoelus minimus	(Tubangui, 1928)          	Glossogobius biocellatus	Coast of Philippines	Western Coral Triangle
+Prototransversotrema steeri	(Angel, 1969)          	Girella tricuspidata	Queensland	Northeast Australian Shelf
+Neoapocreadium karwarensis	(Hafeezullah, 1970)          	Gerres subfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neolebouria moretonensis	Aken'Ova & Cribb, 2001        	Gerres subfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Homalometron stradbrokensis	Cribb & Bray, 1999        	Gerres subfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Marsupioacetabulum opallioderma	Cribb & Bray, 1999        	Gerres subfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Marsupioacetabulum marinum	Yamaguti, 1952          	Gerres punctatus	Pacific coast of Indonesia	Western Coral Triangle
+Ozakia gerris	Shen, 1990          	Gerres macrosoma	South China Sea	South China Sea
+Ozakia gerris	Shen, 1990          	Gerres filamentosus	South China Sea	South China Sea
+Monostephanostomum gazzae	(Shen, 1990)          	Gazza minuta	South China Sea	South China Sea
+Rhipidocotyle gazzae	(Shen, 1990)          	Gazza minuta	South China Sea	South China Sea
+Elongoparorchis pneumatis	Rao, 1961          	Gazza minuta	Coast of Philippines	Western Coral Triangle
+Bucephalus gazzae	Shen, 1990          	Gazza minuta	South China Sea	South China Sea
+Stephanostomum gazzae	Shen, 1990          	Gazza minuta	South China Sea	South China Sea
+Rhipidocotyle eggletoni	Velasquez, 1959          	Gazza minuta	Coast of Philippines	Western Coral Triangle
+Prototransversotrema steeri	(Angel, 1969)          	Gambusia affinis	Queensland	Northeast Australian Shelf
+Ascocotyle felippei	Price, 1935          	Gambusia affinis	Hawaiian Islands	Hawaii
+Bianium hemistoma	(Ozaki, 1928)          	Fugu oblongus	South China Sea	South China Sea
+Bianium isostoma	Liu, 1997          	Fugu oblongus	South China Sea	South China Sea
+Paradeontacylix sinensis	Liu, 1997          	Fugu oblongus	South China Sea	South China Sea
+Bianium hemistoma	(Ozaki, 1928)          	Fugu alboplumbeus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithocladium excisiforme	Cohn, 1902          	Formio niger	South China Sea	South China Sea
+Opisthomonorcheides indicus	Karyakarte & Yadav, 1976        	Formio niger	South China Sea	South China Sea
+Rhynchopharynx formionis	Shen, 1986          	Formio niger	South China Sea	South China Sea
+Skrjabinopsolus sanyaensis	Shen, 1990          	Formio niger	South China Sea	South China Sea
+Mitotrema anthostomatum	Manter, 1963          	Forcipiger flavissimus	Australia: Coast of Queensland	Northeast Australian Shelf
+Callogonotrema fistulariae	Oshmarin, 1965          	Fistularia petimba	South China Sea	South China Sea
+Stephanostomum petimba	Yamaguti, 1970          	Fistularia petimba	Hawaiian coast	Hawaii
+Stephanostomum yagara	Yamaguti, 1970          	Fistularia petimba	Hawaiian coast	Hawaii
+Neoallolepidapedon hawaiiense	Yamaguti, 1970          	Fistularia petimba	South China Sea	South China Sea
+Didymocystis ovata	Ishii, 1935          	Euthynnus yaito	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Euthynnus affinis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bucephaloides sibi	(Yamaguti, 1940)          	Euthynnus affinis	Coast of Philippines	Western Coral Triangle
+Prosorhynchoides sibi	(Yamaguti, 1940)          	Euthynnus affinis	Coast of Philippines	Western Coral Triangle
+Lobatocystis euthynni	Ching & Madhavi, 1999        	Euthynnus affinis	Pacific coast of Indonesia	Western Coral Triangle
+Cardicola congruenta	Lebedev & Mamaev, 1968        	Euthynnus affinis	South China Sea	South China Sea
+Lecithochirium magnaporum	Manter, 1940          	Euthynnus affinis	Coast of Philippines	Western Coral Triangle
+Lobatocystis yaito	Yamaguti, 1965          	Euthynnus affinis	Hawaiian coast	Hawaii
+Neonematobothrium kawakawa	Yamaguti, 1965          	Euthynnus affinis	Hawaiian coast	Hawaii
+Allodidymocodium unitubulare	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Allopseudocolocyntotrema claviforme	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Didymocodium euthynni	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Didymocystoides exiguus	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Didymozoon diverticulatum	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Kamegaia kawakawa	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Lecithochirium kawakawa	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Neonematobothrium dorsale	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Opepherocystis kawakawa	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Opepherotrematoides multitubularis	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Osteodidymocodium kawakawa	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Plerurus kawakawa	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Pseudocolocyntotrema yaito	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Rhipidocotyle kawakawa	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Triplocystoides yaito	Yamaguti, 1970          	Euthynnus affinis	Hawaiian coast	Hawaii
+Lecithochirium kawakawa	Yamaguti, 1970          	Euthynnus affinis	Australia: Coast of Queensland	Northeast Australian Shelf
+Prosogonarium angelae	Cribb & Bray, 1994        	Euristhmus lepturus	Australia: Coast of Queensland	Northeast Australian Shelf
+Monodhelmis torpedinis	Dollfus, 1937          	Euristhmus lepturus	Australia: Coast of Queensland	Northeast Australian Shelf
+Helicometra fasciata	(Rudolphi, 1819)          	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Cainocreadium epinepheli	(Yamaguti, 1934)          	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Allopodocotyle epinepheli	(Yamaguti, 1942)          	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides kerapu	{of Rigby et al., 1997) [nom. nud.]     	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pearsonellum corventum	Overstreet & Koie, 1989        	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Bivesicula claviformis	Yamaguti, 1934          	Epinephelus quoyanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides querni	Yamaguti, 1970          	Epinephelus quernus	Hawaiian coast	Hawaii
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Epinephelus ongus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pearsonellum corventum	Overstreet & Koie, 1989        	Epinephelus ongus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pacificreadium serrani	(Nagaty & Abdel Aal, 1962)       	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Helicometra fasciata	(Rudolphi, 1819)          	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Cainocreadium epinepheli	(Yamaguti, 1934)          	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides kerapu	{of Rigby et al., 1997) [nom. nud.]     	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudoplagioporus interruptus	Durio & Manter, 1968        	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Pearsonellum corventum	Overstreet & Koie, 1989        	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Bivesicula claviformis	Yamaguti, 1934          	Epinephelus merra	Australia: Coast of Queensland	Northeast Australian Shelf
+Erilepturus hamati	(Yamaguti, 1934)          	Epinephelus malabaricus	Coast of Philippines	Western Coral Triangle
+Prosorhynchus pacificus	Manter, 1940          	Epinephelus malabaricus	Coast of Philippines	Western Coral Triangle
+Prosorhynchus epinepheli	Yamaguti, 1939          	Epinephelus kohleri	South China Sea	South China Sea
+Gonapodasmius haemuli	(MacCallum & MacCallum, 1916)        	Epinephelus guernus	Hawaiian coast	Hawaii
+Mitotrema anthostomatum	Manter, 1963          	Epinephelus fuscoguttatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Helicometra fasciata	(Rudolphi, 1819)          	Epinephelus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Allopodocotyle epinepheli	(Yamaguti, 1942)          	Epinephelus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides kerapu	{of Rigby et al., 1997) [nom. nud.]     	Epinephelus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Epinephelus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Folliculovarium xishaense	Gu & Shen, 1983        	Epinephelus fasciatus	South China Sea	South China Sea
+Bivesicula claviformis	Yamaguti, 1934          	Epinephelus fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Bivesicula claviformis	Yamaguti, 1934          	Epinephelus fasciatus	South China Sea	South China Sea
+Lepidapedoides dollfusi	(Durio & Manter, 1968)        	Epinephelus cyanopodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Epinephelus cyanopodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Multitestis pyriformis	Manter, 1963          	Epinephelus cyanopodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Prosorhynchus mcintoshi	(Velasquez, 1959)          	Epinephelus bleekeri	Coast of Philippines	Western Coral Triangle
+Helicometra aposinuata	Pritchard, 1966          	Epinephelus awoara	South China Sea	South China Sea
+Plagioporus oligolecithosus	Wang, Wang & Zhang, 1992        	Epinephelus awoara	South China Sea	South China Sea
+Helicometra epinepheli	Yamaguti, 1934          	Epinephelus akaara	South China Sea	South China Sea
+Diploproctodaeum rutellum	(Mamaev, 1970)          	Ephippus orbis	South China Sea	South China Sea
+Duosphincter zancli	Manter & Pritchard, 1960        	Elops saurus	South China Sea	South China Sea
+Plagioporus eleutheronemae	Wang, Wang & Zhang, 1992        	Eleutheronema tetradactylus	South China Sea	South China Sea
+Ascocotyle felippei	Price, 1935          	Eleotris sandwicensis	Hawaiian Islands	Hawaii
+Torticaecum nipponicum	Yamaguti, 1942          	Eleotris fusca	Coast of Philippines	Western Coral Triangle
+Tubulovesicula angusticauda	(Nicoll, 1915)          	Echeneis naucrates	Australia: Coast of Queensland	Northeast Australian Shelf
+Echeneidocoelium indicum	Simha & Pershad, 1964        	Echeneis naucrates	Australia: Coast of Queensland	Northeast Australian Shelf
+Parahemiurus clupeae	Yamaguti, 1953          	Dussumieria hasseltii	South China Sea	South China Sea
+Diploproctia drepanei	Mamaev, 1970          	Drepane punctata	South China Sea	South China Sea
+Hypocreadium drepanei	Shen, 1990          	Drepane punctata	South China Sea	South China Sea
+Hypocreadium drepanei	Shen, 1990          	Drepane longimana	South China Sea	South China Sea
+Lepocreadium drepanei	Shen, 1990          	Drepane longimana	South China Sea	South China Sea
+Thulinia microrchis	(Yamaguti, 1934)          	Dischistodus melanotus	Australia: Coast of Queensland	Northeast Australian Shelf
+Ectenurus trachuri	(Yamaguti, 1934)          	Diploprion bifasciatum	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Diploprion bifasciatum	Australia: Coast of Queensland	Northeast Australian Shelf
+Aephnidiogenes hainanensis	Shen & Tung, 1990        	Diagramma pictum	South China Sea	South China Sea
+Aephnidiogenes major	Yamaguti, 1934          	Diagramma pictum	South China Sea	South China Sea
+Paramonorcheides pseudocaranxi	Dove & Cribb, 1998        	Diagramma labiosum	Australia: Coast of Queensland	Northeast Australian Shelf
+Aephnidiogenes major	Yamaguti, 1934          	Diagramma labiosum	Australia: Coast of Queensland	Northeast Australian Shelf
+Ectenurus lepidus	Looss, 1907          	Decapterus maruadsi	South China Sea	South China Sea
+Plagioporus branchiostegi	Yamaguti, 1937          	Decapterus maruadsi	South China Sea	South China Sea
+Plagioporus branchiostegi	Yamaguti, 1937          	Decapterus lajand	South China Sea	South China Sea
+Prosorhynchus clavatum	Wang, 1980          	Dasyatis kuhlii	South China Sea	South China Sea
+Thulinia microrchis	(Yamaguti, 1934)          	Dascyllus reticulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Dascyllus reticulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Dascyllus aruanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Dascyllus aruanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Dascyllus aruanus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepocreadium clavatum	(Ozaki, 1932)          	Dascyllus albisella	Hawaiian coast	Hawaii
+Lepotrema clavatum	Ozaki, 1932          	Dascyllus albisella	Hawaiian coast	Hawaii
+Anisoporus cobraeformis	Ozaki, 1928          	Dactylopterus orientalis	South China Sea	South China Sea
+Diplangus hainanensis	Shen, 1990          	Cypselurus bahiensis	South China Sea	South China Sea
+Aponurus laguncula	Looss, 1907          	Cynoglossus semilaevis	South China Sea	South China Sea
+Opecoelus himezi	Yamaguti, 1951          	Cynoglossus joyneri	South China Sea	South China Sea
+Plagioporus spari	Yamaguti, 1951          	Cynoglossus joyneri	South China Sea	South China Sea
+Lepocreadioides orientalis	Park, 1939          	Cynoglossus bilineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema hawaiiense	Pritchard & Manter, 1961        	Ctenochaetus strigosus	Hawaiian coast	Hawaii
+Mitotrema anthostomatum	Manter, 1963          	Cromileptes altivelis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Crenimugil labiosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hymenocotta mulli	Manter, 1961          	Crenimugil labiosus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Crenimugil crenilabis	Australia: Coast of Queensland	Northeast Australian Shelf
+Crusziella formosa	Cribb, Bray & Barker, 1992        	Crenimugil crenilabis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hymenocotta mulli	Manter, 1961          	Crenimugil crenilabis	Australia: Coast of Queensland	Northeast Australian Shelf
+Provitellotrema crenimugilis	Pan, 1984          	Crenimugil crenilabis	South China Sea	South China Sea
+Galactosomum bearupi	Pearson, 1973          	Crenimugil crenilabis	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Craterocephalus marjoriae	Queensland	Northeast Australian Shelf
+Hirudinella clavata	(Menzies, 1791)          	Coryphaena hippurus	Hawaiian coast	Hawaii
+Dinurus longisinus	Looss          	Coryphaena hippurus	South China Sea	South China Sea
+Dinurus longisinus	Looss, 1907          	Coryphaena hippurus	South China Sea	South China Sea
+Dinurus longisinus	Looss, 1907          	Coryphaena hippurus	Coast of New Guinea	Western Coral Triangle
+Tetrochetus coryphaenae	Yamaguti, 1934          	Coryphaena hippurus	South China Sea	South China Sea
+Multitestis pyriformis	Manter, 1963          	Coradion chrysozonus	Australia: Coast of Queensland	Northeast Australian Shelf
+Coitocaecum anaspidis	Hickman & Macfarlane, 1939        	Collichthys lucidus	South China Sea	South China Sea
+Aphanurus stossichii	(Monticelli, 1891)          	Coilia nasus	South China Sea	South China Sea
+Neoaphanurus magniprotesticus	Tang, Shi & Pan, 1983        	Coilia mystus	South China Sea	South China Sea
+Lecithaster confusus	Odhner, 1905          	Coilia grayii	South China Sea	South China Sea
+Rhipidocotyle coiliae	Wang, 1980          	Coilia ectenes	South China Sea	South China Sea
+Dollfustrema cociellae	(Gu & Shen, 1976)        	Cociella crocodila	South China Sea	South China Sea
+Telorhynchus cociellae	Gu & Shen, 1976        	Cociella crocodila	South China Sea	South China Sea
+Aphanurus xiamenensis	Liu, 1995          	Clupanodon punctatus	South China Sea	South China Sea
+Lecithaster clupanodonae	Liu, 1995          	Clupanodon punctatus	South China Sea	South China Sea
+Opecoelus minimus	(Tubangui, 1928)          	Clarias batrachus	Coast of Philippines	Western Coral Triangle
+Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Cirrhitus alternatus	Hawaiian coast	Hawaii
+Rhipidocotyle coiliae	Wang, 1980          	Cirrhimuraena chinensis	South China Sea	South China Sea
+Hysterolecitha nahaensis	Yamaguti, 1942          	Chrysiptera rollandi	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Chrysiptera flavipinnis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Chrysiptera flavipinnis	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Chromis viridis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Chromis viridis	Australia: Coast of Queensland	Northeast Australian Shelf
+Podocotyle atomon	(Rudolphi, 1802)          	Chromis notatus	South China Sea	South China Sea
+Helicometra hypodytis	Yamaguti, 1934         	Chromis notatus	South China Sea	South China Sea
+Hysterolecitha nahaensis	Yamaguti, 1942          	Chromis nitida	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Chromis atripectoralis	Australia: Coast of Queensland	Northeast Australian Shelf
+Uterovesiculurus sinensis	Gu & Shen, 1978        	Chorinemus lysan	South China Sea	South China Sea
+Venusicola inusitatus	Bray & Cribb, 2000        	Choerodon venustus	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon spissum	Bray, Cribb & Barker, 1997        	Choerodon venustus	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon uberis	Bray, Cribb & Barker, 1997        	Choerodon venustus	Australia: Coast of Queensland	Northeast Australian Shelf
+Callohelmis pichelinae	Cribb & Bray, 1999        	Choerodon venustus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema haasi	Witenberg, 1944          	Choerodon venustus	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon spissum	Bray, Cribb & Barker, 1997        	Choerodon schoenleinii	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon uberis	Bray, Cribb & Barker, 1997        	Choerodon schoenleinii	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon secundum	(Durio & Manter, 1968)        	Choerodon graphicus	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon spissum	Bray, Cribb & Barker, 1997        	Choerodon fasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Proctoeces maculatus	(Looss, 1901)          	Choerodon cyanodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Postlepidapedon spissum	Bray, Cribb & Barker, 1997        	Choerodon cyanodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Choerodon cyanodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Choerodon cyanodus	Australia: Coast of Queensland	Northeast Australian Shelf
+Podocotyle lanceolata	Price, 1934          	Choerodon azurio	South China Sea	South China Sea
+Macvicaria longisaccus	(Fischthal & Kuntz, 1964)        	Choerodon anchorago	Coast of Philippines	Western Coral Triangle
+Parahemiurus merus	(Linton, 1910)          	Chlorophthalmus agassizi	South China Sea	South China Sea
+Pseudopecoelina chirocentrosus	Shen, 1986          	Chirocentrus nudus	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Chirocentrus dorab	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha chirocentri	Ku & Shen, 1964        	Chirocentrus dorab	South China Sea	South China Sea
+Acanthocolpus liodorus	Luhe, 1906          	Chirocentrus dorab	South China Sea	South China Sea
+Stephanostomoides dorabi	Mamaev & Oshmarin, 1966        	Chirocentrus dorab	South China Sea	South China Sea
+Pseudopecoelina chirocentrosus	Shen, 1986          	Chirocentrus dorab	South China Sea	South China Sea
+Sterrhurus chirocentri	Shen, 1990          	Chirocentrus dorab	South China Sea	South China Sea
+Stomachicola hainanensis	Shen, 1990          	Chirocentrus dorab	South China Sea	South China Sea
+Paracryptogonimus ovatus	Yamaguti, 1952          	Chirocentrus dorab	South China Sea	South China Sea
+Paucivitellosus fragilis	Coil, Reid & Kuntz, 1965        	Chelon troscheli	South China Sea	South China Sea
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chelmon rostratus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pleorchis uku	Yamaguti          	Chelidonichthys kumu	South China Sea	South China Sea
+Lecithophyllum cheilionis	(Fischthal & Kuntz, 1964)        	Cheilio inermis	Coast of Philippines	Western Coral Triangle
+Diplobulbus minutus	Pritchard, 1966          	Cheilio inermis	Hawaiian coast	Hawaii
+Lecithaster stellatus	Looss, 1906          	Cheilinus diagrammus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema haasi	Witenberg, 1944          	Cheilinus diagrammus	Coast of Philippines	Western Coral Triangle
+Transversotrema patialense	(Soparkar, 1924)          	Chanos chanos	Coast of Philippines	Western Coral Triangle
+Genolinea awa	(Yamaguti, 1965)          	Chanos chanos	Coast of Philippines	Western Coral Triangle
+Isorchis parvus	Durio & Manter, 1969        	Chanos chanos	Coast of Philippines	Western Coral Triangle
+Manteriella chanis	Shen, 1986          	Chanos chanos	South China Sea	South China Sea
+Pseudobunocotyla awa	Yamaguti, 1965          	Chanos chanos	Coast of Philippines	Western Coral Triangle
+Opecoelus minimus	(Tubangui, 1928)          	Channa striata	Coast of Philippines	Western Coral Triangle
+Neopreptetos kurochkini	(Toman, 1989)          	Chaetodontoplus meredithi	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Chaetodontoplus meredithi	Australia: Coast of Queensland	Northeast Australian Shelf
+Koseiria huxleyi	Bray & Cribb, 2001        	Chaetodontoplus meredithi	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon vagabundus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon unimaculatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon unimaculatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster quasimodo	Bray, Cribb & Barker, 1994        	Chaetodon ulietensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon ulietensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon ulietensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster chaetodontis	Yamaguti, 1938          	Chaetodon ulietensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster flindersi	Bray, Cribb & Barker, 1994        	Chaetodon trifasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Symmetrovesicula chaetodontis	Yamaguti, 1938          	Chaetodon trifasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster flindersi	Bray, Cribb & Barker, 1994        	Chaetodon trifascialis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon trifascialis	Marshall Islands	Marshall, Gilbert and Ellis Islands
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon trifascialis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon speculum	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon speculum	Australia: Coast of Queensland	Northeast Australian Shelf
+Symmetrovesicula chaetodontis	Yamaguti, 1938          	Chaetodon speculum	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster flindersi	Bray, Cribb & Barker, 1994        	Chaetodon rainfordi	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon rainfordi	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon rainfordi	Australia: Coast of Queensland	Northeast Australian Shelf
+Symmetrovesicula chaetodontis	Yamaguti, 1938          	Chaetodon rainfordi	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster flindersi	Bray, Cribb & Barker, 1994        	Chaetodon plebeius	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon plebeius	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon plebeius	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster chaetodontis	Yamaguti, 1938          	Chaetodon plebeius	Australia: Coast of Queensland	Northeast Australian Shelf
+Symmetrovesicula chaetodontis	Yamaguti, 1938          	Chaetodon plebeius	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon pelewensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Chaetodon pelewensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster flindersi	Bray, Cribb & Barker, 1994        	Chaetodon ornatissimus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon ornatissimus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster quasimodo	Bray, Cribb & Barker, 1994        	Chaetodon ornatissimus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon ornatissimus	Australia: Coast of Queensland	Northeast Australian Shelf
+Podocotyloides stenometra	Pritchard, 1966          	Chaetodon multicinctus	Hawaiian coast	Hawaii
+Lecithaster xiamenensis	Liu, 1995          	Chaetodon modestus	South China Sea	South China Sea
+Cardicola chaetodontis	Yamaguti, 1970          	Chaetodon miliaris	Hawaiian coast	Hawaii
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon mertensii	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Chaetodon mertensii	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon melannotus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster chaetodontis	Yamaguti, 1938          	Chaetodon melannotus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster quasimodo	Bray, Cribb & Barker, 1994        	Chaetodon lineolatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon lineolatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster chaetodontis	Yamaguti, 1938          	Chaetodon lineolatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Chaetodon kleinii	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon kleinii	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Chaetodon fremblii	Hawaiian coast	Hawaii
+Cardicola chaetodontis	Yamaguti, 1970          	Chaetodon fremblii	Hawaiian coast	Hawaii
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon flavirostris	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon flavirostris	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Chaetodon citrinellus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon citrinellus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon bennetti	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon bennetti	Australia: Coast of Queensland	Northeast Australian Shelf
+Symmetrovesicula chaetodontis	Yamaguti, 1938          	Chaetodon bennetti	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon baronessa	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster quasimodo	Bray, Cribb & Barker, 1994        	Chaetodon auriga	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon auriga	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster chaetodontis	Yamaguti, 1938          	Chaetodon auriga	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster glebulae	Bray, Cribb & Barker, 1994        	Chaetodon aureofasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Neohypocreadium dorsoporum	Machida & Uchida, 1987        	Chaetodon aureofasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Chaetodon aureofasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paradiscogaster eniwetokensis	Martin & Hammerich, 1970        	Chaetodon aureofasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Symmetrovesicula chaetodontis	Yamaguti, 1938          	Chaetodon aureofasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Acanthocolpus acanthocepolae	Shen, 1990          	Cepola schlegeli	South China Sea	South China Sea
+Gonapodasmius branchialis	Yamaguti, 1970          	Cephalopholis platycentron	South China Sea	South China Sea
+Gonapodasmius branchialis	Yamaguti, 1970          	Cephalopholis pachycentron	South China Sea	South China Sea
+Lepidapedoides angustus	Bray, Cribb & Barker, 1996        	Cephalopholis miniatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Didymosulcus orbitalis	(Yamaguti, 1970)          	Carcharhinus longimanus	Hawaiian coast	Hawaii
+Aponurus uraspis	Shen, 1990          	Uraspis helvola	South China Sea	South China Sea
+Lecithochirium priacanthi	Yamaguti, 1953          	Uraspis helvola	South China Sea	South China Sea
+Ectenurus trachuri	(Yamaguti, 1934)          	Caranx sexfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum nyoomwa	Bray & Cribb, 2003        	Caranx sexfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Rhipidocotyle carangi	Shen, 1990          	Caranx sexfasciatus	South China Sea	South China Sea
+Stephanostomum hawaiiense	Yamaguti, 1970          	Caranx sexfasciatus	Hawaiian coast	Hawaii
+Acanthocolpus sanyaensis	Shen, 1990          	Caranx malabaricus	South China Sea	South China Sea
+Stephanostomum madhaviae	Bray & Cribb, 2003        	Caranx ignobilis	Australia: Coast of Queensland	Northeast Australian Shelf
+Rhipidocotyle xishaensis	Gu & Shen, 1983        	Caranx ignobilis	South China Sea	South China Sea
+Aponurus uraspis	Shen, 1990          	Caranx helvolus	South China Sea	South China Sea
+Bucephalus hainanensis	Shen, 1966          	Carangoides malabaricus	South China Sea	South China Sea
+Acanthocolpus sanyaensis	Shen, 1990          	Carangoides malabaricus	South China Sea	South China Sea
+Oligolecithoides trilobatus	Shen, 1982          	Carangoides chrysophrys	South China Sea	South China Sea
+Oligolecithoides trilobatus	Shen, 1982          	Carangoides chrysophrys	South China Sea	South China Sea
+Dinurus magnacetabulum	Gu & Shen, 1978        	Atule mate	South China Sea	South China Sea
+Opisthomonorcheides decapteri	Parukhin, 1966          	Atule mate	South China Sea	South China Sea
+Plerurus atulis	Shen, 1990          	Atule mate	South China Sea	South China Sea
+Lecithocladium excisum	(Rudolphi, 1819)          	Alepes vari	South China Sea	South China Sea
+Ectenurus carangis	Gu & Shen, 1978        	Alepes djedaba	South China Sea	South China Sea
+Lecithocladium megalaspis	Yamaguti, 1953          	Alepes djedaba	South China Sea	South China Sea
+Tergestia atulis	Shen, 1990          	Alepes djedaba	South China Sea	South China Sea
+Dinurus magnacetabulum	Gu & Shen, 1978        	Carangoides mate	South China Sea	South China Sea
+Opisthomonorcheides decapteri	Parukhin, 1966          	Carangoides mate	South China Sea	South China Sea
+Plerurus atulis	Shen, 1990          	Carangoides mate	South China Sea	South China Sea
+Tormopsolus orientalis	(Yamaguti, 1934)          	Carangoides malabaricus	South China Sea	South China Sea
+Ectenurus carangis	Gu & Shen, 1978        	Carangoides kalla	South China Sea	South China Sea
+Lecithocladium megalaspis	Yamaguti, 1953          	Carangoides kalla	South China Sea	South China Sea
+Plerurus digitatus	(Looss, 1899)          	Carangoides gymnostethoides	Australia: Coast of Queensland	Northeast Australian Shelf
+Plerurus digitatus	(Looss, 1899)          	Carangoides embureyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Tergestia atulis	Shen, 1990          	Carangoides djeddaba	South China Sea	South China Sea
+Dermadena spatiosa	Bray & Cribb, 1996        	Cantheschenia grandisquamis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hypocreadium cavum	Bray & Cribb, 1996        	Cantheschenia grandisquamis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hypocreadium grandisquamis	Bray & Cribb, 1996        	Cantheschenia grandisquamis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepotrema canthescheni	Bray & Cribb, 1996        	Cantheschenia grandisquamis	Australia: Coast of Queensland	Northeast Australian Shelf
+Cableia pudica	Bray, Cribb & Barker, 1996        	Cantheschenia grandisquamis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium rewa	Bray, Cribb & Barker, 1996        	Cantherhines pardalis	Australia: Coast of Queensland	Northeast Australian Shelf
+Cableia pudica	Bray, Cribb & Barker, 1996        	Cantherhines pardalis	Australia: Coast of Queensland	Northeast Australian Shelf
+Cableia pudica	Bray, Cribb & Barker, 1996        	Cantherhines dumerili	Australia: Coast of Queensland	Northeast Australian Shelf
+Trifoliovarium draconis	Bray & Cribb, 2000        	Callionymus sublaevis	Australia: Coast of Queensland	Northeast Australian Shelf
+Aponurus laguncula	Looss, 1907          	Callionymus limiceps	Australia: Coast of Queensland	Northeast Australian Shelf
+Trifoliovarium draconis	Bray & Cribb, 2000        	Callionymus belcheri	Australia: Coast of Queensland	Northeast Australian Shelf
+Prosogonotrema caesionis	Gu & Shen, 1979        	Caesio erythrogaster	South China Sea	South China Sea
+Lepidapedoides ovale	(Yamaguti, 1942)          	Caesio cuning	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepidapedoides parvulus	Bray, Cribb & Barker, 1996        	Caesio cuning	Australia: Coast of Queensland	Northeast Australian Shelf
+Hexangium sigani	Goto & Ozaki, 1929        	Caesio cuning	Coast of Philippines	Western Coral Triangle
+Prosogonotrema bilabiatum	Vigueras, 1940          	Caesio cuning	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema haasi	Witenberg, 1944          	Caesio cuning	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithochirium caesionis	Yamaguti, 1942          	Caesio cuning	Australia: Coast of Queensland	Northeast Australian Shelf
+Trigonotrema alatum	Goto & Ozaki, 1929        	Branchiostegus auratus	South China Sea	South China Sea
+Trigonotrema alatum	Goto & Ozaki, 1929        	Branchiostegus argentatus	South China Sea	South China Sea
+Manteriella hainanensis	Shen, 1990          	Branchiostegus argentatus	South China Sea	South China Sea
+Plagioporus azurionis	Yamaguti, 1951          	Bothus mancus	South China Sea	South China Sea
+Opegaster gobii	Yamaguti, 1952          	Blennius sinensis	South China Sea	South China Sea
+Lecithostaphylus ahaaha	Yamaguti, 1970          	Belone platyura	South China Sea	South China Sea
+Pseudobucephalopsis belonnis	Gu & Shen, 1983        	Belone platyara	South China Sea	South China Sea
+Diplocreadium tsontso	Bray, Cribb & Barker, 1996        	Balistoides conspicillus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lobatocreadium exiguum	(Manter, 1963)          	Balistes undulatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudocreadium hainanensis	Shen, 1990          	Balistes capistratus	South China Sea	South China Sea
+Annulocystis auxis	(Taschenberg, 1879)          	Auxis thazard	Hawaiian coast	Hawaii
+Didymocystoides buccalis	(Yamaguti, 1970)          	Auxis thazard	South China Sea	South China Sea
+Lecithochirium keokeo	Yamaguti, 1970          	Auxis thazard	Hawaiian coast	Hawaii
+Plerurus kawakawa	Yamaguti, 1970          	Auxis thazard	Hawaiian coast	Hawaii
+Pseudocolocyntotrema yaito	Yamaguti, 1970          	Auxis thazard	Hawaiian coast	Hawaii
+Sicuotrema auxis	Yamaguti, 1970          	Auxis thazard	Hawaiian coast	Hawaii
+Didymocystis philobranchia	Yamaguti, 1970          	Auxis thazard	South China Sea	South China Sea
+Koellikeria orientalis	Yamaguti, 1934          	Auxis tapeinosoma	South China Sea	South China Sea
+Bulbocirrus aulostomi	Yamaguti, 1965          	Aulostomus chinensis	Hawaiian coast	Hawaii
+Bulbocirrus aulostomi	Yamaguti, 1965          	Aulostomus chinensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum nunu	Yamaguti, 1970          	Aulostomus chinensis	Hawaiian coast	Hawaii
+Lecithocladium angustiovum	Yamaguti, 1953          	Atule mate	Coast of Philippines	Western Coral Triangle
+Tergestia atropi	Shen, 1990          	Atropus atropus	South China Sea	South China Sea
+Bucephalus retractilis	Yamaguti, 1952          	Atropus atropus	South China Sea	South China Sea
+Ectenurus trachuri	(Yamaguti, 1934)          	Atherinomorus capricornensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Bivesiculoides fusiformis	Cribb, Bray & Barker, 1994        	Atherinomorus capricornensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Trigonocryptus conus	Martin, 1958          	Arothron nigropunctatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Trigonocryptus conus	Martin, 1958          	Arothron hispidus	Hawaiian coast	Hawaii
+Trigonocryptus conus	Martin, 1958          	Arothron hispidus	Australia: Coast of Queensland	Northeast Australian Shelf
+Paracardicola hawaiiensis	Martin, 1960          	Arothron hispidus	Hawaiian coast	Hawaii
+Monodhelmis torpedinis	Dollfus, 1937          	Arius thalassinus	Coast of Philippines	Western Coral Triangle
+Mehratrema arii	Gu & Shen, 1979        	Arius thalassinus	South China Sea	South China Sea
+Elongoparorchis arii	Shen & Tong, 1984        	Arius thalassinus	South China Sea	South China Sea
+Monodhelmis torpedinis	Dollfus, 1937          	Arius sinensis	South China Sea	South China Sea
+Mehratrema arii	Gu & Shen, 1979        	Arius sinensis	South China Sea	South China Sea
+Elongoparorchis arii	Shen & Tong, 1984        	Arius sinensis	South China Sea	South China Sea
+Opecoelus minimus	(Tubangui, 1928)          	Arius manilensis	Coast of Philippines	Western Coral Triangle
+Monodhelmis trichofurcata	(Johnston & Angel, 1940)        	Arius graeffei	Queensland	Northeast Australian Shelf
+Monodhelmis torpedinis	Dollfus, 1937          	Arius graeffei	Australia: Coast of Queensland	Northeast Australian Shelf
+Buckleytrema indica	Gupta, 1956          	Arius graeffei	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum bicoronatum	(Stossich, 1883)          	Argyrosomus hololepidotus	Australia: Coast of Queensland	Northeast Australian Shelf
+Stephanostomum argyrosomi	Shen in Shen & Qiu, 1995      	Argyrosomus argentatus	South China Sea	South China Sea
+Pleorchis hainanensis	Shen, 1983          	Argyrosomus aneus	South China Sea	South China Sea
+Stephanostomum uku	Yamaguti, 1970          	Aprion virescens	Hawaiian coast	Hawaii
+Opecoelina pacifica	Manter, 1940          	Apogonichthys carinatus	South China Sea	South China Sea
+Deretrema philippinense	Beverley-Burton & Early, 1982       	Anomalops katoptron	Coast of Philippines	Western Coral Triangle
+Gyliauchen papillatus	(Goto & Matsudaira, 1918)        	Anodontostoma chacunda	Coast of Philippines	Western Coral Triangle
+Transversotrema patialense	(Soparkar, 1924)          	Anodontostoma chacunda	Coast of Philippines	Western Coral Triangle
+Phyllodistomum magnificum	          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Stegodexamene callista	          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Tubulovesicula angusticauda	(Nicoll, 1915)          	Anguilla reinhardti	Australia: Coast of Queensland	Northeast Australian Shelf
+Tubulovesicula angusticauda	(Nicoll, 1915)          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Opecoelus variabilis	Cribb, 1985          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Austrohalipegus anguillicola	Cribb, 1988          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Paracardicoloides yamagutii	Martin, 1974          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Tetracerasta blepta	Watson, 1984          	Anguilla reinhardti	Queensland	Northeast Australian Shelf
+Rhipidocotyle anguillae	Wang, 1985          	Anguilla mauritiana	South China Sea	South China Sea
+Schikhobalotrema pomacentri	(Manter, 1937)          	Amphiprion perideraion	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Amphiprion perideraion	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Amphiprion perideraion	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Amphiprion perideraion	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema pomacentri	(Manter, 1937)          	Amphiprion akindynos	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pearsoni	Bray, Cribb & Barker, 1993        	Amphiprion akindynos	Australia: Coast of Queensland	Northeast Australian Shelf
+Mitotrema anthostomatum	Manter, 1963          	Amphiprion akindynos	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Amphiprion akindynos	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Amblyglyphidodon leucogaster	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pearsoni	Bray, Cribb & Barker, 1993        	Amblyglyphidodon curacao	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Amblyglyphidodon curacao	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Amblyglyphidodon curacao	Australia: Coast of Queensland	Northeast Australian Shelf
+Bacciger amblygastris	Machida & Kuramochi, 2003        	Amblygaster sirm	Coast of Philippines	Western Coral Triangle
+Parahemiurus clupeae	Yamaguti, 1953          	Amblygaster sirm	Coast of Philippines	Western Coral Triangle
+Parahemiurus merus	(Linton, 1910)          	Amblygaster leiogaster	Pacific coast of Indonesia	Western Coral Triangle
+Aphanurus stossichii	(Monticelli, 1891)          	Amblygaster leiogaster	Pacific coast of Indonesia	Western Coral Triangle
+Prosorhynchus paracrucibulus	Velasquez, 1959          	Ambassis buruensis	Coast of Philippines	Western Coral Triangle
+Lepotrema clavatum	Ozaki, 1932          	Amanses scopas	Australia: Coast of Queensland	Northeast Australian Shelf
+Lintonium vibex	(Linton, 1905)          	Aluterus monoceros	South China Sea	South China Sea
+Stephanostomum imparispine	(Linton, 1905)          	Aluterus monoceros	South China Sea	South China Sea
+Pseudocreadium scaphosomum	Manter, 1940          	Aluterus monoceros	South China Sea	South China Sea
+Paratetrochetus hansoni	Parukhin, 1964          	Aluterus monoceros	South China Sea	South China Sea
+Plectognathotrema ovata	Parukhin, 1964          	Aluterus monoceros	South China Sea	South China Sea
+Tetrochetus hainanensis	Shen, 1986          	Aluterus monoceros	South China Sea	South China Sea
+Discogastroides hainanensis	Shen, 1990          	Aluterus monoceros	South China Sea	South China Sea
+Hypocreadium scaphosomum	(Manter, 1940)          	Alutera monoceros	South China Sea	South China Sea
+Pseudacaenodera alectis	Shen, 1990          	Alectis indica	South China Sea	South China Sea
+Prosorhynchus alectis	Shen, 1990          	Alectis ciliaris	South China Sea	South China Sea
+Pseudopecoelus alectis	Shen, 1990          	Alectis ciliaris	South China Sea	South China Sea
+Hysterolecitha progonimus	Ku & Shen, 1964        	Albula vulpes	South China Sea	South China Sea
+Albulatrema ovale	Yamaguti, 1965          	Albula vulpes	South China Sea	South China Sea
+Bivesicula claviformis	Yamaguti, 1934          	Adioryx ruber	Australia: Coast of N Territories	Sahul Shelf
+Homalometron wrightae	Cribb & Bray, 1999        	Achlyopa nigra	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha acanthuri	Annereaux, 1947          	Acanthurus triostegus	Coast of Philippines	Western Coral Triangle
+Zebrasomatrema pichelinae	Bray & Chambers, 2000        	Acanthurus triostegus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Acanthurus triostegus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Acanthurus sandvicensis	Hawaiian coast	Hawaii
+Schikhobalotrema glomerosum	Pritchard & Manter, 1961        	Acanthurus sandvicensis	Hawaiian coast	Hawaii
+Diplobulbus minutus	Pritchard, 1966          	Acanthurus sandvicensis	Hawaiian coast	Hawaii
+Hysterolecithoides manini	Yamaguti, 1970          	Acanthurus sandvicensis	Hawaiian coast	Hawaii
+Lecithaster stellatus	Looss, 1906          	Acanthurus olivaceus	Hawaiian coast	Hawaii
+Petalocotyle diverticulata	Hall & Cribb, 2000        	Acanthurus nigrofuscus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Acanthurus nigrofuscus	Hawaiian coast	Hawaii
+Schikhobalotrema hawaiiense	Pritchard & Manter, 1961        	Acanthurus mata	Hawaiian coast	Hawaii
+Zebrasomatrema pichelinae	Bray & Chambers, 2000        	Acanthurus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Petalocotyle diverticulata	Hall & Cribb, 2000        	Acanthurus lineatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Megasolena acanthuri	Machida & Uchida, 1991        	Acanthurus lineatus	Coast of Philippines	Western Coral Triangle
+Schikhobalotrema glomerosum	Pritchard & Manter, 1961        	Acanthurus achilles	Hawaiian coast	Hawaii
+Prosorhynchus crucibulum	Rudolphi, 1819          	Acanthopagrus berda	Coast of Philippines	Western Coral Triangle
+Prototransversotrema steeri	(Angel, 1969)          	Acanthopagrus australis	Australia: Coast of Queensland	Northeast Australian Shelf
+Prototransversotrema steeri	(Angel, 1969)          	Acanthopagrus australis	Queensland	Northeast Australian Shelf
+Coitocaecum michaeli	Aken'Ova & Cribb, 1996        	Acanthopagrus australis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Acanthopagrus australis	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Acanthopagrus australis	Australia: Coast of Queensland	Northeast Australian Shelf
+Coitocaecum gymnophallum	Nicoll, 1915          	Acanthopagrus australis	Australia: Coast of Queensland	Northeast Australian Shelf
+Schikhobalotrema pomacentri	(Manter, 1937)          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepocreadium clavatum	(Ozaki, 1932)          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Bivesicula unexpecta	Cribb, Bray & Barker, 1994        	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Transversotrema licinum	Manter, 1970          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepotrema clavatum	Ozaki, 1932          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Acanthochromis polyacanthus	Australia: Coast of Queensland	Northeast Australian Shelf
+Acanthocolpus acanthocepolae	Shen, 1990          	Acanthocepola india	South China Sea	South China Sea
+Schikhobalotrema pomacentri	(Manter, 1937)          	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Derogenes pharyngicola	Bray, Cribb & Barker, 1993        	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Steganoderma gibsoni	Cribb, Bray & Barker, 1992        	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepocreadium oyabitcha	Machida, 1984          	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Abudefduf whitleyi	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Abudefduf sordidus	Hawaiian coast	Hawaii
+Thulinia microrchis	(Yamaguti, 1934)          	Abudefduf sexfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lecithaster stellatus	Looss, 1906          	Abudefduf sexfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Abudefduf sexfasciatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepotrema adlardi	(Bray, Cribb & Barker, 1993)        	Abudefduf bengalensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Abudefduf bengalensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Lepocreadium adlardi	Bray, Cribb & Barker, 1993        	Abudefduf bengalensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Hysterolecitha nahaensis	Yamaguti, 1942          	Abudefduf bengalensis	Australia: Coast of Queensland	Northeast Australian Shelf
+Thulinia microrchis	(Yamaguti, 1934)          	Abudefduf abdominalis	Hawaiian coast	Hawaii
+Bucephalopsis ablennus	Gu & Shen, 1976        	Ablennes anastomella	South China Sea	South China Sea
+Phyllodistomum pearsei	Holl, 1929          	Ablennes anastomella	South China Sea	South China Sea
+Lobatocreadium exiguum	(Manter, 1963)          	Abalistes stellatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Hypocreadium cavum	Bray & Cribb, 1996        	Abalistes stellatus	Australia: Coast of Queensland	Northeast Australian Shelf
+Lintonium vibex	(Linton, 1905)          	Abalistes stellaris	South China Sea	South China Sea
+Stephanostomum imparispine	(Linton, 1905)          	Abalistes stellaris	South China Sea	South China Sea
+Hypocreadium scaphosomum	(Manter, 1940)          	Abalistes stellaris	South China Sea	South China Sea
+Diploproctodaeoides longipygum	(Oshmarin, Mamaev & Parukhin, 1961)        	Abalistes stellaris	Australia: Coast of Queensland	Northeast Australian Shelf
+Pseudocreadium scaphosomum	Manter, 1940          	Abalistes stellaris	South China Sea	South China Sea
+Diploproctodaeum macracetabulum	Oshmarin, Mamaev & Parukhin, 1961        	Abalistes stellaris	Australia: Coast of Queensland	Northeast Australian Shelf
+Diploproctodaeum longipygum	Oshmarin, Mamaev & Parukhin, 1961        	Abalistes stellaris	South China Sea	South China Sea
+Diploproctodaeum macracetabulum	Oshmarin, Mamaev & Parukhin, 1961        	Abalistes stellaris	South China Sea	South China Sea
+Sphincteristomum acollum	Oshmarin, Mamaev & Parukhin, 1961        	Abalistes stellaris	South China Sea	South China Sea
+Schistorchis skrjabini	Parukhin, 1963          	Abalistes stellaris	South China Sea	South China Sea
+Prosogonotrema abalisti	Parukhin, 1964          	Abalistes stellaris	South China Sea	South China Sea
+Monilicaecum ventricosum	Yamaguti, 1942          	Abalistes stellaris	South China Sea	South China Sea
