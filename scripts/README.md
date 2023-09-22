@@ -15,7 +15,7 @@ Also, run [3_checklists.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/sc
 
 **Step 4**
 
-Run 4_worms.R to
+Run [4_worms.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/4_worms.R) to
 
 a) select only the taxa identified to species level
 
