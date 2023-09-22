@@ -584,66 +584,6 @@ Fish <- Fish %>% mutate(PROVINCE = "")
 Fish <- Fish %>% mutate(REALM = "")
 length(unique(Fish$aphiaID))
 
-################################################################################
-####################### READ FISHBASE FISH LISTS ###############################
-################################################################################
-
-
-
-
-
-
-all_fishbase_spalding_results_reef <- read.table("all_fishbase_spalding_results_reef.txt", sep = ';', header = TRUE)
-length(unique(all_fishbase_spalding_results_reef$Species))
-
-all_fish <- rbind(Fish_reef, Fish_Barcoding_reef, all_fishbase_spalding_results_reef)
-
-length(unique(all_fish$Species))
-all_fish <- unique(all_fish)
-
-write.table(all_fish, "merged_unique_fish_OBIS_FishBase_Barcoding.txt", 
-            row.names = FALSE, col.names = TRUE, sep = ";")
-
-# Retrieve ecology from FishBase 
-## trophic levels and standard errors for a list of species
-all_fish_ecology <- ecology(species_list = all_fish$Species, 
-                            fields=c("Species", "Herbivory2", "FeedingType", "DietRemark", "FoodRemark"))
-colnames(all_fish_ecology)
-
-write.table(all_fish_ecology, "merged_unique_fish_OBIS_FishBase_Barcoding_ecology.txt", 
-            row.names = FALSE, col.names = TRUE, sep = ";")
-
-length(unique(all_fish_ecology$Species))
-
-#add spalding information to all
-all_fishbase_spalding <- read.table("all_fishbase_spalding.txt", sep = ';', header = TRUE)
-colnames(all_fishbase_spalding)[colnames(all_fishbase_spalding) == "EcosystemName"] ="ECOREGION"
-all_fishbase_spalding <- select(all_fishbase_spalding, Species, ECOREGION, PROVINCE, REALM)
-length(unique(all_fishbase_spalding$Species))
-all_fishbase_spalding_results_reef <- inner_join(all_fishbase_spalding_results_reef, all_fishbase_spalding, by = "Species")
-length(unique(all_fishbase_spalding_results_reef$Species))
-all_fishbase_spalding_results_reef <- select(all_fishbase_spalding_results_reef, -DemersPelag)
-
-Fish_Barcoding <- read.table("Fish_Barcoding_FrenchPolynesia_correctednames.txt", sep = '\t', header = TRUE)
-Fish_Barcoding[Fish_Barcoding == ""] <- NA                     # Replace blank by NA
-Fish_Barcoding <- Fish_Barcoding %>% drop_na(species_name)
-Fish_Barcoding <- Fish_Barcoding[!(Fish_Barcoding$species_name=="Aseraggodes" | Fish_Barcoding$species_name=="Trachinotus"),]
-colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "family_name"] ="Family"
-colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "order_name"] ="Order"
-colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "genus_name"] ="Genus"
-colnames(Fish_Barcoding)[colnames(Fish_Barcoding) == "species_name"] ="Species"
-fish_barc <- select(Fish_Barcoding, Species, Genus, Family, Order, 
-                    ECOREGION, PROVINCE, REALM)
-fish_barc2 <- select(fish_barc, Species, ECOREGION, PROVINCE, REALM)
-
-
-
-spalding_barc <- rbind(all_fishbase_spalding_results_reef, fish_barc2)
-spalding_barc <- unique(spalding_barc)
-length(unique(spalding_barc$Species))
-spalding_barc <- spalding_barc %>% mutate(aphiaID = "")
-spalding_barc$aphiaID <- as.integer(spalding_barc$aphiaID )
-
 Fish <- Fish %>% mutate(PROVINCE =
                           case_when(ECOREGION == "Arnhem Coast to Gulf of Carpenteria" ~ "Sahul Shelf", 
                                     ECOREGION == "Arafura Sea" ~ "Sahul Shelf", 
@@ -755,26 +695,73 @@ Fish <- Fish %>% mutate(REALM =
                                     ECOREGION == "Southern Cook/Austral Islands" ~ "Eastern Indo-Pacific"))
 
 
-Fish_reef_regions <- inner_join(Fish_reef, Fish, by = "Species")
-length(unique(Fish_reef_regions$Species))
-Fish_reef_regions <- select(Fish_reef_regions, -DemersPelag)
+################################################################################
+####################### READ FISHBASE FISH LISTS ###############################
+################################################################################
 
-FISH_all <- rbind(Fish_reef_regions, spalding_barc)
+all_fishbase_spalding <- read.table("all_fishbase_spalding.txt", sep = ';', header = TRUE)
+colnames(all_fishbase_spalding)[colnames(all_fishbase_spalding) == "EcosystemName"] ="ECOREGION"
+all_fishbase_spalding <- select(all_fishbase_spalding, Species, ECOREGION, PROVINCE, REALM)
 
-#FISH_all_no_aphia <- FISH_all[is.na(FISH_all$aphiaID), ]     
+all_fishbase_spalding_species <- select(all_fishbase_spalding, Species)
+all_fishbase_spalding_species <- unique(all_fishbase_spalding_species)
+all_fishbase_spalding_species_list <- list()
+for (i in all_fishbase_spalding_species) {
+  all_fishbase_spalding_species_list <- append(all_fishbase_spalding_species_list, i)
+}
+all_fishbase_spalding_species_list <- as.character(all_fishbase_spalding_species_list)
 
-write.table(FISH_all, "merged_unique_fish_OBIS_FishBase_Barcoding_ecoregions.txt",
-            row.names = FALSE, col.names = TRUE, sep = ";")
+#RETRIEVE APHIA IDs
+all_fishbase_spalding_species_Aphia <- match_taxa(all_fishbase_spalding_species_list, ask=TRUE)
+all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% drop_na()
+A <- select(all_fishbase_spalding_species_Aphia, scientificName)
+A <- unique(A)
+B <- select(all_fishbase_spalding_species, Species)
+B <- unique(B)
+colnames(B)[colnames(B) == "Species"] ="scientificName"
+Species_with_no_aphia <- anti_join(B, A)
+
+#split the column scientificNameID
+split_into_multiple <- function(column, pattern = ", ", into_prefix){
+  cols <- str_split_fixed(column, pattern, n = Inf)
+  # Sub out the ""'s returned by filling the matrix to the right, with NAs which are useful
+  cols[which(cols == "")] <- NA
+  cols <- as.tibble(cols)
+  # name the 'cols' tibble as 'into_prefix_1', 'into_prefix_2', ..., 'into_prefix_m' 
+  # where m = # columns of 'cols'
+  m <- dim(cols)[2]
+  
+  names(cols) <- paste(into_prefix, 1:m, sep = "_")
+  return(cols)
+}
+
+all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% 
+  bind_cols(split_into_multiple(.$scientificNameID, ":", "scientificNameID")) %>% 
+  # selecting those that start with 'type_' will remove the original 'type' column
+  select(scientificName, match_type, starts_with("scientificNameID_"))
+
+colnames(all_fishbase_spalding_species_Aphia)[colnames(all_fishbase_spalding_species_Aphia) == "scientificNameID_5"] ="aphiaID"
+all_fishbase_spalding_species_Aphia <- select(all_fishbase_spalding_species_Aphia, scientificName, aphiaID)
+
+#add manually the species that still doesn't have an AphiaID
+all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% 
+  add_row(scientificName = "Symphurus brachycephalus", aphiaID="00000000000")
+
+#merge the AphiaID to the intial data frame
+all_fishbase_spalding <- inner_join(all_fishbase_spalding, all_fishbase_spalding_species_Aphia, 
+                               by=c('Species'='scientificName'))
+
+################################################################################
+########################## LOAD OTHER FISH LISTS ###############################
+################################################################################
+
+load(file = "Fish_Hosts.RData")
+load(file = "checklists_fish.RData")
+#cleaner_reef_fish_to_merge
+#Fish_Barcoding_to_merge
 
 
 
-#length(unique(FISH_all$Species))
-#8577 species with AphiaID
-#FISH_species <- select(Fish, Species)
-#FISH_species <- unique(FISH_species)
-#all_fish_species <- select(all_fish, Species)
-#length(unique(all_fish$Species))
-#to_get_class <- anti_join(all_fish_species, FISH_species)
 
 
 # Retrieve taxonomy from WORMS 
