@@ -1,0 +1,19 @@
+PROV_CODE	PROVINCE	RLM_CODE	REALM	Lat_Zone
+25	South China Sea	6	Central Indo-Pacific	Tropical
+26	Sunda Shelf	6	Central Indo-Pacific	Tropical
+27	Java Transitional	6	Central Indo-Pacific	Tropical
+28	South Kuroshio	6	Central Indo-Pacific	Tropical
+29	Tropical Northwestern Pacific	6	Central Indo-Pacific	Tropical
+30	Western Coral Triangle	6	Central Indo-Pacific	Tropical
+31	Eastern Coral Triangle	6	Central Indo-Pacific	Tropical
+32	Sahul Shelf	6	Central Indo-Pacific	Tropical
+33	Northeast Australian Shelf	6	Central Indo-Pacific	Tropical
+34	Northwest Australian Shelf	6	Central Indo-Pacific	Tropical
+35	Tropical Southwestern Pacific	6	Central Indo-Pacific	Tropical
+36	Lord Howe and Norfolk Islands	6	Central Indo-Pacific	Tropical
+37	Hawaii	7	Eastern Indo-Pacific	Tropical
+38	Marshall, Gilbert and Ellis Islands	7	Eastern Indo-Pacific	Tropical
+39	Central Polynesia	7	Eastern Indo-Pacific	Tropical
+40	Southeast Polynesia	7	Eastern Indo-Pacific	Tropical
+41	Marquesas	7	Eastern Indo-Pacific	Tropical
+42	Easter Island	7	Eastern Indo-Pacific	Tropical
