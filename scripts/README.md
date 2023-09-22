@@ -8,3 +8,24 @@ Since we were interested in specific Marine Ecoregions of the World (MEOW) provi
 
 Since the .wkt are too big, we need to run the 2_script_big_wkt.R to convert the .wkt to smaller boxes 
 
+**Step 3**
+
+Run 3_obis.R to fetch the occurrences for the fish in the regions of interest
+
+**Step 4**
+
+
+**Step 5**
+
+
+**Step 6**
+
+
+**Step 7**
+
+
+
+**Step 8**
+
+
+**Step 9**
