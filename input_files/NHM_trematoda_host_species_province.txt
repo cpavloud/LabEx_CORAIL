@@ -319,7 +319,7 @@ Stomachicola sexaginta	Li, 1994          	Saurida elongata	South China Sea	South
 Tubulovesicula sexaginta	Li, 1994          	Saurida elongata	South China Sea	South China Sea
 Helicometra execta	Linton, 1910          	Saurida elongata	South China Sea	South China Sea
 Helicometra nasae	Nagaty & Abdel Aal, 1962       	Sargocentron violaceum	Coast of Philippines	Western Coral Triangle
-Bianium hemistoma	(Ozaki, 1928)          	Sargocentron spinosissimum	Australia: Coast of Queensland	Northeast Australian Shelf
+Bianium hemistoma	(Ozaki, 1928)          	Sargocentron spinosissimum	Australia: Coast of Queensland	Northeast Australian Shelf
 Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Sargocentron spiniferum	Hawaiian coast	Hawaii
 Lecithochirium cirrhiti	(Manter & Pritchard, 1960)        	Sargocentron rubrum	Australia: Coast of Queensland	Northeast Australian Shelf
 Aporocotyle pacifica	Yamaguti, 1970          	Ruvettus pretiosus	Hawaiian coast	Hawaii
@@ -715,7 +715,7 @@ Hamacreadium lethrini	Yamaguti, 1934          	Lethrinus erythropterus	Coast of 
 Stephanostomum pagrosomi	(Yamaguti, 1939)          	Lethrinus atkinsoni	Australia: Coast of Queensland	Northeast Australian Shelf
 Zoogonus pagrosomi	Yamaguti, 1939          	Lethrinus atkinsoni	Australia: Coast of Queensland	Northeast Australian Shelf
 Plagioporus leiognathi	Wang, Wang & Zhang, 1992        	Leiognathus ruconius	South China Sea	South China Sea
-Bucephalopsis scombropsis	Yamaguti, 1938          	Leiocassis hainanensis	South China Sea	South China Sea
+Bucephalopsis scombropsis	Yamaguti, 1938          	Leiocassis hainanensis	South China Sea	South China Sea
 Prototransversotrema steeri	(Angel, 1969)          	Lates calcarifer	Australia: Coast of Queensland	Northeast Australian Shelf
 Prototransversotrema steeri	(Angel, 1969)          	Lates calcarifer	Queensland	Northeast Australian Shelf
 Transversotrema patialense	(Soparkar, 1924)          	Lates calcarifer	Coast of Philippines	Western Coral Triangle
@@ -809,7 +809,7 @@ Propycnadenoides philippinensis	Fischthal & Thomas, 1964        	Gymnocranius gr
 Stephanostomum pagrosomi	(Yamaguti, 1939)          	Gymnocranius audleyi	Australia: Coast of Queensland	Northeast Australian Shelf
 Plerurus digitatus	(Looss, 1899)          	Grammatorcynus bicarinatus	Australia: Coast of Queensland	Northeast Australian Shelf
 Ovipusillus mayu	Dove & Cribb, 1998        	Gnathanodon speciosus	Australia: Coast of Queensland	Northeast Australian Shelf
-Prosorhynchus glyptothoracis	Zhang, 1984          	Glyptothorax sinensis	South China Sea	South China Sea
+Prosorhynchus glyptothoracis	Zhang, 1984          	Glyptothorax sinensis	South China Sea	South China Sea
 Aphanurus orientalis	Liu, 1995          	Glossogobius olivaceus	South China Sea	South China Sea
 Erilepturus lemeriensis	(Tubangui & Masilungan, 1934)        	Glossogobius giurus	Coast of Philippines	Western Coral Triangle
 Opecoelus minimus	(Tubangui, 1928)          	Glossogobius giurus	Coast of Philippines	Western Coral Triangle
