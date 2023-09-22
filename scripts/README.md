@@ -12,6 +12,7 @@ Since the .wkt geometries are too big to allow for occurrence searches, we need 
 
 Run [3_obis.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/3_obis.R) and [3_fishbase.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/3_fishbase.R) to fetch the occurrences for the fish in the regions of interest.
 Also, run [3_checklists.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/3_checklists.R) to import the DNA barcode reference library of French Polynesian shore fishes ([Delrieu-Trottin et al., 2019](https://doi.org/10.1038/s41597-019-0123-5)) and the cleaner reef fish fauna checklist of [Quimbayo et al. (2021)](https://doi.org/10.1111/jbi.14214). The input files are found in the folder [input_files](https://github.com/cpavloud/LabEx_CORAIL/tree/main/input_files/).
+In addition, run [3_fish_from_local_databases.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/3_fish_from_local_databases.R) to select the fish hosts from locally stored databases for Trematoda and Copepoda, as well as from the Trematoda data of the [Host-Parasite database of the Natural History Museum (NHM)](https://www.nhm.ac.uk/research-curation/scientific-resources/taxonomy-systematics/host-parasites/database/index.jsp).
 
 **Step 4**
 
