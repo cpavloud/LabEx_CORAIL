@@ -195,7 +195,6 @@ Amphiprion frenatus	1	1	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
 Amphiprion latezonatus	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
 Amphiprion leucokranos	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
 Amphiprion mccullochi	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
-Amphiprion mccullochi	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
 Amphiprion melanopus	0	1	0	0	1	1	1	1	1	0	1	1	0	1	1	1	0	0
 Amphiprion ocellaris	0	1	0	1	0	1	0	1	1	1	1	0	0	0	0	0	0	0
 Amphiprion pacificus	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0
