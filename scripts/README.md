@@ -1,12 +1,12 @@
-The analysis was done in several steps. 
+The analysis is done in several steps. 
 
 **Step 1**
 
-Since we were interested in specific Marine Ecoregions of the World (MEOW) provinces, the first step was to run [1_mregions.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/1_mregions.R) to create the .wkt geometries of the MEOW regions and provinces of interest.
+Since we are interested in specific Marine Ecoregions of the World (MEOW) provinces, the first step is to run [1_mregions.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/1_mregions.R) to create the .wkt geometries of the MEOW regions and provinces of interest.
 
 **Step 2**
 
-Since the .wkt are too big, we need to run the [2_script_big_wkt.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/2_script_big_wkt.R) to convert the .wkt to smaller boxes. 
+Since the .wkt geometries are too big to allow for occurrence searches, we need to run the [2_script_big_wkt.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/2_script_big_wkt.R) to convert the .wkt to smaller boxes. 
 
 **Step 3**
 
@@ -15,19 +15,20 @@ Also, run [3_checklists.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/sc
 
 **Step 4**
 
-Run [4_worms.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/4_worms.R) to
+Run [4_worms.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/4_worms.R) to:
 
-a) select only the taxa identified to species level
+a) merge all the above fish lists,
 
+b) select only the fish taxa identified to species level, 
 
-b) extract unique species AphiaIDs (XXX_aphiaID and XXX_aphiaID_list)
-c) get unique species attribute data by AphiaID (XXX_attr), select only the parasitic and delete the children_children column (XXX_attr2)
-d) select the unique species AphiaIDs for which attributes couldn't be found (XXX_unmatched_aphiaID) (DO NOT DO IT)
-e) retrieve hosts for the parasitic species (XXX_host_aphiaID)
-f) get classification for the hosts (XXX_host_clas) and separate for fish (XXX_host_clas_fish) and other hosts (XXX_host_clas_notfish)
-g) filter the attribute data frames for only the fish/parasite pairs (XXX_attr3) and only the other pairs (XXX_attr4)
-h) get attribute data by fish host AphiaID (XXX_fishhost)
-i) select the unique fish host species AphiaIDs for which attributes couldn't be found (XXX_fishhost_unmatched_aphiaID)	
+c) extract unique species AphiaIDs, 
+
+d) retrieve classification,
+
+e) check if they are characterized in FishBase as "Reef-associated", "Demersal" or "Pelagic".
+
+*Note*: There are fish species which are indeed reef-associated but are not characterized as such in FishBase. Therefore, by exluding them from the lists, we may end up losing important information.
+	
 
 **Step 5**
 
