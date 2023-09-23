@@ -61,8 +61,14 @@ packageVersion("worrms")
 ################################################################################
 ################################################################################
 
+#host parasite list from worms
+worms_info
+#worms_info_parasites_hosts.txt
 
+#fish I haven't searched for 
+fish_to_search 
+#fish_with_no_parasite_TO_SEARCH.txt
+  
 
-
-
-
+ 
+  
