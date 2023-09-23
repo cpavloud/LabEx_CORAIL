@@ -18,9 +18,9 @@ In addition, run [3_fish_from_local_databases.R](https://github.com/cpavloud/Lab
 
 Run [4_worms.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/4_worms.R) to:
 
-a) merge all the above fish lists,
+a) select only the fish taxa identified to species level,
 
-b) select only the fish taxa identified to species level, 
+b) merge all the above fish lists,
 
 c) extract unique species AphiaIDs, 
 
