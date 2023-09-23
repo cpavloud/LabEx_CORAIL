@@ -36,7 +36,15 @@ g) check which are the fish species that are not included in the Trematoda and C
 
 **Step 5**
 
+Run [5_retrieve_parasite.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/5_retrieve_parasite.R) to 
 
+a) add the new parasites from WoRMS, 
+
+b) select only Trematoda and Copepoda, 
+
+c) check their distribution, 
+
+d) delete those that are not occurring in the provinces of interest. 
 
 **Step 6**
 
