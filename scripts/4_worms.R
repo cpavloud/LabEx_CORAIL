@@ -584,6 +584,8 @@ Fish <- Fish %>% mutate(PROVINCE = "")
 Fish <- Fish %>% mutate(REALM = "")
 length(unique(Fish$aphiaID))
 
+Fish <- Fish %>% filter(str_detect(scientificName, "[ ]"))
+
 Fish <- Fish %>% mutate(PROVINCE =
                           case_when(ECOREGION == "Arnhem Coast to Gulf of Carpenteria" ~ "Sahul Shelf", 
                                     ECOREGION == "Arafura Sea" ~ "Sahul Shelf", 
@@ -694,7 +696,6 @@ Fish <- Fish %>% mutate(REALM =
                                     ECOREGION == "Sunda Shelf/Java Sea" ~ "Central Indo-Pacific", 
                                     ECOREGION == "Southern Cook/Austral Islands" ~ "Eastern Indo-Pacific"))
 
-
 ################################################################################
 ####################### READ FISHBASE FISH LISTS ###############################
 ################################################################################
@@ -751,44 +752,76 @@ all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>%
 all_fishbase_spalding <- inner_join(all_fishbase_spalding, all_fishbase_spalding_species_Aphia, 
                                by=c('Species'='scientificName'))
 
+all_fishbase_spalding <- all_fishbase_spalding %>% filter(str_detect(Species, "[ ]"))
+colnames(all_fishbase_spalding)[colnames(all_fishbase_spalding) == "Species"] ="scientificName"
+
+
 ################################################################################
 ########################## LOAD OTHER FISH LISTS ###############################
 ################################################################################
 
 load(file = "Fish_Hosts.RData")
+#to import the Fish_Hosts_to_merge
 load(file = "checklists_fish.RData")
-#cleaner_reef_fish_to_merge
-#Fish_Barcoding_to_merge
+#to import the cleaner_reef_fish_to_merge and the Fish_Barcoding_to_merge
 
+#check if all fish are identified to species level
+Fish_Barcoding_to_merge <- Fish_Barcoding_to_merge %>% filter(str_detect(Species, "[ ]"))
+colnames(Fish_Barcoding_to_merge)[colnames(Fish_Barcoding_to_merge) == "Species"] ="scientificName"
 
+cleaner_reef_fish_to_merge <- cleaner_reef_fish_to_merge %>% filter(str_detect(Species, "[ ]"))
+colnames(cleaner_reef_fish_to_merge)[colnames(cleaner_reef_fish_to_merge) == "Species"] ="scientificName"
 
+Fish_Hosts_to_merge <- Fish_Hosts_to_merge %>% filter(str_detect(scientificName_Host, "[ ]"))
+colnames(Fish_Hosts_to_merge)[colnames(Fish_Hosts_to_merge) == "scientificName_Host"] ="scientificName"
 
+#add ECOREGION column
+Fish_Hosts_to_merge <- Fish_Hosts_to_merge %>% mutate(ECOREGION = NA)
+cleaner_reef_fish_to_merge <- cleaner_reef_fish_to_merge %>% mutate(ECOREGION = NA)
 
-# Retrieve taxonomy from WORMS 
-taxonomy <- classification(all_fish$Species, db="worms", marine_only=FALSE, max_tries=10)
+################################################################################
+############################# MERGE FISH LISTS #################################
+################################################################################
+
+all_fish <- rbind(Fish, all_fishbase_spalding, Fish_Barcoding_to_merge, 
+                  cleaner_reef_fish_to_merge, Fish_Hosts_to_merge)
+all_fish <- select(all_fish, -ECOREGION)
+all_fish <- unique(all_fish)
+
+write.table(all_fish, "all_fish.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+all_fish_species <- select(all_fish, scientificName)
+all_fish_species <- unique(all_fish_species)
+
+all_fish_species_aphia <- select(all_fish, aphiaID)
+all_fish_species_aphia <- unique(all_fish_species_aphia)
+
+# Retrieve taxonomy from WoRMS 
+all_fish_taxonomy <- classification(all_fish_species$scientificName, db="worms", marine_only=FALSE, max_tries=10)
 #Turn classification object into dataframe
 name <- c()
-output <- array(dim = c(dim(all_fish)[1],7))
+output <- array(dim = c(dim(all_fish_species)[1],7))
 colnames(output) <- c("Kingdom", "Phylum", "Class_Gigaclass", "Order", "Family", "Genus", "Species")
-for (i in seq(1,length(taxonomy))) {
-  name <- as.character(names(taxonomy[i]))
-  if (!is.na(taxonomy[name])) { 
-    if (sum(as.integer(eval(parse(text = paste0("taxonomy$`",name,"`$rank == 'Class'"))))) == 1) {
-      output[i,] <- t(eval(parse(text = paste0("taxonomy$`",name, "`$name[taxonomy$`", name, "`$rank == 'Kingdom' |",
-                                               "taxonomy$`", name, "`$rank == 'Phylum' |",
-                                               "taxonomy$`", name, "`$rank == 'Class' |", 
-                                               "taxonomy$`", name, "`$rank == 'Order' |",
-                                               "taxonomy$`", name, "`$rank == 'Family' |",
-                                               "taxonomy$`", name, "`$rank == 'Genus' |", 
-                                               "taxonomy$`", name, "`$rank == 'Species']" ))))
+for (i in seq(1,length(all_fish_taxonomy))) {
+  name <- as.character(names(all_fish_taxonomy[i]))
+  if (!is.na(all_fish_taxonomy[name])) { 
+    if (sum(as.integer(eval(parse(text = paste0("all_fish_taxonomy$`",name,"`$rank == 'Class'"))))) == 1) {
+      output[i,] <- t(eval(parse(text = paste0("all_fish_taxonomy$`",name, "`$name[all_fish_taxonomy$`", name, "`$rank == 'Kingdom' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Phylum' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Class' |", 
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Order' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Family' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Genus' |", 
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Species']" ))))
     } else {
-      output[i,] <- t(eval(parse(text = paste0("taxonomy$`",name, "`$name[taxonomy$`", name, "`$rank == 'Kingdom' |",
-                                               "taxonomy$`", name, "`$rank == 'Phylum' |",
-                                               "taxonomy$`", name, "`$rank == 'Gigaclass' |",
-                                               "taxonomy$`", name, "`$rank == 'Order' |",
-                                               "taxonomy$`", name, "`$rank == 'Family' |",
-                                               "taxonomy$`", name, "`$rank == 'Genus' |",
-                                               "taxonomy$`", name, "`$rank == 'Species']" ))))
+      output[i,] <- t(eval(parse(text = paste0("all_fish_taxonomy$`",name, "`$name[all_fish_taxonomy$`", name, "`$rank == 'Kingdom' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Phylum' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Gigaclass' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Order' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Family' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Genus' |",
+                                               "all_fish_taxonomy$`", name, "`$rank == 'Species']" ))))
     }
     
   }
@@ -802,159 +835,41 @@ output$Order<-NULL
 names(output)[4]<- "Order"
 output<-output[complete.cases(output),]
 
-write.table(output, "merged_unique_fish_OBIS_FishBase_Barcoding_classification.txt", sep = " ",
-            row.names = FALSE, col.names = TRUE)
+write.table(output, "all_fish_taxonomy.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
 
-#retrieve the Aphia IDs
-Fish_names_Aphia_vector <- all_fish$Species  
-Fish_names_Aphia <- match_taxa(Fish_names_Aphia_vector, ask = TRUE)
-
-#split the column scientificNameID
-split_into_multiple <- function(column, pattern = ", ", into_prefix){
-  cols <- str_split_fixed(column, pattern, n = Inf)
-  # Sub out the ""'s returned by filling the matrix to the right, with NAs which are useful
-  cols[which(cols == "")] <- NA
-  cols <- as.tibble(cols)
-  # name the 'cols' tibble as 'into_prefix_1', 'into_prefix_2', ..., 'into_prefix_m' 
-  # where m = # columns of 'cols'
-  m <- dim(cols)[2]
-  
-  names(cols) <- paste(into_prefix, 1:m, sep = "_")
-  return(cols)
+#also, check the classification with another function, based on the aphiaIDs
+#to avoid introducing any mistakes in the dataset
+##Extract the aphiaIDs into a list
+all_fish_species_aphia_list <- list()
+for (i in all_fish_species_aphia) {
+  all_fish_species_aphia_list <- append(all_fish_species_aphia_list, i)
 }
-Fish_names_Aphia_split <- Fish_names_Aphia %>% 
-  bind_cols(split_into_multiple(.$scientificNameID, ":", "scientificNameID")) %>% 
-  # selecting those that start with 'type_' will remove the original 'type' column
-  select(scientificName, match_type, starts_with("scientificNameID_"))
+all_fish_species_aphia_list <- as.integer(all_fish_species_aphia_list)
+all_fish_species_aphia_classification <- wormsbyid(all_fish_species_aphia_list)
 
-colnames(Fish_names_Aphia_split)[colnames(Fish_names_Aphia_split) == "scientificNameID_5"] ="AphiaID"
-Fish_names_Aphia_split <- select(Fish_names_Aphia_split, scientificName, match_type, AphiaID)
-write.table(Fish_names_Aphia_split, "merged_unique_fish_OBIS_FishBase_Barcoding_Aphia.txt",
-            row.names = FALSE, col.names = TRUE, sep =";")
+all_fish_species_aphia_classification <- select(all_fish_species_aphia_classification, AphiaID, 
+                                                   scientificname, valid_AphiaID, valid_name, 
+                                                   genus, family, order, class, phylum, kingdom)
 
+#add manually the species that still doesn't have an AphiaID
+all_fish_species_aphia_classification <- all_fish_species_aphia_classification %>% 
+  add_row(scientificname = "Symphurus brachycephalus", AphiaID=00000000000, 
+          valid_AphiaID =00000000000, valid_name = "Symphurus brachycephalus", 
+          genus = "Symphurus", family = "Cynoglossidae", order = "Pleuronectiformes", class = "Teleostei", 
+          phylum = "Chordata", kingdom = "Animalia")
 
-df <- data.frame(matrix(ncol = 1, nrow = 52))
+write.table(all_fish_species_aphia_classification, "all_fish_species_classification.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
 
-rownames(df) <- c("Arnhem Coast to Gulf of Carpenteria", 
-                  "Arafura Sea", 
-                  "Banda Sea", 
-                  "Bismarck Sea", 
-                  "Bonaparte Coast", 
-                  "Cocos-Keeling/Christmas Island", 
-                  "Coral Sea", 
-                  "East Caroline Islands", 
-                  "Easter Island", 
-                  "Eastern Philippines", 
-                  "Exmouth to Broome", 
-                  "Fiji Islands", 
-                  "Gilbert/Ellis Islands", 
-                  "Gulf of Papua", 
-                  "Gulf of Thailand", 
-                  "Gulf of Tonkin", 
-                  "Halmahera", 
-                  "Hawaii", 
-                  "Lesser Sunda", 
-                  "Line Islands", 
-                  "Lord Howe and Norfolk Islands", 
-                  "Malacca Strait", 
-                  "Mariana Islands", 
-                  "Tuamotus", 
-                  "Marshall Islands", 
-                  "New Caledonia", 
-                  "Ningaloo", 
-                  "Northeast Sulawesi", 
-                  "Ogasawara Islands", 
-                  "Palawan/North Borneo", 
-                  "Papua",
-                  "Phoenix/Tokelau/Northern Cook Islands", 
-                  "Rapa-Pitcairn", 
-                  "Samoa Islands", 
-                  "Society Islands", 
-                  "Solomon Archipelago", 
-                  "Solomon Sea", 
-                  "South China Sea Oceanic Islands", 
-                  "South Kuroshio", 
-                  "Southeast Papua New Guinea", 
-                  "Southern China", 
-                  "Southern Vietnam", 
-                  "Sulawesi Sea/Makassar Strait", 
-                  "Tonga Islands", 
-                  "Marquesas", 
-                  "Vanuatu", 
-                  "West Caroline Islands", 
-                  "Southern Java", 
-                  "Torres Strait Northern Great Barrier Reef", 
-                  "Central and Southern Great Barrier Reef", 
-                  "Sunda Shelf/Java Sea", 
-                  "Southern Cook/Austral Islands")
+#merge the all_fish table with the classification
+all_fish_with_classification <- inner_join(all_fish, all_fish_species_aphia_classification, 
+                                           by = c("scientificName"="scientificname"))
 
-col_FISH_all <- c(sum(FISH_all$ECOREGION == "Arnhem Coast to Gulf of Carpenteria"), 
-                  sum(FISH_all$ECOREGION == "Arafura Sea"), 
-                  sum(FISH_all$ECOREGION == "Banda Sea"), 
-                  sum(FISH_all$ECOREGION == "Bismarck Sea"), 
-                  sum(FISH_all$ECOREGION == "Bonaparte Coast"), 
-                  sum(FISH_all$ECOREGION == "Cocos-Keeling/Christmas Island"), 
-                  sum(FISH_all$ECOREGION == "Coral Sea"), 
-                  sum(FISH_all$ECOREGION == "East Caroline Islands"), 
-                  sum(FISH_all$ECOREGION == "Easter Island"), 
-                  sum(FISH_all$ECOREGION == "Eastern Philippines"), 
-                  sum(FISH_all$ECOREGION == "Exmouth to Broome"), 
-                  sum(FISH_all$ECOREGION == "Fiji Islands"), 
-                  sum(FISH_all$ECOREGION == "Gilbert/Ellis Islands"), 
-                  sum(FISH_all$ECOREGION == "Gulf of Papua"), 
-                  sum(FISH_all$ECOREGION == "Gulf of Thailand"), 
-                  sum(FISH_all$ECOREGION == "Gulf of Tonkin"), 
-                  sum(FISH_all$ECOREGION == "Halmahera"), 
-                  sum(FISH_all$ECOREGION == "Hawaii"), 
-                  sum(FISH_all$ECOREGION == "Lesser Sunda"), 
-                  sum(FISH_all$ECOREGION == "Line Islands"), 
-                  sum(FISH_all$ECOREGION == "Lord Howe and Norfolk Islands"), 
-                  sum(FISH_all$ECOREGION == "Malacca Strait"), 
-                  sum(FISH_all$ECOREGION == "Mariana Islands"), 
-                  sum(FISH_all$ECOREGION == "Tuamotus"), 
-                  sum(FISH_all$ECOREGION == "Marshall Islands"), 
-                  sum(FISH_all$ECOREGION == "New Caledonia"), 
-                  sum(FISH_all$ECOREGION == "Ningaloo"), 
-                  sum(FISH_all$ECOREGION == "Northeast Sulawesi"), 
-                  sum(FISH_all$ECOREGION == "Ogasawara Islands"), 
-                  sum(FISH_all$ECOREGION == "Palawan/North Borneo"), 
-                  sum(FISH_all$ECOREGION == "Papua"),
-                  sum(FISH_all$ECOREGION == "Phoenix/Tokelau/Northern Cook Islands"), 
-                  sum(FISH_all$ECOREGION == "Rapa-Pitcairn"), 
-                  sum(FISH_all$ECOREGION == "Samoa Islands"), 
-                  sum(FISH_all$ECOREGION == "Society Islands"), 
-                  sum(FISH_all$ECOREGION == "Solomon Archipelago"), 
-                  sum(FISH_all$ECOREGION == "Solomon Sea"), 
-                  sum(FISH_all$ECOREGION == "South China Sea Oceanic Islands"), 
-                  sum(FISH_all$ECOREGION == "South Kuroshio"), 
-                  sum(FISH_all$ECOREGION == "Southeast Papua New Guinea"), 
-                  sum(FISH_all$ECOREGION == "Southern China"), 
-                  sum(FISH_all$ECOREGION == "Southern Vietnam"), 
-                  sum(FISH_all$ECOREGION == "Sulawesi Sea/Makassar Strait"), 
-                  sum(FISH_all$ECOREGION == "Tonga Islands"), 
-                  sum(FISH_all$ECOREGION == "Marquesas"), 
-                  sum(FISH_all$ECOREGION == "Vanuatu"), 
-                  sum(FISH_all$ECOREGION == "West Caroline Islands"), 
-                  sum(FISH_all$ECOREGION == "Southern Java"), 
-                  sum(FISH_all$ECOREGION == "Torres Strait Northern Great Barrier Reef"), 
-                  sum(FISH_all$ECOREGION == "Central and Southern Great Barrier Reef"), 
-                  sum(FISH_all$ECOREGION == "Sunda Shelf/Java Sea"), 
-                  sum(FISH_all$ECOREGION == "Southern Cook/Austral Islands"))
+write.table(all_fish_with_classification, "all_fish_province_with_classification.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
 
-colnames(df) <- c("Fish")
-df$Fish <- col_FISH_all
-
-#data_table <- data.table(Fish)                      
-#data_count <- data_table[ , .(count = length(unique(aphiaID))), by = ECOREGION]
-#colnames(data_count)[colnames(data_count) == "count"] ="Fish"
-#df <- cbindX(df, data_count)
-#df <- select(df, -ECOREGION, -matrix.nrow...52.)
-
-#df[is.na(df)] <- 0
-
-write.table(df, "merged_unique_fish_OBIS_FishBase_Barcoding_stats.txt",
-            row.names = TRUE, col.names = TRUE, sep =";")
-
+#calculate statistics
 
 df <- data.frame(matrix(ncol = 1, nrow = 18))
 
@@ -977,43 +892,108 @@ rownames(df) <- c("Eastern Coral Triangle",
                   "Marshall, Gilbert and Ellis Islands", 
                   "Southeast Polynesia")
 
-col_FISH_all <- c(sum(FISH_all$PROVINCE == "Eastern Coral Triangle"), 
-                  sum(FISH_all$PROVINCE == "Java Transitional"), 
-                  sum(FISH_all$PROVINCE == "Lord Howe and Norfolk Islands"), 
-                  sum(FISH_all$PROVINCE == "Northeast Australian Shelf"), 
-                  sum(FISH_all$PROVINCE == "Northwest Australian Shelf"), 
-                  sum(FISH_all$PROVINCE == "Sahul Shelf"), 
-                  sum(FISH_all$PROVINCE == "South China Sea"), 
-                  sum(FISH_all$PROVINCE == "South Kuroshio"), 
-                  sum(FISH_all$PROVINCE == "Sunda Shelf"), 
-                  sum(FISH_all$PROVINCE == "Tropical Northwestern Pacific"), 
-                  sum(FISH_all$PROVINCE == "Tropical Southwestern Pacific"), 
-                  sum(FISH_all$PROVINCE == "Western Coral Triangle"), 
-                  sum(FISH_all$PROVINCE == "Central Polynesia"), 
-                  sum(FISH_all$PROVINCE == "Easter Island"), 
-                  sum(FISH_all$PROVINCE == "Hawaii"), 
-                  sum(FISH_all$PROVINCE == "Marquesas"), 
-                  sum(FISH_all$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
-                  sum(FISH_all$PROVINCE == "Southeast Polynesia"))
+col_all_fish <- c(sum(all_fish$PROVINCE == "Eastern Coral Triangle"), 
+                  sum(all_fish$PROVINCE == "Java Transitional"), 
+                  sum(all_fish$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                  sum(all_fish$PROVINCE == "Northeast Australian Shelf"), 
+                  sum(all_fish$PROVINCE == "Northwest Australian Shelf"), 
+                  sum(all_fish$PROVINCE == "Sahul Shelf"), 
+                  sum(all_fish$PROVINCE == "South China Sea"), 
+                  sum(all_fish$PROVINCE == "South Kuroshio"), 
+                  sum(all_fish$PROVINCE == "Sunda Shelf"), 
+                  sum(all_fish$PROVINCE == "Tropical Northwestern Pacific"), 
+                  sum(all_fish$PROVINCE == "Tropical Southwestern Pacific"), 
+                  sum(all_fish$PROVINCE == "Western Coral Triangle"), 
+                  sum(all_fish$PROVINCE == "Central Polynesia"), 
+                  sum(all_fish$PROVINCE == "Easter Island"), 
+                  sum(all_fish$PROVINCE == "Hawaii"), 
+                  sum(all_fish$PROVINCE == "Marquesas"), 
+                  sum(all_fish$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                  sum(all_fish$PROVINCE == "Southeast Polynesia"))
 
 colnames(df) <- c("Fish")
-df$Fish <- col_FISH_all
+df$Fish <- col_all_fish
 
-#data_table <- data.table(Fish)                      
-#data_count <- data_table[ , .(count = length(unique(aphiaID))), by = ECOREGION]
-#colnames(data_count)[colnames(data_count) == "count"] ="Fish"
-#df <- cbindX(df, data_count)
-#df <- select(df, -ECOREGION, -matrix.nrow...52.)
-
-#df[is.na(df)] <- 0
-
-write.table(df, "merged_unique_fish_OBIS_FishBase_Barcoding_stats_province.txt",
+write.table(df, "all_fish_statistics_province.txt",
             row.names = TRUE, col.names = TRUE, sep =";")
+
+################################################################################
+#################### CHECK IF THEY ARE FISH SPECIES ############################
+################################################################################
+
+all_fish_habitat <- species(species_list = all_fish$scientificName, 
+                      fields = c("Species", "DemersPelag"))
+all_fish_habitat <- all_fish_habitat[!is.na(all_fish_habitat$DemersPelag), ]
+unique(all_fish_habitat$DemersPelag)
+
+write.table(all_fish_habitat, "all_fish_habitat.txt",
+            row.names = FALSE, col.names = TRUE, sep =";")
+
+#calculate statistics
+
+df <- data.frame(matrix(ncol = 1, nrow = 8))
+
+rownames(df) <- c("reef-associated", 
+                  "pelagic-neritic", 
+                  "demersal", 
+                  "benthopelagic", 
+                  "bathypelagic", 
+                  "pelagic-oceanic",
+                  "bathydemersal",
+                  "pelagic")
+
+col_all_fish_habitat <- c(sum(all_fish_habitat$DemersPelag == "reef-associated"), 
+                          sum(all_fish_habitat$DemersPelag == "pelagic-neritic"), 
+                          sum(all_fish_habitat$DemersPelag == "demersal"), 
+                          sum(all_fish_habitat$DemersPelag == "benthopelagic"), 
+                          sum(all_fish_habitat$DemersPelag == "bathypelagic"), 
+                          sum(all_fish_habitat$DemersPelag == "pelagic-oceanic"), 
+                          sum(all_fish_habitat$DemersPelag == "bathydemersal"), 
+                          sum(all_fish_habitat$DemersPelag == "pelagic"))
+
+colnames(df) <- c("Habitat")
+df$Habitat <- col_all_fish_habitat
+
+write.table(df, "all_fish_habitat_statistics.txt",
+            row.names = TRUE, col.names = TRUE, sep =";")
+
+all_fish_reef <- subset(all_fish_habitat, DemersPelag=="reef-associated")
+all_fish_reef <- select(all_fish_reef, Species)
+length(unique(all_fish_reef$Species))
+colnames(all_fish_reef)[colnames(all_fish_reef) == "Species"] ="scientificName"
+
+#check which are the fish with no habitat information
+all_fish_habitat_species <- select(all_fish_habitat, Species)
+colnames(all_fish_species)[colnames(all_fish_species) == "scientificName"] ="Species"
+
+fish_with_no_habitat <- anti_join(all_fish_species, all_fish_habitat_species)
+
+write.table(fish_with_no_habitat, "fish_with_no_habitat.txt",
+            row.names = FALSE, col.names = TRUE, sep =";")
+
+################################################################################
+################ CHECK WHICH FISH DON'T HAVE PARASITE INFO #####################
+################################################################################
+
+#check which are the fish species that are not included in the Trematoda and Copepoda checklists, 
+#i.e. in the Fish_Hosts_to_merge
+
+colnames(all_fish_species)[colnames(all_fish_species) == "Species"] ="scientificName"
+Fish_Hosts_to_merge_species <- select(Fish_Hosts_to_merge, scientificName)
+
+fish_with_no_parasite <- anti_join(all_fish_species, Fish_Hosts_to_merge_species, 
+                                     by=c('scientificName'='scientificName'))
+all_fish_species_aphia <- select(all_fish_species_aphia_classification, AphiaID, scientificname)
+fish_with_no_parasite <- inner_join(fish_with_no_parasite, all_fish_species_aphia, 
+                                    by=c('scientificName'='scientificname'))
+
+write.table(fish_with_no_parasite, "fish_with_no_parasite.txt",
+            row.names = FALSE, col.names = TRUE, sep =";")
 
 #Save the workspace
 save.image(file = "fish_checklist_all.RData")
 
-load(file = "fish_checklist_all.RData")
-
-
+################################################################################
+################################################################################
+################################################################################
 
