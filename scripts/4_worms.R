@@ -715,12 +715,12 @@ all_fishbase_spalding_species_list <- as.character(all_fishbase_spalding_species
 #RETRIEVE APHIA IDs
 all_fishbase_spalding_species_Aphia <- match_taxa(all_fishbase_spalding_species_list, ask=TRUE)
 all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% drop_na()
-A <- select(all_fishbase_spalding_species_Aphia, scientificName)
-A <- unique(A)
-B <- select(all_fishbase_spalding_species, Species)
-B <- unique(B)
-colnames(B)[colnames(B) == "Species"] ="scientificName"
-Species_with_no_aphia <- anti_join(B, A)
+#A <- select(all_fishbase_spalding_species_Aphia, scientificName)
+#A <- unique(A)
+#B <- select(all_fishbase_spalding_species, Species)
+#B <- unique(B)
+#colnames(B)[colnames(B) == "Species"] ="scientificName"
+#Species_with_no_aphia <- anti_join(B, A)
 
 #split the column scientificNameID
 split_into_multiple <- function(column, pattern = ", ", into_prefix){
@@ -744,9 +744,9 @@ all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>%
 colnames(all_fishbase_spalding_species_Aphia)[colnames(all_fishbase_spalding_species_Aphia) == "scientificNameID_5"] ="aphiaID"
 all_fishbase_spalding_species_Aphia <- select(all_fishbase_spalding_species_Aphia, scientificName, aphiaID)
 
-#add manually the species that still doesn't have an AphiaID
-all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% 
-  add_row(scientificName = "Symphurus brachycephalus", aphiaID="1698744")
+##add manually the species that still doesn't have an AphiaID
+#all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% 
+#  add_row(scientificName = "Symphurus brachycephalus", aphiaID="1698744")
 
 #merge the AphiaID to the intial data frame
 all_fishbase_spalding <- inner_join(all_fishbase_spalding, all_fishbase_spalding_species_Aphia, 
@@ -852,12 +852,12 @@ all_fish_species_aphia_classification <- select(all_fish_species_aphia_classific
                                                    scientificname, valid_AphiaID, valid_name, 
                                                    genus, family, order, class, phylum, kingdom)
 
-#add manually the species that still doesn't have an AphiaID
-all_fish_species_aphia_classification <- all_fish_species_aphia_classification %>% 
-  add_row(scientificname = "Symphurus brachycephalus", AphiaID=1698744, 
-          valid_AphiaID =1698744, valid_name = "Symphurus brachycephalus", 
-          genus = "Symphurus", family = "Cynoglossidae", order = "Pleuronectiformes", class = "Teleostei", 
-          phylum = "Chordata", kingdom = "Animalia")
+##add manually the species that still doesn't have an AphiaID
+#all_fish_species_aphia_classification <- all_fish_species_aphia_classification %>% 
+#  add_row(scientificname = "Symphurus brachycephalus", AphiaID=1698744, 
+#          valid_AphiaID =1698744, valid_name = "Symphurus brachycephalus", 
+#          genus = "Symphurus", family = "Cynoglossidae", order = "Pleuronectiformes", class = "Teleostei", 
+#          phylum = "Chordata", kingdom = "Animalia")
 
 write.table(all_fish_species_aphia_classification, "all_fish_species_classification.txt", 
             row.names = FALSE, col.names = TRUE, sep = ";")
