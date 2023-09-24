@@ -746,7 +746,7 @@ all_fishbase_spalding_species_Aphia <- select(all_fishbase_spalding_species_Aphi
 
 #add manually the species that still doesn't have an AphiaID
 all_fishbase_spalding_species_Aphia <- all_fishbase_spalding_species_Aphia %>% 
-  add_row(scientificName = "Symphurus brachycephalus", aphiaID="00000000000")
+  add_row(scientificName = "Symphurus brachycephalus", aphiaID="1698744")
 
 #merge the AphiaID to the intial data frame
 all_fishbase_spalding <- inner_join(all_fishbase_spalding, all_fishbase_spalding_species_Aphia, 
@@ -854,8 +854,8 @@ all_fish_species_aphia_classification <- select(all_fish_species_aphia_classific
 
 #add manually the species that still doesn't have an AphiaID
 all_fish_species_aphia_classification <- all_fish_species_aphia_classification %>% 
-  add_row(scientificname = "Symphurus brachycephalus", AphiaID=00000000000, 
-          valid_AphiaID =00000000000, valid_name = "Symphurus brachycephalus", 
+  add_row(scientificname = "Symphurus brachycephalus", AphiaID=1698744, 
+          valid_AphiaID =1698744, valid_name = "Symphurus brachycephalus", 
           genus = "Symphurus", family = "Cynoglossidae", order = "Pleuronectiformes", class = "Teleostei", 
           phylum = "Chordata", kingdom = "Animalia")
 
