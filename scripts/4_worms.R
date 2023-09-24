@@ -990,6 +990,115 @@ fish_with_no_parasite <- inner_join(fish_with_no_parasite, all_fish_species_aphi
 write.table(fish_with_no_parasite, "fish_with_no_parasite.txt",
             row.names = FALSE, col.names = TRUE, sep =";")
 
+################################################################################
+############################ RETRIEVE BODY SIZE DATA ###########################
+################################################################################
+
+all_fish_aphia <- select(all_fish_species_aphia, AphiaID)
+all_fish_aphia <- unique(all_fish_aphia)
+
+#merge with TL
+# Select Rows by Index Range
+all_fish_Aphia_ids_1000 <- all_fish_aphia %>% slice(1:1000)
+all_fish_Aphia_ids_2000 <- all_fish_aphia %>% slice(1001:2000)
+all_fish_Aphia_ids_3000 <- all_fish_aphia %>% slice(2001:3000)
+all_fish_Aphia_ids_4000 <- all_fish_aphia %>% slice(3001:4000)
+all_fish_Aphia_ids_5000 <- all_fish_aphia %>% slice(4001:5000)
+all_fish_Aphia_ids_6000 <- all_fish_aphia %>% slice(5001:6000)
+all_fish_Aphia_ids_7000 <- all_fish_aphia %>% slice(6001:7000)
+all_fish_Aphia_ids_8000 <- all_fish_aphia %>% slice(7001:8000)
+all_fish_Aphia_ids_9000 <- all_fish_aphia %>% slice(8001:9000)
+all_fish_Aphia_ids_9545 <- all_fish_aphia %>% slice(9001:9545)
+
+
+all_fish_Aphia_ids_1000_list <- list()
+for (i in all_fish_Aphia_ids_1000) {
+  all_fish_Aphia_ids_1000_list <- append(all_fish_Aphia_ids_1000_list, i)
+}
+all_fish_Aphia_ids_1000_list <- as.integer(all_fish_Aphia_ids_1000_list)
+all_fish_attributes_1000 <- wm_attr_data_(id = all_fish_Aphia_ids_1000_list)
+
+
+all_fish_Aphia_ids_2000_list <- list()
+for (i in all_fish_Aphia_ids_2000) {
+  all_fish_Aphia_ids_2000_list <- append(all_fish_Aphia_ids_2000_list, i)
+}
+all_fish_Aphia_ids_2000_list <- as.integer(all_fish_Aphia_ids_2000_list)
+all_fish_attributes_2000 <- wm_attr_data_(id = all_fish_Aphia_ids_2000_list)
+
+all_fish_Aphia_ids_3000_list <- list()
+for (i in all_fish_Aphia_ids_3000) {
+  all_fish_Aphia_ids_3000_list <- append(all_fish_Aphia_ids_3000_list, i)
+}
+all_fish_Aphia_ids_3000_list <- as.integer(all_fish_Aphia_ids_3000_list)
+all_fish_attributes_3000 <- wm_attr_data_(id = all_fish_Aphia_ids_3000_list)
+
+
+all_fish_Aphia_ids_4000_list <- list()
+for (i in all_fish_Aphia_ids_4000) {
+  all_fish_Aphia_ids_4000_list <- append(all_fish_Aphia_ids_4000_list, i)
+}
+all_fish_Aphia_ids_4000_list <- as.integer(all_fish_Aphia_ids_4000_list)
+all_fish_attributes_4000 <- wm_attr_data_(id = all_fish_Aphia_ids_4000_list)
+
+all_fish_Aphia_ids_5000_list <- list()
+for (i in all_fish_Aphia_ids_5000) {
+  all_fish_Aphia_ids_5000_list <- append(all_fish_Aphia_ids_5000_list, i)
+}
+all_fish_Aphia_ids_5000_list <- as.integer(all_fish_Aphia_ids_5000_list)
+all_fish_attributes_5000 <- wm_attr_data_(id = all_fish_Aphia_ids_5000_list)
+
+all_fish_Aphia_ids_6000_list <- list()
+for (i in all_fish_Aphia_ids_6000) {
+  all_fish_Aphia_ids_6000_list <- append(all_fish_Aphia_ids_6000_list, i)
+}
+all_fish_Aphia_ids_6000_list <- as.integer(all_fish_Aphia_ids_6000_list)
+all_fish_attributes_6000 <- wm_attr_data_(id = all_fish_Aphia_ids_6000_list)
+
+all_fish_Aphia_ids_7000_list <- list()
+for (i in all_fish_Aphia_ids_7000) {
+  all_fish_Aphia_ids_7000_list <- append(all_fish_Aphia_ids_7000_list, i)
+}
+all_fish_Aphia_ids_7000_list <- as.integer(all_fish_Aphia_ids_7000_list)
+all_fish_attributes_7000 <- wm_attr_data_(id = all_fish_Aphia_ids_7000_list)
+
+all_fish_Aphia_ids_8000_list <- list()
+for (i in all_fish_Aphia_ids_8000) {
+  all_fish_Aphia_ids_8000_list <- append(all_fish_Aphia_ids_8000_list, i)
+}
+all_fish_Aphia_ids_8000_list <- as.integer(all_fish_Aphia_ids_8000_list)
+all_fish_attributes_8000 <- wm_attr_data_(id = all_fish_Aphia_ids_8000_list)
+
+all_fish_Aphia_ids_9000_list <- list()
+for (i in all_fish_Aphia_ids_9000) {
+  all_fish_Aphia_ids_9000_list <- append(all_fish_Aphia_ids_9000_list, i)
+}
+all_fish_Aphia_ids_9000_list <- as.integer(all_fish_Aphia_ids_9000_list)
+all_fish_attributes_9000 <- wm_attr_data_(id = all_fish_Aphia_ids_9000_list)
+
+all_fish_Aphia_ids_9545_list <- list()
+for (i in all_fish_Aphia_ids_9545) {
+  all_fish_Aphia_ids_9545_list <- append(all_fish_Aphia_ids_9545_list, i)
+}
+all_fish_Aphia_ids_9545_list <- as.integer(all_fish_Aphia_ids_9545_list)
+all_fish_attributes_9545 <- wm_attr_data_(id = all_fish_Aphia_ids_9545_list)
+
+all_fish_attributes <- rbind(all_fish_attributes_1000, all_fish_attributes_2000, 
+                             all_fish_attributes_3000, all_fish_attributes_4000, 
+                             all_fish_attributes_5000, all_fish_attributes_6000, 
+                             all_fish_attributes_7000,  all_fish_attributes_8000, 
+                             all_fish_attributes_9000, all_fish_attributes_9545)
+unique(all_fish_attributes$measurementType)
+
+all_fish_attributes_bodysize <- all_fish_attributes %>% 
+  filter(str_detect(measurementType, "Body size"))
+all_fish_attributes_bodysize <- all_fish_attributes_bodysize %>% unnest(children, names_sep = "_")
+
+##Coerce the data.frame to all-character
+all_fish_attributes_bodysize = data.frame(lapply(all_fish_attributes_bodysize, as.character), stringsAsFactors=FALSE)
+
+
+
 #Save the workspace
 save.image(file = "fish_checklist_all.RData")
 
