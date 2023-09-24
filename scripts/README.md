@@ -34,6 +34,10 @@ f) check if they are characterized in FishBase as "Reef-associated", "Demersal" 
 
 g) check which are the fish species that are not included in the Trematoda and Copepoda checklists, i.e. the fish species for which there are no parasite data, and search (manually unfortunately) in [WoRMS](https://www.marinespecies.org/index.php) for the parasites infecting them. 
 
+h) retrieve body size information for all the fish, 
+
+i) retrieve information on feeding type and diet of all the fish. 
+
 **Step 5**
 
 Run [5_retrieve_parasite.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/5_retrieve_parasite.R) to 
