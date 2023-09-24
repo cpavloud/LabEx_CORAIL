@@ -30,7 +30,7 @@ e) calculate statistics, i.e. number of fish species per provicnce,
 
 f) check if they are characterized in FishBase as "Reef-associated", "Demersal" or "Pelagic".
 
-*Note*: There are fish species which are indeed reef-associated but are not characterized as such in FishBase. Therefore, by exluding them from the lists, we may end up losing important information.
+*Note*: There are fish species which are indeed reef-associated but are not characterized as such in FishBase. Therefore, by exluding them from the lists, we may end up losing important information. We can manually curate the results from FishBase and increase the number of reef-associated fish species. 
 
 g) check which are the fish species that are not included in the Trematoda and Copepoda checklists, i.e. the fish species for which there are no parasite data, and search (manually unfortunately) in [WoRMS](https://www.marinespecies.org/index.php) for the parasites infecting them. 
 
