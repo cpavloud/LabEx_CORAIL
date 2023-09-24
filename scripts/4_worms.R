@@ -1188,7 +1188,32 @@ all_fish_attributes_bodysize <- merge(all_fish_attributes_bodysize, all_fish_spe
                                       by = c("AphiaID" = "AphiaID"), all.x=TRUE)
 all_fish_attributes_bodysize_max <- all_fish_attributes_bodysize %>% group_by(AphiaID,scientificname) %>% slice(which.max(measurementValue))
 
+################################################################################
+##################### RETRIEVE DIET AND FEEDING TYPE ###########################
+################################################################################
 
+# Retrieve ecology from FishBase 
+## trophic levels and standard errors for a list of species
+all_fish_ecology <- ecology(species_list = all_fish_species$Species, 
+                                  fields=c("Species", "Herbivory2", "FeedingType", "DietRemark", "FoodRemark"))
+write.table(all_fish_ecology, "all_fish_ecology.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+length(unique(all_fish_ecology$Species))
+
+all_fish_fooditems <- fooditems(species_list = all_fish_species$Species)
+all_fish_fooditems <- select(all_fish_fooditems, -Locality, -C_Code, -FoodsRefNo, 
+                                   -Commoness, -CommonessII)
+write.table(all_fish_fooditems, "all_fish_fooditems.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+all_fish_diet <- diet(species_list = all_fish_species$Species)
+write.table(all_fish_diet, "all_fish_diet.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+all_fish_diet_items <- diet_items(species_list = all_fish_species$Species)
+write.table(all_fish_diet_items, "all_fish_diet_items.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
 
 #Save the workspace
 save.image(file = "fish_checklist_all.RData")
