@@ -918,7 +918,7 @@ write.table(df, "all_fish_statistics_province.txt",
             row.names = TRUE, col.names = TRUE, sep =";")
 
 ################################################################################
-#################### CHECK IF THEY ARE FISH SPECIES ############################
+##################### CHECK IF THEY ARE REEF SPECIES ###########################
 ################################################################################
 
 all_fish_habitat <- species(species_list = all_fish$scientificName, 
@@ -926,12 +926,102 @@ all_fish_habitat <- species(species_list = all_fish$scientificName,
 all_fish_habitat <- all_fish_habitat[!is.na(all_fish_habitat$DemersPelag), ]
 unique(all_fish_habitat$DemersPelag)
 
+#check which are the fish with no habitat information
+all_fish_habitat_species <- select(all_fish_habitat, Species)
+colnames(all_fish_species)[colnames(all_fish_species) == "scientificName"] ="Species"
+fish_with_no_habitat <- anti_join(all_fish_species, all_fish_habitat_species)
+
+write.table(fish_with_no_habitat, "fish_with_no_habitat.txt",
+            row.names = FALSE, col.names = TRUE, sep =";")
+
+#add the fish_with_no_habitat to all_fish_habitat and use NAs
+fish_with_no_habitat <- fish_with_no_habitat %>% mutate(DemersPelag = "NA")
+all_fish_habitat <- rbind(all_fish_habitat, fish_with_no_habitat)
+
+#however, all the fish included in the cleaner_reef_fish_to_merge data frame
+#should be (by definition) reef associated
+#so, we will correct the all_fish_habitat with this information
+cleaner_reef_fish_to_merge_species <- select(cleaner_reef_fish_to_merge, scientificName)
+cleaner_reef_fish_to_merge_species <- unique(cleaner_reef_fish_to_merge_species)
+
+#delete the cleaner_reef_fish_to_merge_species from the all_fish_habitat and
+#then add them again with the correct habitat information
+all_fish_habitat <- anti_join(all_fish_habitat, cleaner_reef_fish_to_merge_species, 
+                  by = c("Species"="scientificName"))
+cleaner_reef_fish_to_merge_species <- cleaner_reef_fish_to_merge_species %>% mutate(DemersPelag = "reef-associated")
+colnames(cleaner_reef_fish_to_merge_species)[colnames(cleaner_reef_fish_to_merge_species) == "scientificName"] ="Species"
+
+all_fish_habitat <- rbind(all_fish_habitat, cleaner_reef_fish_to_merge_species)
+
+
+#doublecheck if the fish that are not Reef-Associated in FishBase
+#are indeed Reef-Associated
+all_fish_other_habitats <- subset(all_fish_habitat, DemersPelag!="reef-associated")
+all_fish_other_habitats_species <- select(all_fish_other_habitats, Species)
+length(unique(all_fish_other_habitats$Species))
+
+#import the data from the Reef Life Survey (RLS)
+#and check if the all_fish_other_habitats are included in the RLS data
+#and therefore, should inherit the Reef-Associated tag
+IMOS <- read.csv("IMOS.csv", header = TRUE, sep = ",")
+colnames(IMOS)[colnames(IMOS) == "species_name"] ="Species"
+IMOS_species <- select(IMOS, Species)
+IMOS_species <- unique(IMOS_species)
+
+#check if IMOS_species are found in all_fish_other_habitats_species
+IMOS_species <- semi_join(IMOS_species, all_fish_other_habitats_species)
+
+#delete the IMOS_species from the all_fish_habitat and
+#then add them again with the correct habitat information
+
+all_fish_habitat <- anti_join(all_fish_habitat, IMOS_species, 
+                              by = c("Species"="Species"))
+IMOS_species <- IMOS_species %>% mutate(DemersPelag = "reef-associated")
+
+all_fish_habitat <- rbind(all_fish_habitat, IMOS_species)
+
+#estimate again which are the other habitat species
+all_fish_other_habitats <- subset(all_fish_habitat, DemersPelag!="reef-associated")
+all_fish_other_habitats_species <- select(all_fish_other_habitats, Species)
+length(unique(all_fish_other_habitats$Species))
+
+#check if IUCN has habitat information for the all_fish_other_habitats_species
+#all_fish_other_habitats_species_list <- list()
+#for (i in all_fish_other_habitats_species) {
+#  all_fish_other_habitats_species_list <- append(all_fish_other_habitats_species_list, i)
+#}
+#all_fish_other_habitats_species_list <- as.character(all_fish_other_habitats_species_list)
+
+#all_fish_other_habitats_species_IUCN <- rl_habitats_(all_fish_other_habitats_species_list)
+
+#check if the all_fish_other_habitats_species are included in the Hubert et al 2012 checklist
+checklist_Hubert_et_al <- read.csv("checklist_Hubert_et_al.txt", header=TRUE, sep='\t')
+checklist_Hubert_et_al <- select(checklist_Hubert_et_al, Species)
+checklist_Hubert_et_al <- unique(checklist_Hubert_et_al)
+
+#check if checklist_Hubert_et_al are found in all_fish_other_habitats_species
+checklist_Hubert_et_al <- semi_join(checklist_Hubert_et_al, all_fish_other_habitats_species)
+
+#delete the IMOS_species from the all_fish_habitat and
+#then add them again with the correct habitat information
+
+all_fish_habitat <- anti_join(all_fish_habitat, checklist_Hubert_et_al, 
+                              by = c("Species"="Species"))
+checklist_Hubert_et_al <- checklist_Hubert_et_al %>% mutate(DemersPelag = "reef-associated")
+
+all_fish_habitat <- rbind(all_fish_habitat, checklist_Hubert_et_al)
+
+#estimate again which are the other habitat species
+all_fish_other_habitats <- subset(all_fish_habitat, DemersPelag!="reef-associated")
+all_fish_other_habitats_species <- select(all_fish_other_habitats, Species)
+length(unique(all_fish_other_habitats$Species))
+
 write.table(all_fish_habitat, "all_fish_habitat.txt",
             row.names = FALSE, col.names = TRUE, sep =";")
 
 #calculate statistics
 
-df <- data.frame(matrix(ncol = 1, nrow = 8))
+df <- data.frame(matrix(ncol = 1, nrow = 9))
 
 rownames(df) <- c("reef-associated", 
                   "pelagic-neritic", 
@@ -940,7 +1030,8 @@ rownames(df) <- c("reef-associated",
                   "bathypelagic", 
                   "pelagic-oceanic",
                   "bathydemersal",
-                  "pelagic")
+                  "pelagic", 
+                  "NA")
 
 col_all_fish_habitat <- c(sum(all_fish_habitat$DemersPelag == "reef-associated"), 
                           sum(all_fish_habitat$DemersPelag == "pelagic-neritic"), 
@@ -949,7 +1040,8 @@ col_all_fish_habitat <- c(sum(all_fish_habitat$DemersPelag == "reef-associated")
                           sum(all_fish_habitat$DemersPelag == "bathypelagic"), 
                           sum(all_fish_habitat$DemersPelag == "pelagic-oceanic"), 
                           sum(all_fish_habitat$DemersPelag == "bathydemersal"), 
-                          sum(all_fish_habitat$DemersPelag == "pelagic"))
+                          sum(all_fish_habitat$DemersPelag == "pelagic"), 
+                          sum(all_fish_habitat$DemersPelag == "NA"))
 
 colnames(df) <- c("Habitat")
 df$Habitat <- col_all_fish_habitat
@@ -962,14 +1054,7 @@ all_fish_reef <- select(all_fish_reef, Species)
 length(unique(all_fish_reef$Species))
 colnames(all_fish_reef)[colnames(all_fish_reef) == "Species"] ="scientificName"
 
-#check which are the fish with no habitat information
-all_fish_habitat_species <- select(all_fish_habitat, Species)
-colnames(all_fish_species)[colnames(all_fish_species) == "scientificName"] ="Species"
 
-fish_with_no_habitat <- anti_join(all_fish_species, all_fish_habitat_species)
-
-write.table(fish_with_no_habitat, "fish_with_no_habitat.txt",
-            row.names = FALSE, col.names = TRUE, sep =";")
 
 ################################################################################
 ################ CHECK WHICH FISH DON'T HAVE PARASITE INFO #####################
@@ -1075,6 +1160,7 @@ for (i in all_fish_Aphia_ids_9000) {
 }
 all_fish_Aphia_ids_9000_list <- as.integer(all_fish_Aphia_ids_9000_list)
 all_fish_attributes_9000 <- wm_attr_data_(id = all_fish_Aphia_ids_9000_list)
+all_fish_attributes_9000 <- select(all_fish_attributes_9000, -message)
 
 all_fish_Aphia_ids_9545_list <- list()
 for (i in all_fish_Aphia_ids_9545) {
@@ -1096,6 +1182,11 @@ all_fish_attributes_bodysize <- all_fish_attributes_bodysize %>% unnest(children
 
 ##Coerce the data.frame to all-character
 all_fish_attributes_bodysize = data.frame(lapply(all_fish_attributes_bodysize, as.character), stringsAsFactors=FALSE)
+
+all_fish_attributes_bodysize <- select(all_fish_attributes_bodysize, AphiaID, measurementValue)
+all_fish_attributes_bodysize <- merge(all_fish_attributes_bodysize, all_fish_species_aphia, 
+                                      by = c("AphiaID" = "AphiaID"), all.x=TRUE)
+all_fish_attributes_bodysize_max <- all_fish_attributes_bodysize %>% group_by(AphiaID,scientificname) %>% slice(which.max(measurementValue))
 
 
 
