@@ -61,14 +61,90 @@ packageVersion("worrms")
 ################################################################################
 ################################################################################
 
-#host parasite list from worms
+#import host parasite list from worms
+host_prey_attributes_20230627 <- read.csv("host-prey attributes_20230627.txt", header=TRUE, sep='\t')
+host_prey_attributes_12092023 <- read.csv("host-prey attributes_12092023.txt", header=TRUE, sep='\t')
+host_prey_attributes_20230925 <- read.csv("host-prey attributes_20230925.txt", header=TRUE, sep='\t')
+
+host_prey_attributes_12092023 <- select(host_prey_attributes_12092023, -source_name, 
+                                        -attribute_note, -at_group_root)
+host_prey_attributes_20230925 <- select(host_prey_attributes_20230925, -source_name, 
+                                        -attribute_note, -at_group_root)
+host_prey_attributes <- rbind(host_prey_attributes_20230627, host_prey_attributes_12092023, 
+                              host_prey_attributes_20230925)
+host_prey_attributes <- select(host_prey_attributes, AphiaID, scientificName, kingdom, 
+                               phylum, class, order, family, genus, measurementType, 
+                               measurementValueID, measurementValue)
+
+host_prey_attributes <- host_prey_attributes %>% 
+  dplyr::filter(measurementType %in% c("Feedingtype > Host/prey"))
+
+#split the column scientificNameID
+split_into_multiple <- function(column, pattern = ", ", into_prefix){
+  cols <- str_split_fixed(column, pattern, n = Inf)
+  # Sub out the ""'s returned by filling the matrix to the right, with NAs which are useful
+  cols[which(cols == "")] <- NA
+  cols <- as.tibble(cols)
+  # name the 'cols' tibble as 'into_prefix_1', 'into_prefix_2', ..., 'into_prefix_m' 
+  # where m = # columns of 'cols'
+  m <- dim(cols)[2]
+  
+  names(cols) <- paste(into_prefix, 1:m, sep = "_")
+  return(cols)
+}
+
+host_prey_attributes <- host_prey_attributes %>% 
+  bind_cols(split_into_multiple(.$measurementValueID, ":", "measurementValueID")) %>% 
+  # selecting those that start with 'type_' will remove the original 'type' column
+  select(AphiaID, scientificName, genus, family, order, class, phylum, kingdom, measurementValue, starts_with("measurementValueID_"))
+host_prey_attributes <- select(host_prey_attributes, -measurementValueID_1, 
+                                     -measurementValueID_2, -measurementValueID_3, 
+                                     -measurementValueID_4)
+colnames(host_prey_attributes)[colnames(host_prey_attributes) == "measurementValueID_5"] ="AphiaID_Host"
+
+
+
+
 worms_info
 #worms_info_parasites_hosts.txt
 
-#fish I haven't searched for 
-fish_to_search 
-#fish_with_no_parasite_TO_SEARCH.txt
+
+
+################################################################################
+######################## LOAD OTHER PARASITE LISTS #############################
+################################################################################
+
+load(file = "Fish_Hosts.RData")
+#to import the Fish_Hosts_to_merge
+load(file = "checklists_fish.RData")
+#to import the cleaner_reef_fish_to_merge and the Fish_Barcoding_to_merge
+
+#check if all fish are identified to species level
+Fish_Barcoding_to_merge <- Fish_Barcoding_to_merge %>% filter(str_detect(Species, "[ ]"))
+colnames(Fish_Barcoding_to_merge)[colnames(Fish_Barcoding_to_merge) == "Species"] ="scientificName"
+
+cleaner_reef_fish_to_merge <- cleaner_reef_fish_to_merge %>% filter(str_detect(Species, "[ ]"))
+colnames(cleaner_reef_fish_to_merge)[colnames(cleaner_reef_fish_to_merge) == "Species"] ="scientificName"
+
+Fish_Hosts_to_merge <- Fish_Hosts_to_merge %>% filter(str_detect(scientificName_Host, "[ ]"))
+colnames(Fish_Hosts_to_merge)[colnames(Fish_Hosts_to_merge) == "scientificName_Host"] ="scientificName"
+
+#add ECOREGION column
+Fish_Hosts_to_merge <- Fish_Hosts_to_merge %>% mutate(ECOREGION = NA)
+cleaner_reef_fish_to_merge <- cleaner_reef_fish_to_merge %>% mutate(ECOREGION = NA)
+
+
+
+
+
+
+
   
 
- 
+#Save the workspace
+save.image(file = "parasite.RData")
+
+################################################################################
+################################################################################
+################################################################################
   
