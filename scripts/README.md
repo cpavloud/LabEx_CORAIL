@@ -26,7 +26,7 @@ c) extract unique species AphiaIDs,
 
 d) retrieve classification,
 
-e) calculate statistics, i.e. number of fish species per provicnce,
+e) calculate statistics, i.e. number of fish species per province,
 
 f) check if they are characterized in FishBase as "Reef-associated", "Demersal" or "Pelagic".
 
@@ -42,7 +42,7 @@ i) retrieve information on feeding type and diet of all the fish.
 
 Run [5_retrieve_parasite.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/5_retrieve_parasite.R) to 
 
-a) add the new parasites from WoRMS, 
+a) add the new parasite information from WoRMS, 
 
 b) select only Trematoda and Copepoda, 
 
