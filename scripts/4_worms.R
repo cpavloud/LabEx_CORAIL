@@ -986,13 +986,8 @@ all_fish_other_habitats_species <- select(all_fish_other_habitats, Species)
 length(unique(all_fish_other_habitats$Species))
 
 #check if IUCN has habitat information for the all_fish_other_habitats_species
-#all_fish_other_habitats_species_list <- list()
-#for (i in all_fish_other_habitats_species) {
-#  all_fish_other_habitats_species_list <- append(all_fish_other_habitats_species_list, i)
-#}
-#all_fish_other_habitats_species_list <- as.character(all_fish_other_habitats_species_list)
-
-#all_fish_other_habitats_species_IUCN <- rl_habitats_(all_fish_other_habitats_species_list)
+#with the function rl_habitats()
+#it requires to sey up an API Key which at the moment is not functional 
 
 #check if the all_fish_other_habitats_species are included in the Hubert et al 2012 checklist
 checklist_Hubert_et_al <- read.csv("checklist_Hubert_et_al.txt", header=TRUE, sep='\t')
@@ -1002,7 +997,7 @@ checklist_Hubert_et_al <- unique(checklist_Hubert_et_al)
 #check if checklist_Hubert_et_al are found in all_fish_other_habitats_species
 checklist_Hubert_et_al <- semi_join(checklist_Hubert_et_al, all_fish_other_habitats_species)
 
-#delete the IMOS_species from the all_fish_habitat and
+#delete the checklist_Hubert_et_al from the all_fish_habitat and
 #then add them again with the correct habitat information
 
 all_fish_habitat <- anti_join(all_fish_habitat, checklist_Hubert_et_al, 
@@ -1015,6 +1010,38 @@ all_fish_habitat <- rbind(all_fish_habitat, checklist_Hubert_et_al)
 all_fish_other_habitats <- subset(all_fish_habitat, DemersPelag!="reef-associated")
 all_fish_other_habitats_species <- select(all_fish_other_habitats, Species)
 length(unique(all_fish_other_habitats$Species))
+
+#correct the all_fish_habitat based on manually checking of the species
+#some species with NA habitats are reef-associated
+#and some species with pelagic-neritic habitats are reef-associated
+
+NA_reef <- read.csv("NA_reef.txt", header=TRUE, sep='\t')
+pelagic_neritic_reef <- read.csv("pelagic-neritic_reef.txt", header=TRUE, sep='\t')
+merge_manual <- rbind(NA_reef, pelagic_neritic_reef)
+
+#delete the merge_manual from the all_fish_habitat and
+#then add them again with the correct habitat information
+
+all_fish_habitat <- anti_join(all_fish_habitat, merge_manual, 
+                              by = c("Species"="Species"))
+merge_manual <- merge_manual %>% mutate(DemersPelag = "reef-associated")
+
+all_fish_habitat <- rbind(all_fish_habitat, merge_manual)
+
+#estimate again which are the other habitat species
+all_fish_other_habitats <- subset(all_fish_habitat, DemersPelag!="reef-associated")
+all_fish_other_habitats_species <- select(all_fish_other_habitats, Species)
+length(unique(all_fish_other_habitats$Species))
+
+#some of the reef associated species actually are not from our region of interest
+#after manual correction, we decided to exclude certain species that were found
+#erroneously documented from our regions of interest
+#here we exclude the fish that were found only in one data source and only in 
+#a few number of provinces (less than 3)
+fish_dubious <- read.csv("fish_dubious_distribution.txt", header=TRUE, sep='\t')
+
+all_fish_habitat <- anti_join(all_fish_habitat, fish_dubious, 
+                              by = c("Species"= "Species"))
 
 write.table(all_fish_habitat, "all_fish_habitat.txt",
             row.names = FALSE, col.names = TRUE, sep =";")
@@ -1054,6 +1081,60 @@ all_fish_reef <- select(all_fish_reef, Species)
 length(unique(all_fish_reef$Species))
 colnames(all_fish_reef)[colnames(all_fish_reef) == "Species"] ="scientificName"
 
+#correct the all_fish_with_classification and calculate again the statistics
+all_fish_with_classification <- semi_join(all_fish_with_classification, all_fish_habitat, 
+                  by = c("scientificName"="Species"))
+
+write.table(all_fish_with_classification, "all_fish_province_with_classification.txt", 
+            row.names = FALSE, col.names = TRUE, sep = ";")
+
+#calculate statistics
+
+df <- data.frame(matrix(ncol = 1, nrow = 18))
+
+rownames(df) <- c("Eastern Coral Triangle", 
+                  "Java Transitional", 
+                  "Lord Howe and Norfolk Islands", 
+                  "Northeast Australian Shelf", 
+                  "Northwest Australian Shelf", 
+                  "Sahul Shelf", 
+                  "South China Sea", 
+                  "South Kuroshio", 
+                  "Sunda Shelf", 
+                  "Tropical Northwestern Pacific", 
+                  "Tropical Southwestern Pacific", 
+                  "Western Coral Triangle", 
+                  "Central Polynesia", 
+                  "Easter Island", 
+                  "Hawaii", 
+                  "Marquesas", 
+                  "Marshall, Gilbert and Ellis Islands", 
+                  "Southeast Polynesia")
+
+col_all_fish_with_classification <- c(sum(all_fish_with_classification$PROVINCE == "Eastern Coral Triangle"), 
+                  sum(all_fish_with_classification$PROVINCE == "Java Transitional"), 
+                  sum(all_fish_with_classification$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                  sum(all_fish_with_classification$PROVINCE == "Northeast Australian Shelf"), 
+                  sum(all_fish_with_classification$PROVINCE == "Northwest Australian Shelf"), 
+                  sum(all_fish_with_classification$PROVINCE == "Sahul Shelf"), 
+                  sum(all_fish_with_classification$PROVINCE == "South China Sea"), 
+                  sum(all_fish_with_classification$PROVINCE == "South Kuroshio"), 
+                  sum(all_fish_with_classification$PROVINCE == "Sunda Shelf"), 
+                  sum(all_fish_with_classification$PROVINCE == "Tropical Northwestern Pacific"), 
+                  sum(all_fish_with_classification$PROVINCE == "Tropical Southwestern Pacific"), 
+                  sum(all_fish_with_classification$PROVINCE == "Western Coral Triangle"), 
+                  sum(all_fish_with_classification$PROVINCE == "Central Polynesia"), 
+                  sum(all_fish_with_classification$PROVINCE == "Easter Island"), 
+                  sum(all_fish_with_classification$PROVINCE == "Hawaii"), 
+                  sum(all_fish_with_classification$PROVINCE == "Marquesas"), 
+                  sum(all_fish_with_classification$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                  sum(all_fish_with_classification$PROVINCE == "Southeast Polynesia"))
+
+colnames(df) <- c("Fish")
+df$Fish <- col_all_fish_with_classification
+
+write.table(df, "all_fish_statistics_province.txt",
+            row.names = TRUE, col.names = TRUE, sep =";")
 
 
 ################################################################################
@@ -1188,30 +1269,36 @@ all_fish_attributes_bodysize <- merge(all_fish_attributes_bodysize, all_fish_spe
                                       by = c("AphiaID" = "AphiaID"), all.x=TRUE)
 all_fish_attributes_bodysize_max <- all_fish_attributes_bodysize %>% group_by(AphiaID,scientificname) %>% slice(which.max(measurementValue))
 
+#correct based on the all_fish_habitat species
+
+all_fish_attributes_bodysize_max <- semi_join(all_fish_attributes_bodysize_max, all_fish_habitat, 
+                                          by = c("scientificname"="Species"))
+
+
 ################################################################################
 ##################### RETRIEVE DIET AND FEEDING TYPE ###########################
 ################################################################################
 
 # Retrieve ecology from FishBase 
 ## trophic levels and standard errors for a list of species
-all_fish_ecology <- ecology(species_list = all_fish_species$Species, 
+all_fish_ecology <- ecology(species_list = all_fish_habitat$Species, 
                                   fields=c("Species", "Herbivory2", "FeedingType", "DietRemark", "FoodRemark"))
 write.table(all_fish_ecology, "all_fish_ecology.txt", 
             row.names = FALSE, col.names = TRUE, sep = ";")
 
 length(unique(all_fish_ecology$Species))
 
-all_fish_fooditems <- fooditems(species_list = all_fish_species$Species)
+all_fish_fooditems <- fooditems(species_list = all_fish_habitat$Species)
 all_fish_fooditems <- select(all_fish_fooditems, -Locality, -C_Code, -FoodsRefNo, 
                                    -Commoness, -CommonessII)
 write.table(all_fish_fooditems, "all_fish_fooditems.txt", 
             row.names = FALSE, col.names = TRUE, sep = ";")
 
-all_fish_diet <- diet(species_list = all_fish_species$Species)
+all_fish_diet <- diet(species_list = all_fish_habitat$Species)
 write.table(all_fish_diet, "all_fish_diet.txt", 
             row.names = FALSE, col.names = TRUE, sep = ";")
 
-all_fish_diet_items <- diet_items(species_list = all_fish_species$Species)
+all_fish_diet_items <- diet_items(species_list = all_fish_habitat$Species)
 write.table(all_fish_diet_items, "all_fish_diet_items.txt", 
             row.names = FALSE, col.names = TRUE, sep = ";")
 
