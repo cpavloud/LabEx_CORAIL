@@ -1,0 +1,162 @@
+locality	ECOREGION	PROVINCE
+Ambon Bay	Banda Sea	Western Coral Triangle
+Anhui		South China Sea
+Arafura Sea	Arafura Sea	Sahul Shelf
+Arnhem Coast to Gulf of Carpenteria	Arnhem Coast to Gulf of Carpenteria	Sahul Shelf
+Austral Islands	Southern Cook/Austral Islands	Southeast Polynesia
+Australian Exclusive Economic Zone	Arafura Sea	Sahul Shelf
+Australian part of the Coral Sea	Coral Sea	Tropical Southwestern Pacific
+Australian part of the Indian Ocean		Northwest Australian Shelf
+Bali Sea		Java Transitional
+Bismarck Sea	Bismarck Sea	Eastern Coral Triangle
+Bonaparte Coast	Bonaparte Coast	Sahul Shelf
+Borneo		Western Coral Triangle
+Brisbane	Coral Sea	Tropical Southwestern Pacific
+Brisbane River Mouth		Northeast Australian Shelf
+Cairns		Northeast Australian Shelf
+Cape York		Northeast Australian Shelf
+Celebes Sea		Western Coral Triangle
+Central and Southern Great Barrier Reef	Central and Southern Great Barrier Reef	Northeast Australian Shelf
+China		South China Sea
+China Sea		South China Sea
+Chinese Exclusive Economic Zone		South China Sea
+Chinese part of the South China Sea		South China Sea
+Christmas Island / Kiritimati [Pacific Ocean]	Cocos-Keeling/Christmas Island	Java Transitional
+Cocos Islands	Cocos-Keeling/Christmas Island	Java Transitional
+Coral Sea	Coral Sea	Tropical Southwestern Pacific
+Darwin Harbour		Sahul Shelf
+Daya Bay		South China Sea
+Disputed area South China Sea		South China Sea
+East Australian Coastal Province		Northeast Australian Shelf
+East Caroline Islands	East Caroline Islands	Tropical Northwestern Pacific
+Eastern Philippines	Eastern Philippines	Western Coral Triangle
+Eniwetok Atoll		Marshall, Gilbert and Ellis Islands
+Exmouth to Broome	Exmouth to Broome	Northwest Australian Shelf
+Fanning island	Cocos-Keeling/Christmas Island	Java Transitional
+Fiji Islands	Fiji Islands	Tropical Southwestern Pacific
+Fijian part of the South Pacific Ocean	Fiji Islands	Tropical Southwestern Pacific
+Flinders Passage		Northeast Australian Shelf
+French Polynesian Exclusive Economic Zone		Southeast Polynesia
+French Polynesian part of the South Pacific Ocean		Southeast Polynesia
+Fujian		South China Sea
+Gambier Islands (French Polynesia)		Southeast Polynesia
+Gladstone		Northeast Australian Shelf
+Great Barrier Reef	Coral Sea	Tropical Southwestern Pacific
+Guangdong		South China Sea
+Guangzhou		South China Sea
+Gulf of Carpentaria	Arnhem Coast to Gulf of Carpenteria	Sahul Shelf
+Gulf of Nhatrang		South China Sea
+Gulf of Siam	Gulf of Thailand	Sunda Shelf
+Gulf of Thailand	Gulf of Thailand	Sunda Shelf
+Gulf of Tonkin	Gulf of Tonkin	South China Sea
+Ha Long Bay	Gulf of Tonkin	South China Sea
+Hainan		South China Sea
+Halmahera	Halmahera	Western Coral Triangle
+Hawaii	Hawaii	Hawaii
+Hawaiian Exclusive Economic Zone	Hawaii	Hawaii
+Hawaiian part of the North Pacific Ocean	Hawaii	Hawaii
+Heron Island	Coral Sea	Tropical Southwestern Pacific
+Heron Reef	Coral Sea	Tropical Southwestern Pacific
+Indonesian Exclusive Economic Zone		Java Transitional
+Indonesian part of the Bali Sea		Sunda Shelf
+Indonesian part of the Indian Ocean		Java Transitional
+Irian Jaya		Western Coral Triangle
+Java		Java Transitional
+Java Sea	Sunda Shelf/Java Sea	Sunda Shelf
+Kalimantan		Western Coral Triangle
+Kaneohe Bay	Hawaii	Hawaii
+Kii Peninsula		Western Coral Triangle
+Lesser Sunda	Lesser Sunda	Western Coral Triangle
+Lizard Island (Queensland)	Coral Sea	Tropical Southwestern Pacific
+Lombok		Java Transitional
+Luzon	Eastern Philippines	Western Coral Triangle
+Makassar Strait	Sulawesi Sea/Makassar Strait	Western Coral Triangle
+Malacca Strait	Malacca Strait	Sunda Shelf
+Malaysian Exclusive Economic Zone		Sunda Shelf
+Malaysian part of the Malacca Strait	Malacca Strait	Sunda Shelf
+Malaysian part of the South China Sea		South China Sea
+Mariana Islands	Mariana Islands	Tropical Northwestern Pacific
+Marquesas	Marquesas	Marquesas
+Marquesas Islands	Marquesas	Marquesas
+Marshall Islands	Marshall Islands	Marshall, Gilbert and Ellis Islands
+Maui Island	Hawaii	Hawaii
+Mindanao		Western Coral Triangle
+Molucca Sea		Western Coral Triangle
+Moorea		Southeast Polynesia
+Moreton Bay	Coral Sea	Tropical Southwestern Pacific
+New Caledonia	New Caledonia	Tropical Southwestern Pacific
+New Caledonian Exclusive Economic Zone		Tropical Southwestern Pacific
+Nha-Trang Bay		South China Sea
+Niihau	Hawaii	Hawaii
+Ningaloo	Ningaloo	Northwest Australian Shelf
+Norfolk Island Exclusive Economic Zone	Lord Howe and Norfolk Islands	Lord Howe and Norfolk Islands
+Norfolk Island part of the South Pacific Ocean	Lord Howe and Norfolk Islands	Lord Howe and Norfolk Islands
+North Australia		Northwest Australian Shelf
+North Australian Shelf		Sahul Shelf
+Northeast Australian Shelf		Northeast Australian Shelf
+Northwest Australian Shelf		Northwest Australian Shelf
+Noumea	New Caledonia	Tropical Southwestern Pacific
+Oahu Island	Hawaii	Hawaii
+Okinawa	South Kuroshio	South Kuroshio
+Okinawa Island	South Kuroshio	South Kuroshio
+Oresund Strait		Eastern Coral Triangle
+Palau		Tropical Northwestern Pacific
+Palau Exclusive Economic Zone	Eastern Philippines	Western Coral Triangle
+Palau part of the North Pacific Ocean		Tropical Northwestern Pacific
+Palawan	Eastern Philippines	Western Coral Triangle
+Palawan/North Borneo	Palawan/North Borneo	Western Coral Triangle
+Papua	Papua	Western Coral Triangle
+Papua New Guinean Exclusive Economic Zone		Western Coral Triangle
+Paracel Islands part of the South China Sea		South China Sea
+Peninsular Malaysia		Sunda Shelf
+Philippine Sea	Eastern Philippines	Western Coral Triangle
+Philippines	Eastern Philippines	Western Coral Triangle
+Philippines Exclusive Economic Zone	Eastern Philippines	Western Coral Triangle
+Queensland		Northeast Australian Shelf
+Sabah		Western Coral Triangle
+Sahul Shelf		Sahul Shelf
+Samoa Islands	Samoa Islands	Central Polynesia
+Sarawak		Sunda Shelf
+Selangor		Sunda Shelf
+Society Islands	Society Islands	Southeast Polynesia
+Solomon Archipelago	Solomon Archipelago	Eastern Coral Triangle
+Solomon Is.		Eastern Coral Triangle
+Solomon Islands Exclusive Economic Zone		Eastern Coral Triangle
+Solomon Sea		Eastern Coral Triangle
+South China		South China Sea
+South China Sea		South China Sea
+South Kuroshio	South Kuroshio	South Kuroshio
+Southern China	Southern China	South China Sea
+Southern Cook/Austral Islands	Southern Cook/Austral Islands	Southeast Polynesia
+Southern Java	Southern Java	Java Transitional
+Southern Vietnam	Southern Vietnam	Sunda Shelf
+Sulawesi Sea/Makassar Strait	Sulawesi Sea/Makassar Strait	Western Coral Triangle
+Sulu Sea		South China Sea
+Sunda Shelf/Java Sea	Sunda Shelf/Java Sea	Sunda Shelf
+Sunda Strait		Sunda Shelf
+Suruga Bay		Western Coral Triangle
+Swain Reefs		Northeast Australian Shelf
+Taiwan		South China Sea
+Taiwan Strait		South China Sea
+Taiwanese Exclusive Economic Zone		South China Sea
+Thailand	Gulf of Thailand	Sunda Shelf
+Thailand Exclusive Economic Zone		Sunda Shelf
+Timor Sea		Sahul Shelf
+Torres Strait	Torres Strait Northern Great Barrier Reef	Northeast Australian Shelf
+Torres Strait Northern Great Barrier Reef	Torres Strait Northern Great Barrier Reef	Northeast Australian Shelf
+Townsville		Northeast Australian Shelf
+Tropical Pacific Ocean		Eastern Coral Triangle
+Tuamotu	Tuamotus	Southeast Polynesia
+Tuamotu Islands	Tuamotus	Southeast Polynesia
+Tuamotus	Tuamotus	Southeast Polynesia
+Tubuai Island	Southern Cook/Austral Islands	Southeast Polynesia
+Vanuatu	Vanuatu	Tropical Southwestern Pacific
+Vietnam	Southern Vietnam	Sunda Shelf
+Vietnamese Exclusive Economic Zone	Southern Vietnam	Sunda Shelf
+Vietnamese part of the South China Sea		South China Sea
+Wallis and Futuna Exclusive Economic Zone		Tropical Southwestern Pacific
+West Caroline Islands	West Caroline Islands	Tropical Northwestern Pacific
+Western Australia		Northwest Australian Shelf
+Western South Pacific		Northeast Australian Shelf
+Wistari Reef	Coral Sea	Tropical Southwestern Pacific
+Zhejiang		South China Sea
