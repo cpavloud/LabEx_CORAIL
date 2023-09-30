@@ -58,7 +58,7 @@ library("worrms")
 packageVersion("worrms")
 
 ################################################################################
-################################################################################
+###################### IMPORT WORMS PARASITE LISTS #############################
 ################################################################################
 
 #import host parasite list from worms
@@ -102,12 +102,307 @@ host_prey_attributes <- select(host_prey_attributes, -measurementValueID_1,
                                      -measurementValueID_4)
 colnames(host_prey_attributes)[colnames(host_prey_attributes) == "measurementValueID_5"] ="AphiaID_Host"
 
+################################################################################
+############## DELETE THE HOSTS THAT ARE NOT OF INTEREST #######################
+################################################################################
 
+load(file = "fish_checklist_all.RData")
 
+all_fish_valid_aphia <- select(all_fish_with_classification, valid_AphiaID)
+all_fish_valid_aphia <- unique(all_fish_valid_aphia)
+colnames(all_fish_valid_aphia)[colnames(all_fish_valid_aphia) == "valid_AphiaID"] ="AphiaID"
 
-worms_info
-#worms_info_parasites_hosts.txt
+all_fish_aphia_valid_aphia <- rbind(all_fish_aphia, all_fish_valid_aphia)
+all_fish_aphia_valid_aphia <- unique(all_fish_aphia_valid_aphia)
+all_fish_aphia_valid_aphia$AphiaID <- as.integer(all_fish_aphia_valid_aphia$AphiaID)
+host_prey_attributes$AphiaID_Host <- as.integer(host_prey_attributes$AphiaID_Host)
 
+host_prey_attributes <- semi_join(host_prey_attributes, all_fish_aphia_valid_aphia, 
+                  by = c("AphiaID_Host"="AphiaID"))
+
+write.table(host_prey_attributes, "worms_info_parasites_hosts.txt", 
+            row.names = FALSE, col.names = TRUE, sep = "\t")
+
+################################################################################
+############################## CHECK DISTRIBUTION ##############################
+################################################################################
+
+host_prey_attributes_aphia <- select(host_prey_attributes, AphiaID)
+host_prey_attributes_aphia <- unique(host_prey_attributes_aphia)
+
+##Get distribution data by AphiaID
+host_prey_attributes_aphia_list <- list()
+for (i in host_prey_attributes_aphia) {
+  host_prey_attributes_aphia_list <- append(host_prey_attributes_aphia_list, i)
+}
+host_prey_attributes_aphia_list <- as.integer(host_prey_attributes_aphia_list)
+host_prey_attributes_aphia_dist <- wm_distribution_(id = host_prey_attributes_aphia_list)
+
+species_with_distribution <- select(host_prey_attributes_aphia_dist, id)
+species_with_distribution <- unique(species_with_distribution)
+species_with_distribution$id <- as.integer(species_with_distribution$id)
+species_with_no_distribution <- anti_join(host_prey_attributes_aphia, species_with_distribution, 
+                                          by=c('AphiaID'='id'))
+
+write.table(species_with_no_distribution, "species_with_no_distribution.txt", 
+            row.names = FALSE, col.names = TRUE, sep = "\t")
+
+################################################################################
+############################# FILTER DISTRIBUTION ##############################
+################################################################################
+
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist %>% 
+  dplyr::filter(!higherGeography %in% c("South Africa", "Bay of Bengal", "Egypt", "Mexico",  "Estonia", 
+                                        "Mediterranean Sea - Eastern Basin", "Gulf of Mexico", "Azerbaijan", 
+                                        "Mediterranean Sea - Western Basin", "Mediterranean Sea", "Kazakhstan", 
+                                        "English Channel", "Bay of Biscay", "Tyrrhenian Sea", "Poland", "Spain",
+                                        "Ukraine", "Romania", "Netherlands", "Austria", "Hungary", "Israel", 
+                                        "Germany", "Gulf of California"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!higherGeography %in% c("Caribbean Sea" , "North Atlantic Ocean" , "Brazil" ,  "Colombia" , 
+                                        "Venezuela" , "Black Sea", "Adriatic Sea" , "Bristol Channel" , "Italy", 
+                                        "Red Sea" , "South Atlantic Ocean", "Sea of Marmara", "North Sea" , "Aegean Sea"  , 
+                                        "Gulf of Aden" , "Tunisia",  "Peru", "Chile",  "North Pacific Ocean", 
+                                        "Portugal"  , "Canada" , "Inner Seas off the West Coast of Scotland" , "Mozambique Channel", 
+                                        "United Kingdom" , "Kattegat" ,  "Labrador Sea", "Denmark"   , "Baltic Sea"  ,  "Norwegian Sea", 
+                                        "Barentsz Sea" , "Skagerrak"  ,  "Ionian Sea"  , "Yemen"  , "Cuba"  , "Balearic Sea"  , 
+                                        "Switzerland", "Arctic Ocean"  ,  "Gulf of Oman"   , "Levantine Sea" , "Strait of Gibraltar" , 
+                                        "Angola", "South Korea" , "Gulf of Suez" ))  
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!higherGeography %in% c("Turkiye" , "Gulf of Finland"  , "Panama" , "Democratic Republic of the Congo", 
+                                        "Qatar", "Iran" , "Persian Gulf" ,  "Arabian Sea", "Jamaica"  , "Ligurian Sea" , 
+                                        "Pakistan", "Algeria" , "Mozambique", "Uruguay", "India", "Ireland"  , 
+                                        "Great Australian Bight", "Bangladesh" ,  "Oman" , "Ecuador" , "Tanzania" , 
+                                        "Bahamas", "Haiti", "Ross Sea", "Gulf of Aqaba" ,  "Sri Lanka"  , "Wadden Sea" , 
+                                        "Gulf of Riga"  , "Norway" , "Maldives", "Bass Strait"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!higherGeography %in% c("Argentina", "Celtic Sea" , "Namibia" , "Sweden", "Bay of Fundy" , "New Zealand", 
+                                        "Irminger Sea" , "Baffin Bay", "Pechora Sea", "Greenland Sea", "Gulf of Bothnia", 
+                                        "Seto Inland Sea", "Davis Strait", "Inland Sea", "Iceland" , 
+                                        "Japan Sea/East Sea", "Sea of Okhotsk", "White Sea", "Bering Sea" , "Gulf of Saint Lawrence" , 
+                                        "Irish Sea and St. George's Channel"  , "Belgium"  , "Sea of Azov", "Eritrea", 
+                                        "Amundsen Sea", "Kara Sea", "Baelt Sea"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Corsica", "Chilean part of the South Pacific Ocean" ,  "Peruvian part of the South Pacific Ocean", 
+                                 "Black Sea"  , "Cold Temperate Northwest Atlantic", "North Sea", "Sea of Okhotsk" , 
+                                 "Banyuls-sur-Mer" ,  "Pyrenees-Orientales", "Caspian Sea", "Soviet Union" , "Austria", 
+                                 "Hungary", "Germany" , "Central European Russia" ,  "Siberia" , "Russia",
+                                 "Egypt", "Palestine" ,   "Romania" , "Morocco"  , "Baja California"   , "Southern California Bight" , "Mediterranean Sea", 
+                                 "Gulf of Marseille", "French part of Western Mediterranean Sea" , "Tunisian Plateau/Gulf of Sidra", "Aegean Sea"  , "Western Arabian Sea" , 
+                                 "Gulf of Mannar" , "Mexican Tropical Pacific", "Pakistan" ,  "Delaware",  "Sea of Japan/East Sea"  ,  "Celtic Seas"  , "Northern California" , "Patagonian Shelf" , "Oregon, Washington, Vancouver Coast and Shelf" , "Central Chile", 
+                                 "Atlantic Ocean", "Oregon", "Jamaican part of the Caribbean Sea" ,  "New Zealand part of the South Pacific Ocean" , 
+                                 "Galapagos part of the North Pacific Ocean", "Venezuelan part of the Caribbean Sea", "Colombian part of the North Pacific Ocean", 
+                                 "Azores part of the North Atlantic Ocean", "Seychellois part of the Indian Ocean", "Maldives", 
+                                 "Korea" , "Qatari part of the Persian Gulf", "Pakistani Exclusive Economic Zone", "Panama Bay", 
+                                 "Kuwait Bay", "Iberian Peninsula" , "Kara Sea", "Mozambican part of the Indian Ocean", "Western and Northern Madagascar", 
+                                 "Israeli part of the Mediterranean Sea - Eastern Basin", "South India and Sri Lanka", 
+                                 "Northern Gulf of Mexico", "Galapagos" , "Southeastern Brazil", "Puerto Rican Exclusive Economic Zone" , 
+                                 "Western Mediterranean", "Central New Zealand" , "Bermuda", "South European Atlantic Shelf" , "Antarctic Ocean" , 
+                                 "Subantarctic Waters", "East Greenland Shelf", "South West Atlantic" ,  "Channels and Fjords of Southern Chile" ,  "North East Pacific" , 
+                                 "Baffin Bay - Davis Strait", "Subantarctic Islands", "Norwegian part of the Norwegian Sea"   , 
+                                 "Cuban Exclusive Economic Zone"  , "North Indian Ocean" , "New York" , "Massachusetts Continental Shelf" , 
+                                 "Gulf of Oman",  "Pakistani part of the Arabian Sea", "Gulf of Gabes", "Curacaoan part of the Caribbean Sea" , 
+                                 "Curacaoan Exclusive Economic Zone",  "Puerto Rican part of the Caribbean Sea",  "Puerto Rican part of the North Atlantic Ocean", 
+                                 "Kuwaiti part of the Persian Gulf" ,  "Panamanian part of the Caribbean Sea" , "Gulf of Panama", 
+                                 "Benguela" , "Massachusetts" ,  "Biscayne Bay" , "Arabian Sea" , "Gulf of Suez", "Ionian Sea"   , 
+                                 "Spanish part of the Balearic Sea" , "Gulf of Aden" , "Saudi Arabian part of the Red Sea"))   
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("New Brunswick" , "Palaearctic", "Northern European Russia", "Dardanelles" ,  "Tyrrhenian Sea"     ,"Norway"   , "Czech Republic"  ,"Northwest European Russia"  ,  "Czechoslovakia"  ,"North America"  ,  "Kamchatka",
+                                 "Turkey" , "West Siberia" ,  "Russian Far East" , "French part of the Mediterranean Sea - Western Basin", 
+                                 "Egyptian Exclusive Economic Zone" , "Baltic Sea" , "Antarctica" ,  "Ireland" , "Sahara Coast" ,  "North American Pacific Fijordland", 
+                                 "West Greenland Shelf", "Greenlandic Exclusive Economic Zone" , "Kamchatka Shelf and Coast", "Faroes",  "Gulf of St. Lawrence - Eastern Scotian Shelf", 
+                                 "South and West Iceland"   , "Southern Norway" , "Alboran Sea", "Virginian"  ,  "North and East Iceland" ,  "South New Zealand"   ,  "Northern Norway and Finnmark"  , 
+                                 "Arctic" ,  "Northern European Seas" , "Uruguay-Buenos Aires Shelf"  ,  "Gulf of Maine/Bay of Fundy"   , "Shetland Islands" , "South Shetland Islands"   , 
+                                 "Saharan Upwelling" , "Adriatic Sea", "Western India","New Zealand Exclusive Economic Zone",  "Nigerian part of the Gulf of Guinea", "Sri Lankan Exclusive Economic Zone" , 
+                                 "Swedish Exclusive Economic Zone" ,    "Rio Grande" , "Bosporus" ,  "North West Atlantic" ,  "Atlantic Coast of United States of America", "Brazilian Exclusive Economic Zone" ,  "Cape Verde" , 
+                                 "Belizean part of the Caribbean Sea"   , "Indian part of the Arabian Sea"  ,  "Ghanaian Exclusive Economic Zone"  , "Jamaican Exclusive Economic Zone"  , 
+                                 "Spanish Exclusive Economic Zone [Mediterranean part]"  , "Angolan" , "Ecuadorean Exclusive Economic Zone"  ,  "Texas-Louisiana Shelf"   , 
+                                 "Eastern Canada" , "Mexican part of the North Pacific Ocean", "North and East Barents Sea" ,   "Gulf of Maine" ,  "Malvinas/Falklands", "Ross Sea" , "Faroe Plateau" , "White Sea"   ,   "Beaufort Sea - continental coast and shelf", 
+                                 "California", "Bay of Bengal"  , "Walvis Bay"  , "Suez canal" ,  "Mozambican Exclusive Economic Zone",  "Mozambican Coast"   , "Indian part of the Bay of Bengal"   , 
+                                 "Cuban part of the Gulf of Mexico"  , "Southwestern Caribbean", "Tasmania", "Panama Bight"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Bahamian", "Galapagos Exclusive Economic Zone" , "Namib"  ,  "Warm Temperate Northeast Pacific" ,
+                                 "Eastern Brazil" , "Chesapeake Bay" , "Northeastern Brazil", "South African part of the Indian Ocean" , "Madagascan part of the Indian Ocean" , "Mid-Atlantic Bight" ,  "Red Sea"  ,                             
+                                 "Kenyan part of the Indian Ocean",  "Warm Temperate Northwest Atlantic",  "Tropical Atlantic", 
+                                 "Punta Arenas" , "East Antarctic Wilkes Land", "Antarctic Peninsula" , "Lusitanian" , "Mid-Atlantic Ridge", "Buenos Aires" , "Red Sea and Gulf of Aden"  , 
+                                 "Gulf of Mexico" , "Baja California Sur", "Southern Gulf of Mexico", "Arabian (Persian) Gulf" , 
+                                 "Eastern Caribbean", "Japanese part of the North Pacific Ocean", "South Georgia"   , "Alaskan Exclusive Economic Zone"  , 
+                                 "Brazil"  ,  "Azov sea", "Cleveland Bay", "Cameroonian part of the Gulf of Guinea", "Northeast Atlantic Ocean (40W)"  , 
+                                 "European waters (ERMS scope)",  "Bangladeshi part of the Bay of Bengal" , "Northeastern New Zealand"  , 
+                                 "West African Transition", "India"   , "Senegalese part of the North Atlantic Ocean" ))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Thau Lagoon", "Cortezian", "Bassian", "Floridian", "Carolinian", "Humboldtian", 
+                                 "Cape Hatteras", "Pamlico Sound (Sound)", "Scotian Shelf", "Hachijo-jima", "Murmansk Coast", 
+                                 "Murman Coast", "United States Exclusive Economic Zone", "Northeastern Honshu", "Friday Harbor", 
+                                 "Heard and Macdonald Islands"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Wimereux", "Tosa Bay", "Guerrero", "Amur", "Sinaloa", "France", "Campbell Island" , 
+                                 "Comoran part of the Indian Ocean", "Revillagigedos", "Columbia River", "Leeuwin", 
+                                 "Magdalena Transition"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locationID %in% c("http://marineregions.org/mrgid/21831", "http://marineregions.org/mrgid/21864", 
+                                   "http://marineregions.org/mrgid/25376", "http://marineregions.org/mrgid/47746", 
+                                   "http://marineregions.org/mrgid/22872"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!higherGeography %in% c("South Africa", "Bay of Bengal", "Egypt", "Mexico",  "Estonia", 
+                                        "Mediterranean Sea - Eastern Basin", "Gulf of Mexico", "Azerbaijan", 
+                                        "Mediterranean Sea - Western Basin", "Mediterranean Sea", "Kazakhstan", 
+                                        "English Channel", "Bay of Biscay", "Tyrrhenian Sea", "Poland", "Spain",
+                                        "Ukraine", "Romania", "Netherlands", "Austria", "Hungary", "Israel", 
+                                        "Germany", "Gulf of California", "Caribbean Sea" , "North Atlantic Ocean" , "Brazil" ,  "Colombia" , 
+                                        "Venezuela" , "Black Sea", "Adriatic Sea" , "Bristol Channel" , "Italy", 
+                                        "Red Sea" , "South Atlantic Ocean", "Sea of Marmara", "North Sea" , "Aegean Sea"  , 
+                                        "Gulf of Aden" , "Tunisia",  "Peru", "Chile",  "North Pacific Ocean", 
+                                        "Portugal"  , "Canada" , "Inner Seas off the West Coast of Scotland" , "Mozambique Channel", 
+                                        "United Kingdom" , "Kattegat" ,  "Labrador Sea", "Denmark"   , "Baltic Sea"  ,  "Norwegian Sea", 
+                                        "Barentsz Sea" , "Skagerrak"  ,  "Ionian Sea"  , "Yemen"  , "Cuba"  , "Balearic Sea"  , 
+                                        "Switzerland", "Arctic Ocean"  ,  "Gulf of Oman"   , "Levantine Sea" , "Strait of Gibraltar" , 
+                                        "Angola", "South Korea" , "Gulf of Suez" , "Turkiye" , "Gulf of Finland"  , "Panama" , "Democratic Republic of the Congo", 
+                                        "Qatar", "Iran" , "Persian Gulf" ,  "Arabian Sea", "Jamaica"  , "Ligurian Sea" , 
+                                        "Pakistan", "Algeria" , "Mozambique", "Uruguay", "India", "Ireland"  , 
+                                        "Great Australian Bight", "Bangladesh" ,  "Oman" , "Ecuador" , "Tanzania" , 
+                                        "Bahamas", "Haiti", "Ross Sea", "Gulf of Aqaba" ,  "Sri Lanka"  , "Wadden Sea" , 
+                                        "Gulf of Riga"  , "Norway" , "Maldives", "Bass Strait", "Argentina", "Celtic Sea" , "Namibia" , "Sweden", "Bay of Fundy" , "New Zealand", 
+                                        "Irminger Sea" , "Baffin Bay", "Pechora Sea", "Greenland Sea", "Gulf of Bothnia", 
+                                        "Seto Inland Sea", "Davis Strait", "Inland Sea", "Iceland" , 
+                                        "Japan Sea/East Sea", "Sea of Okhotsk", "White Sea", "Bering Sea" , "Gulf of Saint Lawrence" , 
+                                        "Irish Sea and St. George's Channel"  , "Belgium"  , "Sea of Azov", "Eritrea", 
+                                        "Amundsen Sea", "Kara Sea", "Baelt Sea"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!higherGeography %in% c("Benin",  "Seychelles", "Federal Republic of Somalia", "Republic of Mauritius" , "Djibouti" , 
+                                        "Greece" , "Turkiye" , "Kenya"  , "Madagascar" , "Comores" , "Alboran Sea"  , "The Coastal Waters of Southeast Alaska and British Columbia" ))                                                
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Mauritian Exclusive Economic Zone", "Reunion Exclusive Economic Zone", 
+                                 "North East Pacific", "Western Indian Ocean", "Chagos"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Turkey", "Wimereux", "Cargados Carajos", "FAO fishing area 37", 
+                                 "FAO fishing area 87"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locationID %in% c("http://marineregions.org/mrgid/8338"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Japanese Exclusive Economic Zone", "Japanese part of the Inland Sea", "Karachi Coast", "Pacific Coast of Mexico", 
+                                 "United States part of the Gulf of Mexico", "Ivory Coast", "Atlantic Coast of South America", "Atlantic Coast of Florida",
+                                 "Iranian part of the Persian Gulf", "Rio de la Plata", "Indian Ocean", "Somali part of the Indian Ocean", "Gulf of Eilat",
+                                 "Japanese part of the Eastern China Sea",  "East China Sea", "Hong Kong", "Curacaoan Exclusive Economic Zone", "Nicaragua", 
+                                 "West Europe", "Michigan", "South East Atlantic", "Europe", "Argentina", "Bulgaria", "Mediterranean Sea Area", "Crete Sea", "Poland", 
+                                 "Malawi", "Guinea", "Sierra Leone", "Tanganyika, Lake", "Uganda", "Congo", "Jordan", "Puerto Rico", "South African Coast", 
+                                 "British Columbia", "Russian Exclusive economic Zone", "Moldova", "Uzbekistan", "Georgia (Country)", "Tadzhikistan", 
+                                 "Minnesota", "Mississippi", "New Jersey", "Oaxaca", "Ohio", "Veracruz", "South Korea", "Bengal", "New Zealand South", 
+                                 "South European Russia", "Canada (Arctic)", "Chiapas", "Wyoming", "Montana", "Lithuania", "Crimea", "Pacific Coast of Canada",
+                                 "Iceland", "Ontario", "Tennessee", "Faroe Islands", "Idaho", "Connecticut", "Sweden", "Korean Peninsula", "Great Britain", 
+                                 "Baltic States", "Turkmenistan", "Arkansas", "Catalan Sea", "Italian part of the Adriatic Sea", "Argentina Northeast", 
+                                 "South Atlantic", "Netherlands", "Rio Grande do Sul", "French Exclusive Economic Zone [Atlantic part]", "Kirgizistan", 
+                                 "Burkina Faso", "Cameroon", "Benin", "Senegal", "Zimbabwe", "Ghana", "Israel", "Plymouth Sound", "Cypriote Exclusive Economic Zone", 
+                                 "Temperate Northern Atlantic", "South African part of the South Atlantic Ocean", "United States part of the North Atlantic Ocean", "United States part of the North Pacific Ocean", 
+                                 "Monterey Bay", "Volga", "Slovakia", "Middle Europe", "Sardinia", "Spanish part of the Mediterranean Sea - Western Basin", "Yangtze Estuary", 
+                                 "United Kingdom part of the North Sea", "Southwest Australian Shelf", "Costa Rica", "Indian Ocean, Antarctic and Southern Ocean", "Mexican part of the Caribbean Sea", 
+                                 "Brazilian Exclusive Economic Zone (Trindade)", "Senegalese Exclusive Economic Zone", "Canary Islands Exclusive Economic Zone", 
+                                 "Sea of Japan", "Pacific Coast of Costa Rica", "Yucatan"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Virginia", "North Dakota", "Canadian Atlantic Coast", "Sumatra", "Belgian part of the North Sea", 
+                                 "Los Angeles Bay", "Galicia", "Canadian part of the North Atlantic Ocean", "Uruguay", "North East Atlantic", 
+                                 "Algerian part of the Mediterranean Sea - Western Basin", "Belarus", "Parana", "Niger", "Caribbean Sea", 
+                                 "Pennsylvania", "Amazonas", "Azerbaijan", "Rio de Janeiro", "Ivory Coast Exclusive Economic Zone", 
+                                 "Azores Canaries Madeira", "Gulf of St. Vincent", "Goa", "Croatia", "Iberian Atlantic", 
+                                 "Atlantic coast of Europe", "Maine", "Bay of Biscay", "English Channel", "Louisiana", "Kentucky", "Oklahoma", 
+                                 "Washington (State)", "New York Bight", "South East Australia", "Quebec", "Baikal Lake", "Yugoslavia", "South Korean Exclusive Economic Zone", 
+                                 "Georgian part of the Black Sea", "Latvia", "Kaliningrad", "Denmark", "Cuba", "Florida"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Seychelles", "Curacaoan part of the Caribbean Sea", "Gulf of Guinea", "Curacaoan Exclusive Economic Zone",
+                                 "Japan", "Iraqi part of the Persian Gulf", "Southeast Australian Shelf", "Inland Sea off Seto", "Naha Bay"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!higherGeography %in% c("Eastern China Sea", "Japan", "United States", "Indian Ocean","Southern Ocean", "Antilles Sea", "France", 
+                                 "Tasman Sea", "Yellow Sea", "Guyana", "Sudan", "Andaman Sea", "Myanmar", "Mali", "Finland", "Laptev Sea"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Eurasia", "Cosmopolitan (World Oceans)", "North Patagonian Gulfs", 
+                                 "Northern and Central Red Sea", "Cape Howe", "Chatham Island, New Zealand", 
+                                 "St. Helena and Ascension Islands", "Crozet Islands", "Ukraine",
+                                 "Kerguelen Islands", "Macquarie Island", "Prince Edward Islands", "South Australian Gulfs", 
+                                 "Central Kuroshio Current", "Araucanian", "Sahelian Upwelling", "Shark Bay"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Houtman", "Transbaikalia", "Celtic Sea", "Kaikoura District", "Skagerrak", 
+                                 "Baltic sea", "Brazilian part of the South Atlantic Ocean", 
+                                 "Buryatia", "Karelia", "Andaman Sea", "Great Lakes", "Lake Huron", 
+                                 "Yellow Sea", "Japanese Sea", "Bering Sea"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("French Exclusive Economic Zone", "Irish Exclusive economic Zone", 
+                                 "Chatham Rise", "Andaman and Nicobar Islands Exclusive Economic Zone", 
+                                 "Madagascan Exclusive Economic Zone", "Maldives Exclusive Economic Zone", 
+                                 "Omani Exclusive Economic Zone", "Reunion", "Alabama", "Rio De Janeiro", 
+                                 "Kerala", "Tasman Sea", "New Zealand", "Bangladesh", "Kazakhstan", 
+                                 "Mongolia", "Switzerland", "East European Russia", "South Carolina", 
+                                 "South Australia", "Texas", "East Atlantic", "Pacific Ocean", "Great Australian Bight", 
+                                 "Chiloense", "Graham Land", "Admiralty Bay", "Indo-Pacific", "Cronulla", 
+                                 "Port Phillip Bay", "Victoria", "Victoria (Australian state)", "Circumtropical", 
+                                 "Palmyra Atoll Exclusive Economic Zone", "Northumberland Coast", "Oran Bight", 
+                                 "Tsushima Basin", "Yucatan"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Puget Sound", "Adelie Land [RAMS]", "Adventure Bay", "Africa", "Andhra Pradesh",
+                                 "Agulhas Bank", "Bay of Islands", "Bihar", "Biwa lake", "Bohai Bay", "Aral Sea", 
+                                 "Brittany", "Andaman", "Andaman and Nicobar Islands", "Andaman Islands", 
+                                 "Ariake Sea", "Assam", "Australia", "Australian part of the Bass Strait", 
+                                 "Bass Strait", "Campeche","Central Indo-Pacific", "Chattisgarh", "Chihuahua", 
+                                 "Chile Central", "Deep Bay", "Durango", "East Central Australian Shelf", 
+                                 "Chubut", "Chukotka", "Clarion Island", "Commander Islands", "Cook Strait",
+                                 "Cockburn Sound", "Curacaoan Exclusive Economic Zone", "Curacaoan part of the Caribbean Sea", 
+                                 "Dagestan", "East European Russia", "Egyptian part of the Gulf of Suez", 
+                                 "FAO fishing area 67", "Finland", "Florida Bay", "Gulf of Gabes", "Healesville Sanctuary", 
+                                 "Heard Island"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locality %in% c("Gotland", "Grand Bank", "Green Island", "Guanajuato", "Guizhou", "Kerala", "Liaoning", "Madhya Pradesh", "Nuevo Leon",
+                                 "High seas of the South Pacific Ocean", "Natal", "New South Wales", "Jilin", "Kobe", "Long Island Sound (bay)", "Shandong",
+                                 "New Zealand North", "North China", "North European Russia", "Northern New Zealand", "Kuril Is.", "Maria Island",
+                                 "Northwest Territories", "Omani part of the Gulf of Oman", "Hokkaido", "Holarctic", "Magellanic", "Miwi Island", "Rottnest Island",
+                                 "Honshu", "Hubei", "Hunan", "Nei Mongol", "Neuquen", "Oyashio Current", "Patagonia", "Magadan", "Morelos", "Seto Inland Sea",
+                                 "Pacific Coast of Panama", "Pacific Coast of the United States","Parana", "Kyushu", "Lake Erie", "Manipur", "Shag Rocks",
+                                 "Phillip Island", "Persian Gulf", "Peter the Great Bay", "Point Peron", "Wisconsin", "Laccadive Sea", "Milford Haven", "Shikoku",
+                                 "Xinjiang", "Yakutskiya", "Yunnan", "Western Indo-Pacific", "West Bengal", "Kagoshima Prefecture", "Mexican part of the Gulf of Mexico",
+                                 "Virgin Gorda", "Warm Temperate Northwest Pacific", "Weddell Sea", "Tunisian part of the Mediterranean Sea - Eastern Basin", 
+                                 "Toyama Bay", "Tweed-Moreton", "Ural Mountains", "Uttar Pradesh", "Tropical Southwestern Atlantic", "Meghalaya",
+                                 "Tianjin", "Temperate Australasia", "Temperate Northern Pacific", "Sodwana Bay","Jiangxi", "Maharashtra", "Shark Bay, Western Australia",
+                                 "Taiwanese part of the Eastern China Sea", "Tamil Nadu", "Tampa Bay", "Sundarbans", "Jiangsu", "Michoacan", "Shelley Beach",
+                                 "Sudan", "Tabasco", "Spencer Gulf", "Southern New Zealand", "South West India", "Sakhalin", "Melbourne", "rasdu atoll",
+                                 "South Carolina", "South Andaman Islands", "Jalisco", "Jammu-Kashmir", "Saint Joseph Bay", "Quintana Roo", "Rio Negro",
+                                 "Scotia Sea", "San Jorge Gulf", "San Luis Potosi", "Santiago del Estero", "Sergipe", "Sagami Bay", "Rockall Trough",
+                                "Porcupine Abyssal Plain", "Porcupine Seabight", "Port Natal", "Port Willunga", "Portuguese part of the North Atlantic Ocean",
+                                 "Primorie", "Primorsky Krai", "Primorye", "Prince Edward I.", "Puri"))
+host_prey_attributes_aphia_dist_filt <- host_prey_attributes_aphia_dist_filt %>% 
+  dplyr::filter(!locationID %in% c("http://marineregions.org/mrgid/48685", "http://marineregions.org/mrgid/26517",
+                                   "http://marineregions.org/mrgid/26569", "http://marineregions.org/mrgid/3879",
+                                   "http://marineregions.org/mrgid/48329", "http://marineregions.org/mrgid/47933",
+                                   "http://marineregions.org/mrgid/48313", "http://marineregions.org/mrgid/48025",
+                                   "http://marineregions.org/mrgid/8609", "http://marineregions.org/mrgid/48315",
+                                   "http://marineregions.org/mrgid/48336", "http://marineregions.org/mrgid/19141"))
+                                  
+host_prey_attributes_aphia_dist_filt <- select(host_prey_attributes_aphia_dist_filt, -recordStatus, typeStatus, 
+                                                -establishmentMeans, -qualityStatus, -typeStatus, -decimalLatitude, -decimalLongitude)
+
+#import a file containing the correspondence of the localities to provinces
+mregionsID <- read.csv("mregions.txt", sep = '\t', header = TRUE)
+
+#add province information to the host_prey_attributes_aphia_dist_filt
+host_prey_attributes_ecoregion  <- inner_join(host_prey_attributes_aphia_dist_filt, mregionsID, 
+                                  by = c("locality"="locality"))
+
+missing_locality <- anti_join(host_prey_attributes_aphia_dist_filt, mregionsID, 
+                by = c("locality"="locality"))
+
+missing_locality <- missing_locality %>% mutate(ECOREGION = "New Caledonia")
+missing_locality <- missing_locality %>% mutate(PROVINCE = "Tropical Southwestern Pacific")
+
+host_prey_attributes_ecoregion <- rbind(host_prey_attributes_ecoregion, missing_locality)
+host_prey_attributes_ecoregion$id <- as.integer(host_prey_attributes_ecoregion$id)
+colnames(host_prey_attributes_ecoregion)[colnames(host_prey_attributes_ecoregion) == "id"] ="AphiaID"
+
+host_prey_attributes_province <- select(host_prey_attributes_ecoregion, AphiaID, PROVINCE)
+host_prey_attributes_province <- unique(host_prey_attributes_province)
+  
+#add host AphiaID
+
+host_prey_attributes_ecoregion_aphia <- merge(host_prey_attributes, host_prey_attributes_province, 
+                                                   by = c("AphiaID"="AphiaID"), relationship = "many-to-many")
+colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_ecoregion_aphia) == "AphiaID"] ="AphiaID"
+colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_ecoregion_aphia) == "id"] ="AphiaID"
 
 
 ################################################################################
@@ -115,9 +410,12 @@ worms_info
 ################################################################################
 
 load(file = "Fish_Hosts.RData")
-#to import the Fish_Hosts_to_merge
-load(file = "checklists_fish.RData")
-#to import the cleaner_reef_fish_to_merge and the Fish_Barcoding_to_merge
+#to import the Parasites
+
+colnames(Parasites)
+
+#merge Parasites with host_prey_attributes_ecoregion
+
 
 #check if all fish are identified to species level
 Fish_Barcoding_to_merge <- Fish_Barcoding_to_merge %>% filter(str_detect(Species, "[ ]"))
