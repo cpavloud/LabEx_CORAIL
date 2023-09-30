@@ -44,11 +44,11 @@ Run [5_retrieve_parasite.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/s
 
 a) add the new parasite information from WoRMS, 
 
-b) select only Trematoda and Copepoda, 
+b) check their distribution, 
 
-c) check their distribution, 
+c) delete those that are not occurring in the provinces of interest,
 
-d) delete those that are not occurring in the provinces of interest. 
+d) select only Trematoda and Copepoda. 
 
 **Step 6**
 
