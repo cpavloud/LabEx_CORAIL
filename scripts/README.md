@@ -48,7 +48,9 @@ b) check their distribution,
 
 c) delete those that are not occurring in the provinces of interest,
 
-d) select only Trematoda and Copepoda (but also calculate brief statistics for the other groups).  
+d) select only Trematoda and Copepoda (but also calculate brief statistics for the other groups), 
+
+e) create lists (per species, genus, family) to search against GenBank. 
 
 **Step 6**
 
