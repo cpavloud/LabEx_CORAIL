@@ -48,7 +48,7 @@ b) check their distribution,
 
 c) delete those that are not occurring in the provinces of interest,
 
-d) select only Trematoda and Copepoda. 
+d) select only Trematoda and Copepoda.  
 
 **Step 6**
 
