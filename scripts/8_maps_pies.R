@@ -1,34 +1,66 @@
-getwd()
-setwd("C:/Users/cpavl/OneDrive/Έγγραφα/Post-Doc/CNRS_Labex_Corail/References")
+# ============================================================
+'R code for LabEx CORAIL book chapter on fish parasites
 
+Christina Pavloudi
+cpavloud@hcmr.gr
+https://cpavloud.github.io/mysite/
 
-library(memisc)
-library(assertthat)
-library(sqldf)
-library(magrittr)
-library(dplyr)
-library(reshape2)
-library(ggplot2)
-library(oz)
-library(scatterpie)
-library(rgdal)
-library(maptools)
-library(maps)
-library(ggmap)
-library(mapproj)
-library(mapdata)
-library(scales) 
-library(rworldmap)
-library(sf)
-library(reshape)
-library(rworldxtra)
-library(leaflet)
-library(spData) # for the shapefiles of world
+	Copyright (C) 2023 Christina Pavloudi
+  
+    This script is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+  
+    This script is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.'
 
+# =============================================================
 
-load("maps.RData")
+################################################################################
+########################### LOAD LIBRARIES #####################################
+################################################################################
 
-##############################################################################
+# List of packages needed
+.packages = c("memisc", "assertthat", "sqldf", "magrittr", "dplyr", "reshape2", "ggplot2", "oz", 
+              "scatterpie", "rgdal", "maptools", "maps", "ggmap", "mapproj", "scales", 
+              "rworldmap", "sf", "reshape", "rworldxtra", "leaflet", "spData")
+
+# Install CRAN packages (if not already installed)
+.inst <- .packages %in% installed.packages()
+if(length(.packages[!.inst]) > 0) install.packages(.packages[!.inst])
+
+# Load packages into session 
+lapply(.packages, require, character.only=TRUE)
+
+packageVersion("memisc")
+packageVersion("assertthat")
+packageVersion("sqldf")
+packageVersion("magrittr")
+packageVersion("dplyr")
+packageVersion("reshape2")
+packageVersion("ggplot2")
+packageVersion("oz")
+packageVersion("scatterpie")
+packageVersion("rgdal")
+packageVersion("maptools")
+packageVersion("maps")
+packageVersion("ggmap")
+packageVersion("mapproj")
+packageVersion("mapdata")
+packageVersion("scales")
+packageVersion("rworldmap")
+packageVersion("sf")
+packageVersion("reshape")
+packageVersion("rworldxtra")
+packageVersion("leaflet")
+packageVersion("spData")
+
+################################################################################
+############################# IMPORT FILES #####################################
+################################################################################
 
 lat_lon_ecoregion <- read.csv("lat_lon_ecoregion.txt", sep ="\t")
 lat_lon_province <- read.csv("lat_lon_province.txt", sep ="\t")
