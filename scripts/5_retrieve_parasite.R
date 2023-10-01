@@ -1011,9 +1011,6 @@ df$Others <- col_Others
 write.table(df, "all_parasites_reef_statistics_province.txt",
             row.names = TRUE, col.names = TRUE, sep =";")
 
-#Save the workspace
-save.image(file = "parasite.RData")
-
 ################################################################################
 ########################## CREATE LISTS FOR EUTILS #############################
 ################################################################################
@@ -1048,8 +1045,8 @@ Trematoda_reef_family_for_NCBI <- unique(Trematoda_reef_family_for_NCBI)
 write.table(Trematoda_reef_family_for_NCBI, "Trematoda_reef_family_for_NCBI.txt",
             row.names = FALSE, col.names = FALSE, sep =";")
 
-
-
+#Save the workspace
+save.image(file = "parasite.RData")
 
 ################################################################################
 ################################################################################
