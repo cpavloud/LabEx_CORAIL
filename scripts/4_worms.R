@@ -1077,9 +1077,9 @@ write.table(df, "all_fish_habitat_statistics.txt",
             row.names = TRUE, col.names = TRUE, sep =";")
 
 all_fish_reef <- subset(all_fish_habitat, DemersPelag=="reef-associated")
-all_fish_reef <- select(all_fish_reef, Species)
-length(unique(all_fish_reef$Species))
-colnames(all_fish_reef)[colnames(all_fish_reef) == "Species"] ="scientificName"
+all_fish_reef_species <- select(all_fish_reef, Species)
+length(unique(all_fish_reef_species$Species))
+colnames(all_fish_reef_species)[colnames(all_fish_reef_species) == "Species"] ="scientificName"
 
 #correct the all_fish_with_classification and calculate again the statistics
 all_fish_with_classification <- semi_join(all_fish_with_classification, all_fish_habitat, 
@@ -1134,6 +1134,59 @@ colnames(df) <- c("Fish")
 df$Fish <- col_all_fish_with_classification
 
 write.table(df, "all_fish_statistics_province.txt",
+            row.names = TRUE, col.names = TRUE, sep =";")
+
+#calculate again the statistics for the reef fish
+all_reef_fish_with_classification <- semi_join(all_fish_with_classification, all_fish_reef, 
+                                          by = c("scientificName"="Species"))
+
+write.table(all_reef_fish_with_classification, "all_reef_fish_province_with_classification.txt", 
+            row.names = FALSE, col.names = TRUE, sep = "\t")
+
+df <- data.frame(matrix(ncol = 1, nrow = 18))
+
+rownames(df) <- c("Eastern Coral Triangle", 
+                  "Java Transitional", 
+                  "Lord Howe and Norfolk Islands", 
+                  "Northeast Australian Shelf", 
+                  "Northwest Australian Shelf", 
+                  "Sahul Shelf", 
+                  "South China Sea", 
+                  "South Kuroshio", 
+                  "Sunda Shelf", 
+                  "Tropical Northwestern Pacific", 
+                  "Tropical Southwestern Pacific", 
+                  "Western Coral Triangle", 
+                  "Central Polynesia", 
+                  "Easter Island", 
+                  "Hawaii", 
+                  "Marquesas", 
+                  "Marshall, Gilbert and Ellis Islands", 
+                  "Southeast Polynesia")
+
+col_all_reef_fish <- c(sum(all_reef_fish_with_classification$PROVINCE == "Eastern Coral Triangle"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Java Transitional"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Northeast Australian Shelf"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Northwest Australian Shelf"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Sahul Shelf"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "South China Sea"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "South Kuroshio"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Sunda Shelf"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Tropical Northwestern Pacific"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Tropical Southwestern Pacific"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Western Coral Triangle"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Central Polynesia"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Easter Island"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Hawaii"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Marquesas"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                                      sum(all_reef_fish_with_classification$PROVINCE == "Southeast Polynesia"))
+
+colnames(df) <- c("Reef_Fish")
+df$Reef_Fish <- col_all_reef_fish
+
+write.table(df, "all_reef_fish_statistics_province.txt",
             row.names = TRUE, col.names = TRUE, sep =";")
 
 
