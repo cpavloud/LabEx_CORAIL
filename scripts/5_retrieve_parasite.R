@@ -398,11 +398,46 @@ host_prey_attributes_province <- select(host_prey_attributes_ecoregion, AphiaID,
 host_prey_attributes_province <- unique(host_prey_attributes_province)
   
 #add host AphiaID
-
 host_prey_attributes_ecoregion_aphia <- merge(host_prey_attributes, host_prey_attributes_province, 
                                                    by = c("AphiaID"="AphiaID"), relationship = "many-to-many")
 colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_ecoregion_aphia) == "AphiaID"] ="AphiaID"
 colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_ecoregion_aphia) == "id"] ="AphiaID"
+
+#select only parasites identified to the species level
+host_prey_attributes_ecoregion_aphia <- host_prey_attributes_ecoregion_aphia %>% filter(str_detect(scientificName, "[ ]"))
+
+#select only the hosts and retrieve their classification
+#we should already have that from 4_worms.R but why not do it again
+host_prey_attributes_hosts <- select(host_prey_attributes, AphiaID_Host)
+host_prey_attributes_hosts <- unique(host_prey_attributes_hosts)
+
+##Extract the aphiaIDs into a list
+host_prey_attributes_hosts_list <- list()
+for (i in host_prey_attributes_hosts) {
+  host_prey_attributes_hosts_list <- append(host_prey_attributes_hosts_list, i)
+}
+host_prey_attributes_hosts_list <- as.integer(host_prey_attributes_hosts_list)
+host_prey_attributes_hosts_classification <- wormsbyid(host_prey_attributes_hosts_list)
+
+host_prey_attributes_hosts_classification <- select(host_prey_attributes_hosts_classification, AphiaID, 
+                                                scientificname, valid_AphiaID, valid_name, 
+                                                genus, family, order, class, phylum, kingdom)
+
+#select only the parasites and retrieve their classification
+host_prey_attributes_parasites <- select(host_prey_attributes, AphiaID)
+host_prey_attributes_parasites <- unique(host_prey_attributes_parasites)
+
+##Extract the aphiaIDs into a list
+host_prey_attributes_parasites_list <- list()
+for (i in host_prey_attributes_parasites) {
+  host_prey_attributes_parasites_list <- append(host_prey_attributes_parasites_list, i)
+}
+host_prey_attributes_parasites_list <- as.integer(host_prey_attributes_parasites_list)
+host_prey_attributes_parasites_classification <- wormsbyid(host_prey_attributes_parasites_list)
+
+host_prey_attributes_parasites_classification <- select(host_prey_attributes_parasites_classification, AphiaID, 
+                                                    scientificname, valid_AphiaID, valid_name, 
+                                                    genus, family, order, class, phylum, kingdom)
 
 
 ################################################################################
@@ -412,24 +447,83 @@ colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_eco
 load(file = "Fish_Hosts.RData")
 #to import the Parasites
 
-colnames(Parasites)
+#select only parasites identified to the species level
+Parasites <- Parasites %>% filter(str_detect(scientificName_Parasite, "[ ]"))
+
+#retrieve AphiaIDs for Parasites 
+Parasites_species <- select(Parasites, scientificName_Parasite)
+Parasites_species <- unique(Parasites_species)
+Parasites_species_list <- list()
+for (i in Parasites_species) {
+  Parasites_species_list <- append(Parasites_species_list, i)
+}
+Parasites_species_list <- as.character(Parasites_species_list)
+
+#RETRIEVE APHIA IDs
+Parasites_species_Aphia <- match_taxa(Parasites_species_list, ask=TRUE)
+Parasites_species_Aphia <- Parasites_species_Aphia %>% drop_na()
+A <- select(Parasites_species_Aphia, scientificName)
+A <- unique(A)
+B <- select(Parasites_species, scientificName_Parasite)
+B <- unique(B)
+colnames(B)[colnames(B) == "scientificName_Parasite"] ="scientificName"
+Species_with_no_aphia <- anti_join(B, A)
+
+#add manually retrieved data for the 21 species
+Species_with_no_aphia <- Species_with_no_aphia %>% mutate(aphiaID = "")
+Species_with_no_aphia <- Species_with_no_aphia %>% mutate(aphiaID =
+                                                            case_when(scientificName == "Azygia anguillae" ~ "726174", 
+                                                                      scientificName == "Coitocaecum kuhliae" ~ "934941", 
+                                                                      scientificName == "Spirocaecum lafii" ~ "1532903", 
+                                                                      scientificName == "Opegaster lobulus" ~ "728462", 
+                                                                      scientificName == "Opecoelus minimus" ~ "728423", 
+                                                                      scientificName == "Prosorhynchoides ozakii" ~ "725948", 
+                                                                      scientificName == "Antorchis tsushimaensis" ~ "767632", 
+                                                                      scientificName == "Centrocestus formosanus" ~ "1376193", 
+                                                                      scientificName == "Monodhelmis trichofurcata" ~ "736131", 
+                                                                      scientificName == "Opecoelus variabilis" ~ "728442", 
+                                                                      scientificName == "Bancroftrema neoceratodi" ~ "1338098", 
+                                                                      scientificName == "Isoparorchis hypselobagri" ~ "1324007", 
+                                                                      scientificName == "Pretestis australianus" ~ "1324009", 
+                                                                      scientificName == "Phyllodistomum magnificum" ~ "1245644", 
+                                                                      scientificName == "Stegodexamene callista" ~ "727530", 
+                                                                      scientificName == "Tetracerasta blepta" ~ "727531", 
+                                                                      scientificName == "Prosorhynchus glyptothoracis" ~ "734129", 
+                                                                      scientificName == "Plagioporus serotinus" ~ "728517", 
+                                                                      scientificName == "Neoprosorhynchus pseudecheneis" ~ "725975", 
+                                                                      scientificName == "Plagioporus myoxocephalis" ~ "1255318", 
+                                                                      scientificName == "Rhipidocotyloides tsengi" ~ "579718"))
+
+Parasites_species_Aphia <- Parasites_species_Aphia %>% 
+  bind_cols(split_into_multiple(.$scientificNameID, ":", "scientificNameID")) %>% 
+  # selecting those that start with 'type_' will remove the original 'type' column
+  select(scientificName, match_type, starts_with("scientificNameID_"))
+
+colnames(Parasites_species_Aphia)[colnames(Parasites_species_Aphia) == "scientificNameID_5"] ="aphiaID"
+Parasites_species_Aphia <- select(Parasites_species_Aphia, scientificName, aphiaID)
+Parasites_species_Aphia <- rbind(Parasites_species_Aphia, Species_with_no_aphia)
+
+#retrieve classification for Parasites 
+Parasites_species_only_aphia <- select(Parasites_species_Aphia, aphiaID)
+Parasites_species_only_aphia_list <- list()
+for (i in Parasites_species_only_aphia) {
+  Parasites_species_only_aphia_list <- append(Parasites_species_only_aphia_list, i)
+}
+Parasites_species_only_aphia_list <- as.integer(Parasites_species_only_aphia_list)
+Parasites_species_classification <- wormsbyid(Parasites_species_only_aphia_list)
+
+Parasites_species_classification <- select(Parasites_species_classification, AphiaID, 
+                                                    scientificname, valid_AphiaID, valid_name, 
+                                                    genus, family, order, class, phylum, kingdom)
+
+colnames(host_prey_attributes_ecoregion_aphia)
+colnames(host_prey_attributes_hosts_classification)
+
 
 #merge Parasites with host_prey_attributes_ecoregion
 
 
-#check if all fish are identified to species level
-Fish_Barcoding_to_merge <- Fish_Barcoding_to_merge %>% filter(str_detect(Species, "[ ]"))
-colnames(Fish_Barcoding_to_merge)[colnames(Fish_Barcoding_to_merge) == "Species"] ="scientificName"
 
-cleaner_reef_fish_to_merge <- cleaner_reef_fish_to_merge %>% filter(str_detect(Species, "[ ]"))
-colnames(cleaner_reef_fish_to_merge)[colnames(cleaner_reef_fish_to_merge) == "Species"] ="scientificName"
-
-Fish_Hosts_to_merge <- Fish_Hosts_to_merge %>% filter(str_detect(scientificName_Host, "[ ]"))
-colnames(Fish_Hosts_to_merge)[colnames(Fish_Hosts_to_merge) == "scientificName_Host"] ="scientificName"
-
-#add ECOREGION column
-Fish_Hosts_to_merge <- Fish_Hosts_to_merge %>% mutate(ECOREGION = NA)
-cleaner_reef_fish_to_merge <- cleaner_reef_fish_to_merge %>% mutate(ECOREGION = NA)
 
 
 
