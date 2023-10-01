@@ -22,28 +22,21 @@ packageVersion("Orcs")
 ############################# IMPORT FILES #####################################
 ################################################################################
 
+################################################################################
+################################# COPEPODA #####################################
+################################################################################
+
 #read results from getGenes.py
-# Myxozoa_genes <- read_tsv("Myxozoa_genes_from_NCBI.txt", col_names = T)
-# Myxozoa_genes <- unique(Myxozoa_genes)
-# Monogenea_genes <- read_tsv("Monogenea_genes_from_NCBI.txt", col_names = T)
-# Monogenea_genes <- unique(Monogenea_genes)
-# Cestoda_genes <- read_tsv("Cestoda_genes_from_NCBI.txt", col_names = T)
-# Cestoda_genes <- unique(Cestoda_genes)
-# Nematoda_genes <- read_tsv("Nematoda_genes_from_NCBI.txt", col_names = T)
-# Nematoda_genes <- unique(Nematoda_genes)
-# Isopoda_genes <- read_tsv("Isopoda_genes_from_NCBI.txt", col_names = T)
-# Isopoda_genes <- unique(Isopoda_genes)
-Copepoda_genes <- read_tsv("Copepoda_genes_from_NCBI_September.txt", col_names = T)
-Copepoda_genes <- unique(Copepoda_genes)
-Trematoda_genes <- read_tsv("Trematoda_genes_from_NCBI_September.txt", col_names = T)
-Trematoda_genes <- unique(Trematoda_genes)
+Copepoda_genes_species <- read_tsv("Copepoda_reef_species_from_NCBI.txt", col_names = T)
+Copepoda_genes_species <- unique(Copepoda_genes_species)
+Copepoda_genes_genera <- read_tsv("Copepoda_reef_genera_from_NCBI.txt", col_names = T)
+Copepoda_genes_genera <- unique(Copepoda_genes_genera)
+Copepoda_genes_families <- read_tsv("Copepoda_reef_family_from_NCBI.txt", col_names = T)
+Copepoda_genes_families <- unique(Copepoda_genes_families)
 
-#data <- rbind(Myxozoa_genes, Monogenea_genes, Cestoda_genes, Nematoda_genes, Isopoda_genes, 
-#              Copepoda_genes, Trematoda_genes)
+Copepoda_genes <- rbind(Copepoda_genes_species, Copepoda_genes_genera, Copepoda_genes_families)
 
-#data <- Copepoda_genes
-
-data <- Trematoda_genes
+data <- Copepoda_genes
 
 # Remove UNVERIFIED sequences (https://www.ncbi.nlm.nih.gov/genbank/unverified/)
 data <- dplyr::filter(data, !grepl("UNVERIFIED", Sequence_Title))
@@ -338,3 +331,31 @@ data_with_taxa[is.na(data_with_taxa)]<- 0
 #            row.names = FALSE, col.names = TRUE)
 write.table(data_with_taxa, "Available_sequences_parasites_trematoda_September.txt", sep = " ", dec = ".",
             row.names = FALSE, col.names = TRUE)
+
+################################################################################
+################################### TREMATODA ##################################
+################################################################################
+
+#read results from getGenes.py
+Trematoda_genes_species <- read_tsv("Trematoda_reef_species_from_NCBI.txt", col_names = T)
+Trematoda_genes_species <- unique(Trematoda_genes_species)
+Trematoda_genes_genera <- read_tsv("Trematoda_reef_genera_from_NCBI.txt", col_names = T)
+Trematoda_genes_genera <- unique(Trematoda_genes_genera)
+Trematoda_genes_families <- read_tsv("Trematoda_reef_family_from_NCBI.txt", col_names = T)
+Trematoda_genes_families <- unique(Trematoda_genes_families)
+
+Trematoda_genes <- rbind(Trematoda_genes_species, Trematoda_genes_genera, Trematoda_genes_families)
+
+data <- Trematoda_genes
+
+
+
+
+
+
+
+
+
+
+#Save the workspace
+save.image(file = "makegene.RData")
