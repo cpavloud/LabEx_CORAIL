@@ -516,25 +516,510 @@ Parasites_species_classification <- select(Parasites_species_classification, Aph
                                                     scientificname, valid_AphiaID, valid_name, 
                                                     genus, family, order, class, phylum, kingdom)
 
-colnames(host_prey_attributes_ecoregion_aphia)
-colnames(host_prey_attributes_hosts_classification)
+#retrieve AphiaIDs for Hosts 
+Parasites_hosts <- select(Parasites, scientificName_Host)
+Parasites_hosts <- unique(Parasites_hosts)
+Parasites_hosts_list <- list()
+for (i in Parasites_hosts) {
+  Parasites_hosts_list <- append(Parasites_hosts_list, i)
+}
+Parasites_hosts_list <- as.character(Parasites_hosts_list)
+
+#RETRIEVE APHIA IDs
+Parasites_hosts_Aphia <- match_taxa(Parasites_hosts_list, ask=TRUE)
+Parasites_hosts_Aphia <- Parasites_hosts_Aphia %>% drop_na()
+
+A <- select(Parasites_hosts_Aphia, scientificName)
+A <- unique(A)
+B <- select(Parasites_hosts, scientificName_Host)
+B <- unique(B)
+colnames(B)[colnames(B) == "scientificName_Host"] ="scientificName"
+Species_with_no_aphia <- anti_join(B, A)
+
+Parasites_hosts_Aphia <- Parasites_hosts_Aphia %>% 
+  bind_cols(split_into_multiple(.$scientificNameID, ":", "scientificNameID")) %>% 
+  # selecting those that start with 'type_' will remove the original 'type' column
+  select(scientificName, match_type, starts_with("scientificNameID_"))
+
+colnames(Parasites_hosts_Aphia)[colnames(Parasites_hosts_Aphia) == "scientificNameID_5"] ="aphiaID"
+Parasites_hosts_Aphia <- select(Parasites_hosts_Aphia, scientificName, aphiaID)
+
+#add manually retrieved data for the 13 species
+Species_with_no_aphia <- Species_with_no_aphia %>% mutate(aphiaID = "")
+Species_with_no_aphia <- Species_with_no_aphia %>% mutate(aphiaID =
+                                                            case_when(scientificName == "Maccullochella macquariensis" ~ "991272", 
+                                                                      scientificName == "Tandanus tandanus" ~ "1022552", 
+                                                                      scientificName == "Neoceratodus forsteri" ~ "1421405", 
+                                                                      scientificName == "Xiphophorus maculatus" ~ "862549", 
+                                                                      scientificName == "Neosilurus ater" ~ "991288", 
+                                                                      scientificName == "Craterocephalus marjoriae" ~ "1014294", 
+                                                                      scientificName == "Melanotaenia duboulayi" ~ "1020149", 
+                                                                      scientificName == "Glyptothorax sinensis" ~ "1018215", 	
+                                                                      scientificName == "Sphoeroides ocellatus" ~ "298214", 	
+                                                                      scientificName == "Leiocassis hainanensis" ~ "1015325", 	
+                                                                      scientificName == "Leiocassis brashnikowi" ~ "1623431", 	
+                                                                      scientificName == "Pseudecheneis sulcata" ~ "1022207", 	
+                                                                      scientificName == "Leiopotherapon plumbeus" ~ "1020693"))
+                                                                      
+                                                                                                                                            
+Parasites_hosts_Aphia <- rbind(Parasites_hosts_Aphia, Species_with_no_aphia)
 
 
-#merge Parasites with host_prey_attributes_ecoregion
+#retrieve classification for Hosts 
+Parasites_hosts_only_aphia <- select(Parasites_hosts_Aphia, aphiaID)
+Parasites_hosts_only_aphia_list <- list()
+for (i in Parasites_hosts_only_aphia) {
+  Parasites_hosts_only_aphia_list <- append(Parasites_hosts_only_aphia_list, i)
+}
+Parasites_hosts_only_aphia_list <- as.integer(Parasites_hosts_only_aphia_list)
+Parasites_hosts_classification <- wormsbyid(Parasites_hosts_only_aphia_list)
+
+Parasites_hosts_classification <- select(Parasites_hosts_classification, AphiaID, 
+                                           scientificname, valid_AphiaID, valid_name, 
+                                           genus, family, order, class, phylum, kingdom)
 
 
 
+#merge Parasites with host_prey_attributes_ecoregion_aphia
+
+colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_ecoregion_aphia) == "scientificName"] ="scientificName_Parasite"
+
+host_prey_attributes_ecoregion_aphia_reduced <- select(host_prey_attributes_ecoregion_aphia, 
+                                                       AphiaID, scientificName_Parasite, AphiaID_Host, PROVINCE)
+host_prey_attributes_hosts_classification_only_species_aphia <- select(host_prey_attributes_hosts_classification, AphiaID, 
+                                                                       scientificname)
+host_prey_attributes_ecoregion_aphia_reduced <- inner_join(host_prey_attributes_ecoregion_aphia_reduced, 
+                                                           host_prey_attributes_hosts_classification_only_species_aphia,
+                                by = c("AphiaID_Host"="AphiaID"))
+colnames(host_prey_attributes_ecoregion_aphia_reduced)[colnames(host_prey_attributes_ecoregion_aphia_reduced) == "scientificname"] ="scientificName_Host"
+
+Parasites_reduced <- select(Parasites, PROVINCE, scientificName_Parasite, scientificName_Host)
+Parasites_reduced <- inner_join(Parasites_reduced, Parasites_hosts_Aphia,
+                   by = c("scientificName_Host"="scientificName"))
+colnames(Parasites_reduced)[colnames(Parasites_reduced) == "aphiaID"] ="AphiaID_Host"
+Parasites_reduced <- inner_join(Parasites_reduced, Parasites_species_Aphia,
+                                by = c("scientificName_Parasite"="scientificName"))
+colnames(Parasites_reduced)[colnames(Parasites_reduced) == "aphiaID"] ="AphiaID"
+
+#merge Parasites_reduced with host_prey_attributes_ecoregion_aphia_reduced
+host_prey_attributes_ecoregion_aphia <- rbind(Parasites_reduced, host_prey_attributes_ecoregion_aphia_reduced)
+colnames(host_prey_attributes_ecoregion_aphia)[colnames(host_prey_attributes_ecoregion_aphia) == "AphiaID"] ="AphiaID_Parasite"
+host_prey_attributes_ecoregion_aphia$AphiaID_Host <- as.integer(host_prey_attributes_ecoregion_aphia$AphiaID_Host)
+host_prey_attributes_ecoregion_aphia$AphiaID_Parasite <- as.integer(host_prey_attributes_ecoregion_aphia$AphiaID_Parasite)
+
+#merge Parasites_hosts_classification with host_prey_attributes_hosts_classification
+host_prey_attributes_hosts_classification <- rbind(host_prey_attributes_hosts_classification, 
+                                                   Parasites_hosts_classification)
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "AphiaID"] ="AphiaID_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "scientificname"] ="scientificName_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "valid_AphiaID"] ="valid_AphiaID_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "valid_name"] ="valid_name_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "genus"] ="genus_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "family"] ="family_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "order"] ="order_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "class"] ="class_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "phylum"] ="phylum_Host"
+colnames(host_prey_attributes_hosts_classification)[colnames(host_prey_attributes_hosts_classification) == "kingdom"] ="kingdom_Host"
+
+#merge Parasites_species_classification with host_prey_attributes_parasites_classification
+host_prey_attributes_parasites_classification <- rbind(host_prey_attributes_parasites_classification, 
+                                                       Parasites_species_classification)
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "AphiaID"] ="AphiaID_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "scientificname"] ="scientificName_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "valid_AphiaID"] ="valid_AphiaID_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "valid_name"] ="valid_name_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "genus"] ="genus_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "family"] ="family_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "order"] ="order_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "class"] ="class_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "phylum"] ="phylum_Parasite"
+colnames(host_prey_attributes_parasites_classification)[colnames(host_prey_attributes_parasites_classification) == "kingdom"] ="kingdom_Parasite"
+
+#create one big table with everything
+#so, in a way, merge host_prey_attributes_ecoregion_aphia 
+#with host_prey_attributes_hosts_classification
+#with host_prey_attributes_parasites_classification
+
+test <- inner_join(host_prey_attributes_ecoregion_aphia, host_prey_attributes_parasites_classification)
+
+test <- inner_join(test, host_prey_attributes_hosts_classification) 
+
+colSums(is.na(test))
+#fill in valid_AphiaID_Parasite column
+repeat {
+  for (i in 1:nrow(test))
+    if (is.na(test$valid_AphiaID_Parasite[i])){
+      test$valid_AphiaID_Parasite[i]=test$AphiaID_Parasite[i]
+    }
+  if (sum(is.na(test$valid_AphiaID_Parasite))==0) {
+    break
+  }
+}
+#fill in valid_name_Parasite column
+repeat {
+  for (i in 1:nrow(test))
+    if (is.na(test$valid_name_Parasite[i])){
+      test$valid_name_Parasite[i]=test$scientificName_Parasite[i]
+    }
+  if (sum(is.na(test$valid_name_Parasite))==0) {
+    break
+  }
+}
+#fill in family_Parasite column
+repeat {
+  for (i in 1:nrow(test))
+    if (is.na(test$family_Parasite[i])){
+      test$family_Parasite[i]=test$genus_Parasite[i]
+    }
+  if (sum(is.na(test$family_Parasite))==0) {
+    break
+  }
+}
+
+all_parasites_province <- test
+write.table(all_parasites_province, "all_parasites_province.txt", 
+            row.names = FALSE, col.names = TRUE, sep = "\t")
+
+################################################################################
+############################# SUBSET PER GROUP #################################
+################################################################################  
+
+Isopoda <- all_parasites_province %>% 
+  dplyr::filter(order_Parasite %in% c("Isopoda"))
+length(unique(Isopoda$valid_name_Parasite))
+Isopoda <- unique(Isopoda)
+
+Nematoda <- all_parasites_province %>% 
+  dplyr::filter(phylum_Parasite %in% c("Nematoda"))
+length(unique(Nematoda$valid_name_Parasite))
+Nematoda <- unique(Nematoda)
+
+Cestoda <- all_parasites_province %>% 
+  dplyr::filter(class_Parasite %in% c("Cestoda"))
+length(unique(Cestoda$valid_name_Parasite))
+Cestoda <- unique(Cestoda)
+
+Monogenea <- all_parasites_province %>% 
+  dplyr::filter(class_Parasite %in% c("Monogenea"))
+length(unique(Monogenea$valid_name_Parasite))
+Monogenea <- unique(Monogenea)
+
+Myxozoa <- all_parasites_province %>% 
+  dplyr::filter(class_Parasite %in% c("Myxozoa"))
+length(unique(Myxozoa$valid_name_Parasite))
+Myxozoa <- unique(Myxozoa)
+
+Acanthocephala <- all_parasites_province %>% 
+  dplyr::filter(phylum_Parasite %in% c("Acanthocephala"))
+length(unique(Acanthocephala$valid_name_Parasite))
+Acanthocephala <- unique(Acanthocephala)
+
+Trematoda <- all_parasites_province %>% 
+  dplyr::filter(class_Parasite %in% c("Trematoda"))
+length(unique(Trematoda$valid_name_Parasite))
+Trematoda <- unique(Trematoda)
+
+Copepoda <- all_parasites_province %>% 
+  dplyr::filter(class_Parasite %in% c("Copepoda"))
+length(unique(Copepoda$valid_name_Parasite))
+Copepoda <- unique(Copepoda)
+
+Others <- anti_join(all_parasites_province, Acanthocephala)
+Others <- anti_join(Others, Myxozoa)
+Others <- anti_join(Others, Monogenea)
+Others <- anti_join(Others, Cestoda)
+Others <- anti_join(Others, Nematoda)
+Others <- anti_join(Others, Isopoda)
+Others <- anti_join(Others, Trematoda)
+Others <- anti_join(Others, Copepoda)
+length(unique(Others$valid_name_Parasite))
+Others <- unique(Others)
+
+################################################################################
+##################### SELECT ONLY THOSE WITH REEF HOSTS ########################
+################################################################################  
+
+Isopoda_reef <- semi_join(Isopoda, all_fish_reef, 
+                          by = c("scientificName_Host"="scientificName"))
+Isopoda_reef_species <- select(Isopoda_reef, scientificName_Parasite, PROVINCE)
+Isopoda_reef_species <- unique(Isopoda_reef_species)
+length(unique(Isopoda_reef_species$scientificName_Parasite))
+
+Acanthocephala_reef <- semi_join(Acanthocephala, all_fish_reef, 
+                                 by = c("scientificName_Host"="scientificName"))
+Acanthocephala_reef_species <- select(Acanthocephala_reef, scientificName_Parasite, PROVINCE)
+Acanthocephala_reef_species <- unique(Acanthocephala_reef_species)
+length(unique(Acanthocephala_reef_species$scientificName_Parasite))
+
+Myxozoa_reef <- semi_join(Myxozoa, all_fish_reef, 
+                          by = c("scientificName_Host"="scientificName"))
+Myxozoa_reef_species <- select(Myxozoa_reef, scientificName_Parasite, PROVINCE)
+Myxozoa_reef_species <- unique(Myxozoa_reef_species)
+length(unique(Myxozoa_reef_species$scientificName_Parasite))
+
+Monogenea_reef <- semi_join(Monogenea, all_fish_reef, 
+                            by = c("scientificName_Host"="scientificName"))
+Monogenea_reef_species <- select(Monogenea_reef, scientificName_Parasite, PROVINCE)
+Monogenea_reef_species <- unique(Monogenea_reef_species)
+length(unique(Monogenea_reef_species$scientificName_Parasite))
+
+Cestoda_reef <- semi_join(Cestoda, all_fish_reef, 
+                          by = c("scientificName_Host"="scientificName"))
+Cestoda_reef_species <- select(Cestoda_reef, scientificName_Parasite, PROVINCE)
+Cestoda_reef_species <- unique(Cestoda_reef_species)
+length(unique(Cestoda_reef_species$scientificName_Parasite))
+
+Nematoda_reef <- semi_join(Nematoda, all_fish_reef, 
+                           by = c("scientificName_Host"="scientificName"))
+Nematoda_reef_species <- select(Nematoda_reef, scientificName_Parasite, PROVINCE)
+Nematoda_reef_species <- unique(Nematoda_reef_species)
+length(unique(Nematoda_reef_species$scientificName_Parasite))
+
+Trematoda_reef <- semi_join(Trematoda, all_fish_reef, 
+                            by = c("scientificName_Host"="scientificName"))
+Trematoda_reef_species <- select(Trematoda_reef, scientificName_Parasite, PROVINCE)
+Trematoda_reef_species <- unique(Trematoda_reef_species)
+length(unique(Trematoda_reef_species$scientificName_Parasite))
+
+Others_reef <- semi_join(Others, all_fish_reef, 
+                         by = c("scientificName_Host"="scientificName"))
+Others_reef_species <- select(Others_reef, scientificName_Parasite, PROVINCE)
+Others_reef_species <- unique(Others_reef_species)
+length(unique(Others_reef_species$scientificName_Parasite))
+
+Copepoda_reef <- semi_join(Copepoda, all_fish_reef, 
+                           by = c("scientificName_Host"="scientificName"))
+Copepoda_reef_species <- select(Copepoda_reef, scientificName_Parasite, PROVINCE)
+Copepoda_reef_species <- unique(Copepoda_reef_species)
+length(unique(Copepoda_reef_species$scientificName_Parasite))
+
+
+################################################################################
+########################### CALCULATE STATISTICS ###############################
+################################################################################  
+
+#calculate statistics
+df <- data.frame(matrix(ncol = 9, nrow = 18))
+rownames(df) <- c("Eastern Coral Triangle", 
+                  "Java Transitional", 
+                  "Lord Howe and Norfolk Islands", 
+                  "Northeast Australian Shelf", 
+                  "Northwest Australian Shelf", 
+                  "Sahul Shelf", 
+                  "South China Sea", 
+                  "South Kuroshio", 
+                  "Sunda Shelf", 
+                  "Tropical Northwestern Pacific", 
+                  "Tropical Southwestern Pacific", 
+                  "Western Coral Triangle", 
+                  "Central Polynesia", 
+                  "Easter Island", 
+                  "Hawaii", 
+                  "Marquesas", 
+                  "Marshall, Gilbert and Ellis Islands", 
+                  "Southeast Polynesia")
+col_Acanthocephala <- c(sum(Acanthocephala_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Java Transitional"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Sahul Shelf"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "South China Sea"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "South Kuroshio"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Sunda Shelf"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Western Coral Triangle"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Central Polynesia"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Easter Island"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Hawaii"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Marquesas"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                        sum(Acanthocephala_reef_species$PROVINCE == "Southeast Polynesia"))
+
+col_Myxozoa <- c(sum(Myxozoa_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Java Transitional"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Sahul Shelf"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "South China Sea"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "South Kuroshio"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Sunda Shelf"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Western Coral Triangle"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Central Polynesia"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Easter Island"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Hawaii"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Marquesas"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                 sum(Myxozoa_reef_species$PROVINCE == "Southeast Polynesia"))
+
+
+col_Monogenea <- c(sum(Monogenea_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Java Transitional"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Sahul Shelf"), 
+                   sum(Monogenea_reef_species$PROVINCE == "South China Sea"), 
+                   sum(Monogenea_reef_species$PROVINCE == "South Kuroshio"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Sunda Shelf"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Western Coral Triangle"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Central Polynesia"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Easter Island"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Hawaii"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Marquesas"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                   sum(Monogenea_reef_species$PROVINCE == "Southeast Polynesia"))
+
+col_Cestoda <- c(sum(Cestoda_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Java Transitional"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Sahul Shelf"), 
+                 sum(Cestoda_reef_species$PROVINCE == "South China Sea"), 
+                 sum(Cestoda_reef_species$PROVINCE == "South Kuroshio"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Sunda Shelf"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Western Coral Triangle"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Central Polynesia"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Easter Island"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Hawaii"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Marquesas"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                 sum(Cestoda_reef_species$PROVINCE == "Southeast Polynesia"))
 
 
 
+col_Nematoda <- c(sum(Nematoda_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Java Transitional"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Sahul Shelf"), 
+                  sum(Nematoda_reef_species$PROVINCE == "South China Sea"), 
+                  sum(Nematoda_reef_species$PROVINCE == "South Kuroshio"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Sunda Shelf"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Western Coral Triangle"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Central Polynesia"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Easter Island"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Hawaii"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Marquesas"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                  sum(Nematoda_reef_species$PROVINCE == "Southeast Polynesia"))
+
+col_Isopoda <- c(sum(Isopoda_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Java Transitional"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Sahul Shelf"), 
+                 sum(Isopoda_reef_species$PROVINCE == "South China Sea"), 
+                 sum(Isopoda_reef_species$PROVINCE == "South Kuroshio"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Sunda Shelf"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Western Coral Triangle"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Central Polynesia"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Easter Island"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Hawaii"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Marquesas"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                 sum(Isopoda_reef_species$PROVINCE == "Southeast Polynesia"))
 
 
+col_Trematoda <- c(sum(Trematoda_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Java Transitional"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Sahul Shelf"), 
+                   sum(Trematoda_reef_species$PROVINCE == "South China Sea"), 
+                   sum(Trematoda_reef_species$PROVINCE == "South Kuroshio"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Sunda Shelf"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Western Coral Triangle"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Central Polynesia"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Easter Island"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Hawaii"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Marquesas"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                   sum(Trematoda_reef_species$PROVINCE == "Southeast Polynesia"))
 
 
-  
+col_Copepoda <- c(sum(Copepoda_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Java Transitional"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Sahul Shelf"), 
+                               sum(Copepoda_reef_species$PROVINCE == "South China Sea"), 
+                               sum(Copepoda_reef_species$PROVINCE == "South Kuroshio"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Sunda Shelf"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Western Coral Triangle"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Central Polynesia"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Easter Island"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Hawaii"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Marquesas"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                               sum(Copepoda_reef_species$PROVINCE == "Southeast Polynesia"))
+
+col_Others <- c(sum(Others_reef_species$PROVINCE == "Eastern Coral Triangle"), 
+                sum(Others_reef_species$PROVINCE == "Java Transitional"), 
+                sum(Others_reef_species$PROVINCE == "Lord Howe and Norfolk Islands"), 
+                sum(Others_reef_species$PROVINCE == "Northeast Australian Shelf"), 
+                sum(Others_reef_species$PROVINCE == "Northwest Australian Shelf"), 
+                sum(Others_reef_species$PROVINCE == "Sahul Shelf"), 
+                sum(Others_reef_species$PROVINCE == "South China Sea"), 
+                sum(Others_reef_species$PROVINCE == "South Kuroshio"), 
+                sum(Others_reef_species$PROVINCE == "Sunda Shelf"), 
+                sum(Others_reef_species$PROVINCE == "Tropical Northwestern Pacific"), 
+                sum(Others_reef_species$PROVINCE == "Tropical Southwestern Pacific"), 
+                sum(Others_reef_species$PROVINCE == "Western Coral Triangle"), 
+                sum(Others_reef_species$PROVINCE == "Central Polynesia"), 
+                sum(Others_reef_species$PROVINCE == "Easter Island"), 
+                sum(Others_reef_species$PROVINCE == "Hawaii"), 
+                sum(Others_reef_species$PROVINCE == "Marquesas"), 
+                sum(Others_reef_species$PROVINCE == "Marshall, Gilbert and Ellis Islands"), 
+                sum(Others_reef_species$PROVINCE == "Southeast Polynesia"))
+
+colnames(df) <- c("Acanthocephala", "Myxozoa", "Monogenea", "Cestoda", 
+                  "Nematoda", "Isopoda", "Trematoda", "Copepoda", "Others")
+
+df$Acanthocephala <- col_Acanthocephala
+df$Myxozoa <- col_Myxozoa
+df$Monogenea <- col_Monogenea
+df$Cestoda <- col_Cestoda
+df$Nematoda <- col_Nematoda
+df$Isopoda <- col_Isopoda
+df$Trematoda <- col_Trematoda
+df$Copepoda <- col_Copepoda
+df$Others <- col_Others
+
+
+write.table(df, "all_parasites_reef_statistics_province.txt",
+            row.names = TRUE, col.names = TRUE, sep =";")
 
 #Save the workspace
 save.image(file = "parasite.RData")
+
+################################################################################
+########################## CREATE LISTS FOR EUTILS #############################
+################################################################################
+
+
+
 
 ################################################################################
 ################################################################################
