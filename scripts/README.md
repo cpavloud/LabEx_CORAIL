@@ -61,6 +61,13 @@ This python script was retrieved from the [GitHub page of Naiara Rodríguez-Ezpe
 
 **Step 7**
 
-
+Run the [7_makeGeneTable.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/7_makeGeneTable.R) script to summarize the results of the previous step.  
+This script was retrieved from the [GitHub page of Naiara Rodríguez-Ezpeleta](https://github.com/rodriguez-ezpeleta/NEA_fish_DB) and was used in the [Claver et al., 2023](https://doi.org/10.1002/edn3.433) publication. It was modified according to the datasets needs. 
 
 **Step 8**
+
+Run the [8_maps_pies.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/8_maps_pies.R) to create maps with the fish and the parasites distribution per province. 
+
+**Step 9**
+
+
