@@ -1018,6 +1018,36 @@ save.image(file = "parasite.RData")
 ########################## CREATE LISTS FOR EUTILS #############################
 ################################################################################
 
+Copepoda_reef_species_for_NCBI <- select(Copepoda_reef_species, scientificName_Parasite)
+Copepoda_reef_species_for_NCBI <- unique(Copepoda_reef_species_for_NCBI)
+write.table(Copepoda_reef_species_for_NCBI, "Copepoda_reef_species_for_NCBI.txt",
+            row.names = FALSE, col.names = FALSE, sep =";")
+
+Copepoda_reef_genera_for_NCBI <- select(Copepoda_reef, genus_Parasite)
+Copepoda_reef_genera_for_NCBI <- unique(Copepoda_reef_genera_for_NCBI)
+write.table(Copepoda_reef_genera_for_NCBI, "Copepoda_reef_genera_for_NCBI.txt",
+            row.names = FALSE, col.names = FALSE, sep =";")
+
+Copepoda_reef_family_for_NCBI <- select(Copepoda_reef, family_Parasite)
+Copepoda_reef_family_for_NCBI <- unique(Copepoda_reef_family_for_NCBI)
+write.table(Copepoda_reef_family_for_NCBI, "Copepoda_reef_family_for_NCBI.txt",
+            row.names = FALSE, col.names = FALSE, sep =";")
+
+Trematoda_reef_species_for_NCBI <- select(Trematoda_reef_species, scientificName_Parasite)
+Trematoda_reef_species_for_NCBI <- unique(Trematoda_reef_species_for_NCBI)
+write.table(Trematoda_reef_species_for_NCBI, "Trematoda_reef_species_for_NCBI.txt",
+            row.names = FALSE, col.names = FALSE, sep =";")
+
+Trematoda_reef_genera_for_NCBI <- select(Trematoda_reef, genus_Parasite)
+Trematoda_reef_genera_for_NCBI <- unique(Trematoda_reef_genera_for_NCBI)
+write.table(Trematoda_reef_genera_for_NCBI, "Trematoda_reef_genera_for_NCBI.txt",
+            row.names = FALSE, col.names = FALSE, sep =";")
+
+Trematoda_reef_family_for_NCBI <- select(Trematoda_reef, family_Parasite)
+Trematoda_reef_family_for_NCBI <- unique(Trematoda_reef_family_for_NCBI)
+write.table(Trematoda_reef_family_for_NCBI, "Trematoda_reef_family_for_NCBI.txt",
+            row.names = FALSE, col.names = FALSE, sep =";")
+
 
 
 
