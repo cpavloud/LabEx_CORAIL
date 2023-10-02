@@ -216,10 +216,12 @@ Trematoda_genes_species <- read_tsv("Trematoda_reef_species_from_NCBI.txt", col_
 Trematoda_genes_species <- unique(Trematoda_genes_species)
 Trematoda_genes_genera <- read_tsv("Trematoda_reef_genera_from_NCBI.txt", col_names = T)
 Trematoda_genes_genera <- unique(Trematoda_genes_genera)
-Trematoda_genes_families <- read_tsv("Trematoda_reef_family_from_NCBI.txt", col_names = T)
-Trematoda_genes_families <- unique(Trematoda_genes_families)
+Trematoda_genes_families_1 <- read_tsv("Trematoda_reef_family_1_from_NCBI.txt", col_names = T)
+Trematoda_genes_families_1 <- unique(Trematoda_genes_families_1)
+Trematoda_genes_families_2 <- read_tsv("Trematoda_reef_family_2_from_NCBI.txt", col_names = T)
+Trematoda_genes_families_2 <- unique(Trematoda_genes_families_2)
 
-Trematoda_genes <- rbind(Trematoda_genes_species, Trematoda_genes_genera, Trematoda_genes_families)
+Trematoda_genes <- rbind(Trematoda_genes_species, Trematoda_genes_genera, Trematoda_genes_families_1, Trematoda_genes_families_2)
 
 data <- Trematoda_genes
 
@@ -308,6 +310,19 @@ data$regionnd1 <- ifelse((str_detect(data$Sequence_Title, "NADH dehydrogenase su
                          | (str_detect(data$Sequence_Title, "NADH"))== "TRUE",
                          "nd1", data$regionnd1)
 
+data$region28S <- NA
+data$region28S <- ifelse((str_detect(data$Sequence_Title, "28S ribosomal RNA gene"))== "TRUE" 
+                         | (str_detect(data$Sequence_Title, "28S"))== "TRUE" 
+                         | (str_detect(data$Sequence_Title,"28S rRNA gene"))== "TRUE"
+                         | (str_detect(data$Sequence_Title, "28S rRNA"))== "TRUE",
+                         "28S", data$region28S)
+
+data$regionITS <- NA
+data$regionITS <- ifelse((str_detect(data$Sequence_Title, "ITS1"))== "TRUE" 
+                         | (str_detect(data$Sequence_Title, "ITS2"))== "TRUE" 
+                         | (str_detect(data$Sequence_Title,"Internal transcribed spacer"))== "TRUE",
+                         "ITS", data$regionITS)
+
 data$wholemtDNA <- NA
 data$wholemtDNA <- ifelse((str_detect(data$Sequence_Title, "complete genome"))== "TRUE" 
                           | (str_detect(data$Sequence_Title, "complete mitochondiral genome"))== "TRUE" 
@@ -338,6 +353,8 @@ for (i in c(1:dim(data)[1])) {
     data$region16S[i] <- "16S"
     data$regioncytb[i] <- "cytb"
     data$regionnd1[i] <- "nd1"
+    data$region28S[i] <- "28S"
+    data$regionITS[i] <- "ITS"
     data$partialmtDNA[i] <- "partialmtDNA"
   }
 }
@@ -345,7 +362,9 @@ data$wholemtDNA <- NULL
 
 
 data$othermtDNA <- NA
-data$othermtDNA <- ifelse(is.na(data$regionCOI) & is.na(data$regionnd1) & is.na(data$region18S) & is.na(data$region16S) & is.na(data$regioncytb) & is.na(data$partialmtDNA),
+data$othermtDNA <- ifelse(is.na(data$regionCOI) & is.na(data$regionnd1) & is.na(data$region18S) 
+                          & is.na(data$region16S) & is.na(data$regioncytb) & is.na(data$partialmtDNA)
+                          & is.na(data$region28S) & is.na(data$regionITS),
                           "other mtDNA", data$othermtDNA)
 
 #Save dataset
@@ -378,8 +397,9 @@ summary$Species_Name <- rownames(summary)
 #names(Trematoda_species)[1] <- "Species_Name"
 Trematoda_genes_species_names <- select(Trematoda_genes_species, Species_Name)
 Trematoda_genes_genera_names <- select(Trematoda_genes_genera, Species_Name)
-Trematoda_genes_families_names <- select(Trematoda_genes_families, Species_Name)
-Trematoda_species <- rbind(Trematoda_genes_species_names, Trematoda_genes_genera_names, Trematoda_genes_families_names)
+Trematoda_genes_families_1_names <- select(Trematoda_genes_families_1, Species_Name)
+Trematoda_genes_families_2_names <- select(Trematoda_genes_families_2, Species_Name)
+Trematoda_species <- rbind(Trematoda_genes_species_names, Trematoda_genes_genera_names, Trematoda_genes_families_1_names, Trematoda_genes_families_2_names)
 Trematoda_species <- unique(Trematoda_species)
 
 #Merge taxonomy with gene information
