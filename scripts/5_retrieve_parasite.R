@@ -781,6 +781,9 @@ Trematoda_reef_species <- select(Trematoda_reef, scientificName_Parasite, PROVIN
 Trematoda_reef_species <- unique(Trematoda_reef_species)
 length(unique(Trematoda_reef_species$scientificName_Parasite))
 
+write.table(Trematoda_reef, "Trematoda_reef_province.txt", 
+            row.names = FALSE, col.names = TRUE, sep = "\t")
+
 Others_reef <- semi_join(Others, all_fish_reef, 
                          by = c("scientificName_Host"="scientificName"))
 Others_reef_species <- select(Others_reef, scientificName_Parasite, PROVINCE)
@@ -793,6 +796,8 @@ Copepoda_reef_species <- select(Copepoda_reef, scientificName_Parasite, PROVINCE
 Copepoda_reef_species <- unique(Copepoda_reef_species)
 length(unique(Copepoda_reef_species$scientificName_Parasite))
 
+write.table(Copepoda_reef, "Copepoda_reef_province.txt", 
+            row.names = FALSE, col.names = TRUE, sep = "\t")
 
 ################################################################################
 ########################### CALCULATE STATISTICS ###############################
