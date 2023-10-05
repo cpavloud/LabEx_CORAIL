@@ -1,0 +1,19 @@
+PROVINCE	Acanthocephala	Cestoda	Copepoda	Isopoda	Monogenea	Myxozoa	Nematoda	Trematoda	Others
+Eastern Coral Triangle	0	2	17	0	0	0	1	5	0
+Java Transitional	0	2	12	0	1	1	5	24	0
+Lord Howe and Norfolk Islands	0	0	0	0	0	0	0	2	0
+Northeast Australian Shelf	0	3	141	2	2	2	8	498	0
+Northwest Australian Shelf	1	1	29	1	1	1	0	67	0
+Sahul Shelf	1	9	38	1	0	0	12	9	0
+South China Sea	24	11	123	0	59	3	33	522	0
+South Kuroshio	0	0	68	0	9	0	2	229	0
+Sunda Shelf	5	3	73	0	15	1	4	63	0
+Tropical Northwestern Pacific	0	0	16	0	0	0	0	64	0
+Tropical Southwestern Pacific	3	15	70	2	42	36	56	520	1
+Western Coral Triangle	0	3	89	3	5	1	5	197	0
+Central Polynesia	0	0	25	0	0	0	0	1	0
+Easter Island	0	0	2	0	0	0	0	0	0
+Hawaii	0	0	44	1	7	0	3	325	0
+Marquesas	0	0	0	0	0	0	1	5	0
+Marshall, Gilbert and Ellis Islands	0	0	22	0	0	0	0	1	0
+Southeast Polynesia	1	0	9	0	0	0	2	43	0

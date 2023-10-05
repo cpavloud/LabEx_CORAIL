@@ -1,0 +1,19 @@
+PROVINCE	Latitude	Longitude
+Eastern Coral Triangle	-9.989942453	153.1554975
+Java Transitional	-9.398129883	103.2355709
+Lord Howe and Norfolk Islands	-30.3708992	163.7689972
+Northeast Australian Shelf	-14.61130754	147.613617
+Northwest Australian Shelf	-17.00240261	117.3920957
+Sahul Shelf	-9.727364469	129.9578054
+South China Sea	15.50365482	113.5205013
+South Kuroshio	23.64450073	127.5490036
+Sunda Shelf	4.935839414	107.017955
+Tropical Northwestern Pacific	8.891712166	148.0158917
+Tropical Southwestern Pacific	-20.82816019	177.8582737
+Western Coral Triangle	-4.840562086	127.5081903
+Central Polynesia	-9.675919844	-164.9687772
+Easter Island	-26.84119987	-107.4769974
+Hawaii	22.68499947	-163.0189972
+Marquesas	-9.251319885	-139.6159973
+Marshall, Gilbert and Ellis Islands	4.272244259	171.2996466
+Southeast Polynesia	-20.34943869	-159.067165

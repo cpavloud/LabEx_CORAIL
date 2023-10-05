@@ -1,0 +1,19 @@
+	Reef_Fish
+Eastern Coral Triangle	2775
+Java Transitional	1442
+Lord Howe and Norfolk Islands	878
+Northeast Australian Shelf	2297
+Northwest Australian Shelf	2123
+Sahul Shelf	2236
+South China Sea	1911
+South Kuroshio	2375
+Sunda Shelf	2644
+Tropical Northwestern Pacific	2124
+Tropical Southwestern Pacific	2845
+Western Coral Triangle	3315
+Central Polynesia	1486
+Easter Island	163
+Hawaii	802
+Marquesas	607
+Marshall, Gilbert and Ellis Islands	1621
+Southeast Polynesia	1351

@@ -1,0 +1,19 @@
+PROVINCE	Realm
+South_China_Sea	Central Indo-Pacific
+Sunda_Shelf	Central Indo-Pacific
+Java_Transitional	Central Indo-Pacific
+South_Kuroshio	Central Indo-Pacific
+Tropical_Northwestern_Pacific	Central Indo-Pacific
+Western_Coral_Triangle	Central Indo-Pacific
+Eastern_Coral_Triangle	Central Indo-Pacific
+Sahul_Shelf	Central Indo-Pacific
+Northeast_Australian_Shelf	Central Indo-Pacific
+Northwest_Australian_Shelf	Central Indo-Pacific
+Tropical_Southwestern_Pacific	Central Indo-Pacific
+Lord_Howe_and_Norfolk_Islands	Central Indo-Pacific
+Hawaii	Eastern Indo-Pacific
+Marshall_Gilbert_and_Ellis_Islands	Eastern Indo-Pacific
+Central_Polynesia	Eastern Indo-Pacific
+Southeast_Polynesia	Eastern Indo-Pacific
+Marquesas	Eastern Indo-Pacific
+Easter_Island	Eastern Indo-Pacific
