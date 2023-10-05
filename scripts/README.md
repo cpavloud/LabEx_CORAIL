@@ -70,4 +70,7 @@ Run the [8_maps_pies.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scrip
 
 **Step 9**
 
+Run the [9_graphs.R](https://github.com/cpavloud/LabEx_CORAIL/blob/main/scripts/9_graphs.R) to create other graphs for the publication (accummulation curves, cluster dendrogram, barcharts, scatterplot).
+
+
 
