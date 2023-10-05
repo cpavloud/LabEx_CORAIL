@@ -2,7 +2,7 @@
 'R code for LabEx CORAIL book chapter on fish parasites
 
 Christina Pavloudi
-cpavloud@hcmr.gr
+christina.pavloudi@embrc.eu
 https://cpavloud.github.io/mysite/
 
 	Copyright (C) 2023 Christina Pavloudi
