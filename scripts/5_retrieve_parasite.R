@@ -1050,6 +1050,58 @@ Trematoda_reef_family_for_NCBI <- unique(Trematoda_reef_family_for_NCBI)
 write.table(Trematoda_reef_family_for_NCBI, "Trematoda_reef_family_for_NCBI.txt",
             row.names = FALSE, col.names = FALSE, sep =";")
 
+
+################################################################################
+########### MERGE FISH HOST DIET AND BODYSIZE WITH PARASITES ###################
+################################################################################
+
+load(file = "fish_checklist_all.RData")
+
+#add host body size info to Trematoda_reef and Copepoda_reef
+all_fish_attributes_bodysize_max$AphiaID <- as.integer(all_fish_attributes_bodysize_max$AphiaID)
+
+Trematoda_reef_to_merge <- select(Trematoda_reef, scientificName_Host, scientificName_Parasite)
+Trematoda_reef_to_merge <- unique(Trematoda_reef_to_merge)
+
+all_fish_attributes_bodysize_max_Trem <- semi_join(all_fish_attributes_bodysize_max, 
+                                                   Trematoda_reef_to_merge, 
+                                                   by = c("scientificname"="scientificName_Host"))      
+                                                   
+write.table(all_fish_attributes_bodysize_max_Trem, "Trematoda_Host_Body_Size.txt",
+            row.names = FALSE, col.names = TRUE, sep ="\t")
+
+
+all_fish_ecology_Trem <- semi_join(all_fish_ecology, 
+                                                   Trematoda_reef_to_merge, 
+                                                   by = c("Species"="scientificName_Host"))      
+
+write.table(all_fish_ecology_Trem, "Trematoda_Host_Ecology.txt",
+            row.names = FALSE, col.names = TRUE, sep ="\t")
+  
+Copepoda_reef_to_merge <- select(Copepoda_reef, scientificName_Host, scientificName_Parasite)
+Copepoda_reef_to_merge <- unique(Copepoda_reef_to_merge)
+
+all_fish_attributes_bodysize_max_Cop <- semi_join(all_fish_attributes_bodysize_max, 
+                                                   Copepoda_reef_to_merge, 
+                                                   by = c("scientificname"="scientificName_Host"))      
+
+write.table(all_fish_attributes_bodysize_max_Cop, "Copepoda_Host_Body_Size.txt",
+            row.names = FALSE, col.names = TRUE, sep ="\t")
+
+all_fish_ecology_Cop <- semi_join(all_fish_ecology, 
+                                  Copepoda_reef_to_merge, 
+                                   by = c("Species"="scientificName_Host"))      
+
+write.table(all_fish_ecology_Cop, "Copepoda_Host_Ecology.txt",
+            row.names = FALSE, col.names = TRUE, sep ="\t")
+
+all_fish_attributes_bodysize_max_reef <- semi_join(all_fish_attributes_bodysize_max, 
+                                                   all_fish_reef_species, 
+                                                   by = c("scientificname"="scientificName"))      
+
+write.table(all_fish_attributes_bodysize_max_reef, "FishReef_Body_Size.txt",
+            row.names = FALSE, col.names = TRUE, sep ="\t")
+
 #Save the workspace
 save.image(file = "parasite.RData")
 
