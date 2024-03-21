@@ -24,7 +24,7 @@ https://cpavloud.github.io/mysite/
 ################################################################################
 
 # List of packages needed
-.packages = c("tidyverse")
+.packages = c("tidyverse", "obistools")
 
 # Install CRAN packages (if not already installed)
 .inst <- .packages %in% installed.packages()
@@ -34,6 +34,7 @@ if(length(.packages[!.inst]) > 0) install.packages(.packages[!.inst])
 lapply(.packages, require, character.only=TRUE)
 
 packageVersion("tidyverse")
+packageVersion("obistools")
 
 ################################################################################
 ################## CREATION OF THE BARCODE FISH LIST ###########################
